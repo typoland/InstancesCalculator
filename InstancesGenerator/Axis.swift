@@ -1,15 +1,17 @@
 import Foundation
-
-public struct Axis: CustomStringConvertible {
+struct Axis: CustomStringConvertible {
 	
-	public var name: String
-	public var styles: [Style]
-	public init (name:String, styles:[Style] = []) {
+	var name: String
+	var styles: [Style]
+	var bounds: ClosedRange<CoordUnit>
+	
+	init (name:String, bounds: ClosedRange<CoordUnit>, styles:[Style] = []) {
 		self.name = name
+		self.bounds = bounds
 		self.styles = styles
 	}
 	
-	public var description: String {
+	var description: String {
 		return "\"\(name)\""
 	}
 }

@@ -1,7 +1,7 @@
 import Foundation
 
 extension Space {
-	public var edges: [[Edge]] {
+	var edges: [[Edge]] {
 		var result:[[Edge]] = []
 		for axisNr in (0..<dimensions) {
 			var axisResult:[Edge] = []

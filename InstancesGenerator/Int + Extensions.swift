@@ -23,32 +23,32 @@ public extension Double {
 }
 postfix operator  |<>|
 
-public extension Array {
-	static postfix func |<>| (lhs: inout Array) {
-		let length = lhs.count
-		precondition ((length/2).isLog2, "Must be divided by 4")
-		let segmentSize = length/4
-		let a = lhs[0..<segmentSize]
-		let b = lhs[segmentSize..<segmentSize * 2]
-		let c = lhs[segmentSize * 2..<segmentSize * 3]
-		let d = lhs[segmentSize * 3..<length]
-		lhs = Array(a) + Array(c) + Array(b) + Array(d)
-	}
-}
+//public extension Array {
+//	static postfix func |<>| (lhs: inout Array) {
+//		let length = lhs.count
+//		precondition ((length/2).isLog2, "Must be divided by 4")
+//		let segmentSize = length/4
+//		let a = lhs[0..<segmentSize]
+//		let b = lhs[segmentSize..<segmentSize * 2]
+//		let c = lhs[segmentSize * 2..<segmentSize * 3]
+//		let d = lhs[segmentSize * 3..<length]
+//		lhs = Array(a) + Array(c) + Array(b) + Array(d)
+//	}
+//}
+//
+//public extension String {
+//	static prefix func ~ (rhs: String) -> String {
+//		return "\(rhs)"
+//	}
+//}
 
-public extension String {
-	static prefix func ~ (rhs: String) -> String {
-		return "\(rhs)"
-	}
-}
-
-public extension Array where Element: FloatingPoint {
+extension Array where Element: FloatingPoint {
 	var average: Element {
 		return self.reduce(into:Element.zero, {$0+=$1})/Element(self.count)
 	}
 }
 
-public extension Int {
+extension Int {
 	
 	/**I hope it's fast log2 for integers. If it's log returns log if not returns nil
 	*/

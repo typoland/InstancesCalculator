@@ -9,15 +9,8 @@
 import Foundation
 
 
-
-
-
 extension Space {
-	
-	
-	
-	
-	
+
 	var stylesIndexList : [[Int]] {
 		var result: [[Int]] = []
 		func nextAxis(styles:[Int], _ level:Int = 0) {
@@ -48,7 +41,7 @@ extension Space {
 	
 	func simplify(_ line:[CoordUnit]) -> [CoordUnit]  {
 		var result:[CoordUnit] = []
-		print ("simplify \(line)")
+		//print ("simplify \(line)")
 		
 		for i in 0..<line.count / 4 {
 			let i0 = line[i*4]
@@ -58,7 +51,7 @@ extension Space {
 			let a  = (i0, i1) ❖ (i2, i3)
 			result.append(contentsOf: [a.0, a.1])
 		}
-		print ("Siplified",result)
+		//print ("Siplified",result)
 		return result
 	}
 	
@@ -68,7 +61,7 @@ extension Space {
 		
 		
 		if list[0].count == 2 {
-			print ("top", level)
+			//print ("top", level)
 			var shifted : [[CoordUnit]] = []
 			for lineNr in 0..<list.count {
 				let nextLine = (lineNr + 1) % list.count
@@ -86,20 +79,20 @@ extension Space {
 					let nextLine = (lineNr + 1) %% list.count
 					newLine.append(contentsOf: [list[lineNr][pair*2], list[nextLine][pair*2+1]])
 				}
-				print("NewLine",newLine)
+				//print("NewLine",newLine)
 				reduced.append(simplify(newLine))
 			}
 			result.append(contentsOf: reduceByCross(list: reduced, level: level+1))
 			
 		}
-		print ("return", level)
-		result.forEach {print ($0)}
-		print ()
+		//print ("return", level)
+		//result.forEach {print ($0)}
+		//print ()
 		return result
 	}
 	
 	
-	var instances: [(name:String, coordinates:[CoordUnit])] {
+	public var instances: [(name:String, coordinates:[CoordUnit])] {
 		
 		var result:[(name:String, coordinates:[CoordUnit])] = []
 		
@@ -110,10 +103,10 @@ extension Space {
 			var groups: [[Pair<CoordUnit>]] = []
 			for axisNr in 0..<dimensions {
 				let styleIndex = stylesIndexes[axisNr]
-				name += "\(axes[axisNr].styles[styleIndex].name)-"
+				name += "\(axes[axisNr].styles[styleIndex].name) "
 				var planeGroup : [Pair<CoordUnit>] = []
 				for plane in planes[axisNr] {
-					print (plane)
+					//print (plane)
 					
 					
 					let ( axisA, styleValueIndexA0) = plane.edgesA.0.axisAndStyleValueIndex
@@ -131,21 +124,23 @@ extension Space {
 					let b0 = valuesB[styleValueIndexB0]
 					let b1 = valuesB[styleValueIndexB1]
 					
-					print ("# \(~a0) \(~a1) ❖ \(~b0) \(~b1)", terminator:" = ")
+					//print ("# \(~a0) \(~a1) ❖ \(~b0) \(~b1)", terminator:" = ")
 					let (a, b) = (a0,a1) ❖ (b0, b1)
 					planeGroup.append(Pair(a:a, b:b))
 					
-					let d =  (planeGroup.last!)
-					print (~d.a, ~d.b)
+					//let d =  (planeGroup.last!)
+					//print (~d.a, ~d.b)
 				}
 				groups.append(planeGroup)
 			}
 			let data = flat(array: groups)
-			print ("flat Data:")
-			data.forEach({print ($0)})
-			print ()
-			let b = reduceByCross(list: data)
-			b.forEach({ print($0) })
+			//print ("flat Data:")
+			//data.forEach({print ($0)})
+			//print ()
+			let coordinatesArray = reduceByCross(list: data)
+			let coordinates = coordinatesArray.map { $0.average }
+			_ = name.removeLast()
+			result.append((name: name, coordinates: coordinates))
 		}
 		return result
 	}

@@ -1,24 +1,24 @@
 import Foundation
 
-public struct Edge: CustomStringConvertible {
-	public var from:Int
-	public var to:Int
-	public init(from: Int, to: Int) {
+struct Edge: CustomStringConvertible {
+	var from:Int
+	var to:Int
+	init(from: Int, to: Int) {
 		self.from = from
 		self.to = to
 	}
 	
-	public var axisNr: Int {
+	var axisNr: Int {
 		return (from ^ to).log2!
 	}
 	
-	public var axisAndStyleValueIndex : (axis:Int, styleValueIndex:Int) {
+	var axisAndStyleValueIndex : (axis:Int, styleValueIndex:Int) {
 		let currentAxis = axisNr
 		return (axis:currentAxis,
 				styleValueIndex: from.deleteBit(currentAxis))
 	}
 	
-	public var description:String {
+	var description:String {
 		return "\(from)⟷\(to)"
 	}
 }

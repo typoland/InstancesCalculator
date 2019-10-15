@@ -20,9 +20,10 @@
 		B28AF7E02355DF2B00608F8F /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D52355DF2B00608F8F /* Pair.swift */; };
 		B28AF7E12355DF2B00608F8F /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D62355DF2B00608F8F /* Int + Extensions.swift */; };
 		B28AF7E22355DF2B00608F8F /* cross.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D72355DF2B00608F8F /* cross.swift */; };
-		B28AF7E42355DF8100608F8F /* InstancesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E32355DF8100608F8F /* InstancesGenerator.swift */; };
+		B28AF7E42355DF8100608F8F /* Space + instances.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E32355DF8100608F8F /* Space + instances.swift */; };
 		B28AF7E62355E29300608F8F /* Space + defineEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E52355E29300608F8F /* Space + defineEdges.swift */; };
 		B28AF7E82355E2E100608F8F /* Space + combineCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */; };
+		B28AF7EA2356063300608F8F /* InstanceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E92356063300608F8F /* InstanceGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +53,10 @@
 		B28AF7D52355DF2B00608F8F /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		B28AF7D62355DF2B00608F8F /* Int + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
 		B28AF7D72355DF2B00608F8F /* cross.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cross.swift; sourceTree = "<group>"; };
-		B28AF7E32355DF8100608F8F /* InstancesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancesGenerator.swift; sourceTree = "<group>"; };
+		B28AF7E32355DF8100608F8F /* Space + instances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + instances.swift"; sourceTree = "<group>"; };
 		B28AF7E52355E29300608F8F /* Space + defineEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + defineEdges.swift"; sourceTree = "<group>"; };
 		B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + combineCoords.swift"; sourceTree = "<group>"; };
+		B28AF7E92356063300608F8F /* InstanceGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,17 +99,18 @@
 		B28AF7B52355DF0800608F8F /* InstancesGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				B28AF7E32355DF8100608F8F /* InstancesGenerator.swift */,
+				B28AF7E92356063300608F8F /* InstanceGenerator.swift */,
+				B28AF7CF2355DF2B00608F8F /* Space.swift */,
+				B28AF7D22355DF2B00608F8F /* Axis.swift */,
+				B28AF7E32355DF8100608F8F /* Space + instances.swift */,
 				B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */,
 				B28AF7E52355E29300608F8F /* Space + defineEdges.swift */,
-				B28AF7D22355DF2B00608F8F /* Axis.swift */,
 				B28AF7D72355DF2B00608F8F /* cross.swift */,
 				B28AF7D42355DF2B00608F8F /* Edge.swift */,
 				B28AF7D62355DF2B00608F8F /* Int + Extensions.swift */,
 				B28AF7D52355DF2B00608F8F /* Pair.swift */,
 				B28AF7D32355DF2B00608F8F /* Plane.swift */,
 				B28AF7D02355DF2B00608F8F /* Space + Edges.swift */,
-				B28AF7CF2355DF2B00608F8F /* Space.swift */,
 				B28AF7CE2355DF2B00608F8F /* Style.swift */,
 				B28AF7D12355DF2B00608F8F /* Type aliases.swift */,
 				B28AF7B62355DF0800608F8F /* InstancesGenerator.h */,
@@ -236,7 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28AF7DB2355DF2B00608F8F /* Space + Edges.swift in Sources */,
-				B28AF7E42355DF8100608F8F /* InstancesGenerator.swift in Sources */,
+				B28AF7E42355DF8100608F8F /* Space + instances.swift in Sources */,
 				B28AF7E62355E29300608F8F /* Space + defineEdges.swift in Sources */,
 				B28AF7DF2355DF2B00608F8F /* Edge.swift in Sources */,
 				B28AF7DC2355DF2B00608F8F /* Type aliases.swift in Sources */,
@@ -245,6 +248,7 @@
 				B28AF7E22355DF2B00608F8F /* cross.swift in Sources */,
 				B28AF7E02355DF2B00608F8F /* Pair.swift in Sources */,
 				B28AF7DD2355DF2B00608F8F /* Axis.swift in Sources */,
+				B28AF7EA2356063300608F8F /* InstanceGenerator.swift in Sources */,
 				B28AF7E12355DF2B00608F8F /* Int + Extensions.swift in Sources */,
 				B28AF7DA2355DF2B00608F8F /* Space.swift in Sources */,
 				B28AF7DE2355DF2B00608F8F /* Plane.swift in Sources */,
@@ -407,6 +411,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.InstancesGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -433,6 +438,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.InstancesGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

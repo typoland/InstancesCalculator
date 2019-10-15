@@ -14,7 +14,7 @@ extension Space {
 		func deep (list: [(a:CoordUnit, b:CoordUnit)], level: Int = 0 )
 			-> [(a:CoordUnit, b:CoordUnit)] {
 				let tab = String(repeating: "---", count: level)
-				print ("\(tab)combine:")
+				//print ("\(tab)combine:")
 				list.forEach( {print ("\(tab)\($0)")})
 				
 				let l1 = Array(list[0..<list.count/2])
@@ -35,14 +35,14 @@ extension Space {
 				} else {
 					let a = deep(list: l1, level: level+1)
 					let b = deep(list: l2, level: level+1)
-					print (tab, "a:", a)
-					print (tab, "b:", b)
+					//print (tab, "a:", a)
+					//print (tab, "b:", b)
 					return deep (list: a+b, level: level + 1)
 				}
 		}
 		
 		let (a,b) = list.count == 1 ? list[0] : deep(list: list)[0]
-		print ("returns (\(a), \(b))\n")
+		//print ("returns (\(a), \(b))\n")
 		return (a:a, b:b)
 	}
 }

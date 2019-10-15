@@ -1,6 +1,12 @@
 import Foundation
 
-public typealias CoordUnit = String
+extension String {
+	static var zero: String {
+		return ""
+	}
+}
+
+public typealias CoordUnit = Double
 
 
 //public enum EdgePosition :Int, CustomStringConvertible {
