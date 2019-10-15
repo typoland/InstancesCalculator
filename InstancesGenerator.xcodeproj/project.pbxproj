@@ -10,6 +10,19 @@
 		B28AF7BD2355DF0800608F8F /* InstancesGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28AF7B32355DF0800608F8F /* InstancesGenerator.framework */; };
 		B28AF7C22355DF0800608F8F /* InstancesGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7C12355DF0800608F8F /* InstancesGeneratorTests.swift */; };
 		B28AF7C42355DF0800608F8F /* InstancesGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = B28AF7B62355DF0800608F8F /* InstancesGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B28AF7D92355DF2B00608F8F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7CE2355DF2B00608F8F /* Style.swift */; };
+		B28AF7DA2355DF2B00608F8F /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7CF2355DF2B00608F8F /* Space.swift */; };
+		B28AF7DB2355DF2B00608F8F /* Space + Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D02355DF2B00608F8F /* Space + Edges.swift */; };
+		B28AF7DC2355DF2B00608F8F /* Type aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D12355DF2B00608F8F /* Type aliases.swift */; };
+		B28AF7DD2355DF2B00608F8F /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D22355DF2B00608F8F /* Axis.swift */; };
+		B28AF7DE2355DF2B00608F8F /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D32355DF2B00608F8F /* Plane.swift */; };
+		B28AF7DF2355DF2B00608F8F /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D42355DF2B00608F8F /* Edge.swift */; };
+		B28AF7E02355DF2B00608F8F /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D52355DF2B00608F8F /* Pair.swift */; };
+		B28AF7E12355DF2B00608F8F /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D62355DF2B00608F8F /* Int + Extensions.swift */; };
+		B28AF7E22355DF2B00608F8F /* cross.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D72355DF2B00608F8F /* cross.swift */; };
+		B28AF7E42355DF8100608F8F /* InstancesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E32355DF8100608F8F /* InstancesGenerator.swift */; };
+		B28AF7E62355E29300608F8F /* Space + defineEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E52355E29300608F8F /* Space + defineEdges.swift */; };
+		B28AF7E82355E2E100608F8F /* Space + combineCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +42,19 @@
 		B28AF7BC2355DF0800608F8F /* InstancesGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstancesGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28AF7C12355DF0800608F8F /* InstancesGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancesGeneratorTests.swift; sourceTree = "<group>"; };
 		B28AF7C32355DF0800608F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B28AF7CE2355DF2B00608F8F /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		B28AF7CF2355DF2B00608F8F /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		B28AF7D02355DF2B00608F8F /* Space + Edges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Space + Edges.swift"; sourceTree = "<group>"; };
+		B28AF7D12355DF2B00608F8F /* Type aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Type aliases.swift"; sourceTree = "<group>"; };
+		B28AF7D22355DF2B00608F8F /* Axis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
+		B28AF7D32355DF2B00608F8F /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		B28AF7D42355DF2B00608F8F /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		B28AF7D52355DF2B00608F8F /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
+		B28AF7D62355DF2B00608F8F /* Int + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
+		B28AF7D72355DF2B00608F8F /* cross.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cross.swift; sourceTree = "<group>"; };
+		B28AF7E32355DF8100608F8F /* InstancesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancesGenerator.swift; sourceTree = "<group>"; };
+		B28AF7E52355E29300608F8F /* Space + defineEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + defineEdges.swift"; sourceTree = "<group>"; };
+		B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + combineCoords.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +97,19 @@
 		B28AF7B52355DF0800608F8F /* InstancesGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				B28AF7E32355DF8100608F8F /* InstancesGenerator.swift */,
+				B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */,
+				B28AF7E52355E29300608F8F /* Space + defineEdges.swift */,
+				B28AF7D22355DF2B00608F8F /* Axis.swift */,
+				B28AF7D72355DF2B00608F8F /* cross.swift */,
+				B28AF7D42355DF2B00608F8F /* Edge.swift */,
+				B28AF7D62355DF2B00608F8F /* Int + Extensions.swift */,
+				B28AF7D52355DF2B00608F8F /* Pair.swift */,
+				B28AF7D32355DF2B00608F8F /* Plane.swift */,
+				B28AF7D02355DF2B00608F8F /* Space + Edges.swift */,
+				B28AF7CF2355DF2B00608F8F /* Space.swift */,
+				B28AF7CE2355DF2B00608F8F /* Style.swift */,
+				B28AF7D12355DF2B00608F8F /* Type aliases.swift */,
 				B28AF7B62355DF0800608F8F /* InstancesGenerator.h */,
 				B28AF7B72355DF0800608F8F /* Info.plist */,
 			);
@@ -148,6 +187,7 @@
 				TargetAttributes = {
 					B28AF7B22355DF0800608F8F = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 					B28AF7BB2355DF0800608F8F = {
 						CreatedOnToolsVersion = 11.0;
@@ -195,6 +235,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28AF7DB2355DF2B00608F8F /* Space + Edges.swift in Sources */,
+				B28AF7E42355DF8100608F8F /* InstancesGenerator.swift in Sources */,
+				B28AF7E62355E29300608F8F /* Space + defineEdges.swift in Sources */,
+				B28AF7DF2355DF2B00608F8F /* Edge.swift in Sources */,
+				B28AF7DC2355DF2B00608F8F /* Type aliases.swift in Sources */,
+				B28AF7E82355E2E100608F8F /* Space + combineCoords.swift in Sources */,
+				B28AF7D92355DF2B00608F8F /* Style.swift in Sources */,
+				B28AF7E22355DF2B00608F8F /* cross.swift in Sources */,
+				B28AF7E02355DF2B00608F8F /* Pair.swift in Sources */,
+				B28AF7DD2355DF2B00608F8F /* Axis.swift in Sources */,
+				B28AF7E12355DF2B00608F8F /* Int + Extensions.swift in Sources */,
+				B28AF7DA2355DF2B00608F8F /* Space.swift in Sources */,
+				B28AF7DE2355DF2B00608F8F /* Plane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +392,7 @@
 		B28AF7C82355DF0900608F8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -356,6 +410,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.InstancesGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -363,6 +418,7 @@
 		B28AF7C92355DF0900608F8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -387,6 +443,7 @@
 		B28AF7CB2355DF0900608F8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3ASHMCMJEN;
@@ -405,6 +462,7 @@
 		B28AF7CC2355DF0900608F8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 3ASHMCMJEN;
