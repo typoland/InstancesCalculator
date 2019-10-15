@@ -24,6 +24,8 @@
 		B28AF7E62355E29300608F8F /* Space + defineEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E52355E29300608F8F /* Space + defineEdges.swift */; };
 		B28AF7E82355E2E100608F8F /* Space + combineCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */; };
 		B28AF7EA2356063300608F8F /* InstanceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E92356063300608F8F /* InstanceGenerator.swift */; };
+		B28AF81F2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */; };
+		B28AF82123564B5700608F8F /* InstanceGenerator exportJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = B28AF7B22355DF0800608F8F;
 			remoteInfo = InstancesGenerator;
+		};
+		B28AF8152356365E00608F8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B28AF8112356365D00608F8F /* insgen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B28AF8072356365D00608F8F;
+			remoteInfo = insgen;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -57,6 +66,9 @@
 		B28AF7E52355E29300608F8F /* Space + defineEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + defineEdges.swift"; sourceTree = "<group>"; };
 		B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + combineCoords.swift"; sourceTree = "<group>"; };
 		B28AF7E92356063300608F8F /* InstanceGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceGenerator.swift; sourceTree = "<group>"; };
+		B28AF8112356365D00608F8F /* insgen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = insgen.xcodeproj; path = insgen/insgen.xcodeproj; sourceTree = "<group>"; };
+		B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Generator. + initFromDesignSpace.swift"; sourceTree = "<group>"; };
+		B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstanceGenerator exportJson.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 		B28AF7A92355DF0800608F8F = {
 			isa = PBXGroup;
 			children = (
+				B28AF8112356365D00608F8F /* insgen.xcodeproj */,
 				B28AF7B52355DF0800608F8F /* InstancesGenerator */,
 				B28AF7C02355DF0800608F8F /* InstancesGeneratorTests */,
 				B28AF7B42355DF0800608F8F /* Products */,
@@ -100,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				B28AF7E92356063300608F8F /* InstanceGenerator.swift */,
+				B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */,
+				B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */,
 				B28AF7CF2355DF2B00608F8F /* Space.swift */,
 				B28AF7D22355DF2B00608F8F /* Axis.swift */,
 				B28AF7E32355DF8100608F8F /* Space + instances.swift */,
@@ -126,6 +141,14 @@
 				B28AF7C32355DF0800608F8F /* Info.plist */,
 			);
 			path = InstancesGeneratorTests;
+			sourceTree = "<group>";
+		};
+		B28AF8122356365D00608F8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B28AF8162356365E00608F8F /* insgen */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +231,12 @@
 			mainGroup = B28AF7A92355DF0800608F8F;
 			productRefGroup = B28AF7B42355DF0800608F8F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B28AF8122356365D00608F8F /* Products */;
+					ProjectRef = B28AF8112356365D00608F8F /* insgen.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B28AF7B22355DF0800608F8F /* InstancesGenerator */,
@@ -215,6 +244,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B28AF8162356365E00608F8F /* insgen */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = insgen;
+			remoteRef = B28AF8152356365E00608F8F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B28AF7B12355DF0800608F8F /* Resources */ = {
@@ -246,6 +285,8 @@
 				B28AF7E82355E2E100608F8F /* Space + combineCoords.swift in Sources */,
 				B28AF7D92355DF2B00608F8F /* Style.swift in Sources */,
 				B28AF7E22355DF2B00608F8F /* cross.swift in Sources */,
+				B28AF81F2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */,
+				B28AF82123564B5700608F8F /* InstanceGenerator exportJson.swift in Sources */,
 				B28AF7E02355DF2B00608F8F /* Pair.swift in Sources */,
 				B28AF7DD2355DF2B00608F8F /* Axis.swift in Sources */,
 				B28AF7EA2356063300608F8F /* InstanceGenerator.swift in Sources */,

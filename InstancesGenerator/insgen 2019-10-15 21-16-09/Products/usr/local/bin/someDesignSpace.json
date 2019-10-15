@@ -1,0 +1,76 @@
+{
+	"axes":[
+		{
+			"name":"weight",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"Thin",
+				"values": [0, 0, 0, 0]
+				},
+				{
+				"name":"Light",
+				"values": [333, 333, 333, 333]
+				},
+				{
+				"name":"<Normal>",
+				"values": [900, 400, 666, 666]
+				},
+				{
+				"name":"Bold",
+				"values": [1000, 1000, 1000, 1000]
+				}
+			]
+
+		},
+		{
+			"name":"width",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"Condensed",
+				"values": [0, 0, 0, 0]
+				},
+				{
+				"name":"Narrow",
+				"values": [333, 333, 333, 333]
+				},
+				{
+				"name":"Normal",
+				"values": [900, 666, 400, 666]
+				},
+				{
+				"name":"Extended",
+				"values": [1000, 1000, 1000, 1000]
+				}
+			]
+
+		},
+		{
+			"name":"contrast",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"High",
+				"values": [0, 0, 0, 0]
+				},
+				{
+				"name":"Common",
+				"values": [333, 333, 333, 333]
+				},
+				{
+				"name":"Low",
+				"values": [900, 666, 666, 400]
+				},
+				{
+				"name":"Very Low",
+				"values": [1000, 1000, 1000, 1000]
+				}
+			]
+
+		}
+	]
+}

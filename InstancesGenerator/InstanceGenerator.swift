@@ -13,10 +13,15 @@ public class InstanceGenerator {
 		case axisNotExist(name: String)
 		case notEnoughValuesForStyle(name: String, expected: Int)
 	}
+	
 	var space: Space
 	
 	public init (axes names: [String], bounds: ClosedRange<CoordUnit>) {
 		self.space = Space(axes: (0..<names.count).map {Axis(name: names[$0], bounds: bounds)})
+	}
+	
+	init (space:Space) {
+		self.space = space
 	}
 	
 	public func addStyle(name: String, to axisName: String, values: [CoordUnit]) throws {
@@ -30,7 +35,7 @@ public class InstanceGenerator {
 			
 		}
 		let internalValues = values.map { value in
-			convertToInternal(value: value, bounds: space.axes[axisIndex].bounds)
+			 InstanceGenerator.convertToInternal(value: value, bounds: space.axes[axisIndex].bounds)
 		}
 		
 		let style = Style(name: name, values: internalValues)
@@ -38,20 +43,24 @@ public class InstanceGenerator {
 		
 	}
 	
-	func convertToInternal(value:CoordUnit, bounds:ClosedRange<CoordUnit>) -> CoordUnit {
-		return (value - bounds.lowerBound) / (bounds.upperBound - bounds.lowerBound)
+	static func convertToInternal(value:CoordUnit, bounds:ClosedRange<CoordUnit>) -> CoordUnit {
+		let result = (value - bounds.lowerBound) / (bounds.upperBound - bounds.lowerBound)
+		//print ("To Internal", bounds, value, result)
+		return result
 	}
 	
-	func convertfromInternal(value:CoordUnit, bounds:ClosedRange<CoordUnit>) -> CoordUnit {
-		return  (bounds.upperBound - bounds.lowerBound) * value + bounds.lowerBound
+	static func convertfromInternal(value:CoordUnit, bounds:ClosedRange<CoordUnit>) -> CoordUnit {
+		let result = (bounds.upperBound - bounds.lowerBound) * value + bounds.lowerBound
+		//print ("From Internal", bounds, value, result)
+		return result
 	}
 	
-	var instances: [(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])] {
+	public var instances: [(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])] {
 		var result:[(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])]  = []
 		for style in space.instances {
 			let coordinates = (0..<style.coordinates.count).map {
 				(space.axes[$0].name,
-				 convertfromInternal(value: style.coordinates[$0],
+				 InstanceGenerator.convertfromInternal(value: style.coordinates[$0],
 									 bounds: space.axes[$0].bounds) )
 			}
 			
