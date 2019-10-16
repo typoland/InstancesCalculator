@@ -14,14 +14,17 @@ class Instance3D: SCNNode {
 		super.init()
 		self.name = name
 		let box = SCNSphere(radius: size)
-		let text = SCNText(string: name, extrusionDepth: 0)
+		let text = SCNText(string: name.replacingOccurrences(of: " ", with: "\n"), extrusionDepth: 0)
+		text.font = NSFont.boldSystemFont(ofSize: 32)
 		let node = SCNNode(geometry: text)
-		node.scale = SCNVector3(x: 0.002, y: 0.002, z: 0.002)
-		node.position = SCNVector3(x: 0.1, y: 0, z: 0)
+		node.scale = SCNVector3(x: 0.003, y: 0.003, z: 0.003)
+		node.position = SCNVector3(x: 0.07, y:-0.10, z: 0)
 		self.addChildNode(node)
 		let material = SCNMaterial()
 		material.diffuse.contents = NSColor.gray
 		material.lightingModel = .physicallyBased
+		material.metalness.contents = 1
+
 		box.materials = [material]
 		text.materials = [material]
 		let x:CGFloat = CGFloat(coordinates["width"] ?? 0)/250.0

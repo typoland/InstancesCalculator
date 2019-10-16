@@ -23,9 +23,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let scene = SCNScene(named: "basicScene.scn")
 		view3D.allowsCameraControl = true
 		view3D.scene = scene
-		print (view3D.scene)
-	}
 
+	}
+	
+	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+		return true
+	}
+	
 	func applicationWillTerminate(_ aNotification: Notification) {
 		// Insert code here to tear down your application
 	}
@@ -49,7 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			let jsonData = try Data(contentsOf: url)
 				let object = try JSONDecoder().decode(JSONData.self, from: jsonData)
 				for instance in object.instances {
-					let node = Instance3D(name: instance.name, size: 0.1, coordinates: instance.location)
+					let node = Instance3D(name: instance.name, size: 0.05, coordinates: instance.location)
 					view3D.scene?.rootNode.addChildNode(node)
 				}
 			} catch {
