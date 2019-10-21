@@ -75,7 +75,7 @@ __Important__: number of values in `axisInstance` must be equal `2^(dimensions -
 ![](./exp05.png)
 #### Rendering of distorted 5d designspace. 4th dimension is represented by blue color and 5th dimension is represented brightness
 ![](./exp06.png)
-#### Rendering of distorted 5d designspace. 4th dimension is represented by hue,  5th by saturation, 6th by brightness.
+#### Rendering of distorted 6d designspace. 4th dimension is represented by hue,  5th by saturation, 6th by brightness.
 ![](./exp07.png)
 
 
