@@ -72,7 +72,7 @@ class InstancesNode:SCNNode {
 			brightness = CGFloat(coordinates[4]) / 4000
 			hue = CGFloat(coordinates[5]) / 1500 + 0.16
 		}
-		print (hue, saturation, brightness)
+		///print (hue, saturation, brightness)
 		return NSColor(calibratedHue: hue, saturation: saturation, brightness: brightness, alpha: 1)
 	}
 	

@@ -6,7 +6,7 @@ struct Axis: CustomStringConvertible {
 	var name: String
 	var styles: [Style]
 	var bounds: ClosedRange<CoordUnit>
-	var distribution: Double = 1.0
+	var distribution: Double? = nil
 	
 	init (name:String, bounds: ClosedRange<CoordUnit>, styles:[Style] = []) {
 		self.name = name

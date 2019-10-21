@@ -9,10 +9,11 @@
 import Foundation
 
 extension Axis {
+	
 	mutating func distributeStyles() {
 		//print ("distribution of \(name)")
 		func distribute(values:[CoordUnit]) -> [CoordUnit]  {
-			guard values.count > 2 else { return values}
+			guard let distribution = distribution, values.count > 2 else { return values}
 			let min = values[0]
 			let max = values.last!
 			let step: Double = 1/Double(values.count-1)
