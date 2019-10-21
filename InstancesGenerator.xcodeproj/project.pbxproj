@@ -32,10 +32,8 @@
 		B2D5EB20235E01F400A99453 /* exp03a.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB19235E01F400A99453 /* exp03a.png */; };
 		B2D5EB21235E01F400A99453 /* exp06.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1A235E01F400A99453 /* exp06.png */; };
 		B2D5EB22235E01F400A99453 /* exp05.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1B235E01F400A99453 /* exp05.png */; };
-		B2D5EB23235E01F400A99453 /* exp03.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1C235E01F400A99453 /* exp03.png */; };
 		B2D5EB24235E01F400A99453 /* exp04.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1D235E01F400A99453 /* exp04.png */; };
 		B2D5EB25235E01F400A99453 /* exp07.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1E235E01F400A99453 /* exp07.png */; };
-		B2D5EB26235E01F400A99453 /* exp02.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1F235E01F400A99453 /* exp02.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,10 +84,8 @@
 		B2D5EB19235E01F400A99453 /* exp03a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp03a.png; sourceTree = "<group>"; };
 		B2D5EB1A235E01F400A99453 /* exp06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp06.png; sourceTree = "<group>"; };
 		B2D5EB1B235E01F400A99453 /* exp05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp05.png; sourceTree = "<group>"; };
-		B2D5EB1C235E01F400A99453 /* exp03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp03.png; sourceTree = "<group>"; };
 		B2D5EB1D235E01F400A99453 /* exp04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp04.png; sourceTree = "<group>"; };
 		B2D5EB1E235E01F400A99453 /* exp07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp07.png; sourceTree = "<group>"; };
-		B2D5EB1F235E01F400A99453 /* exp02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp02.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				B27A75BE235DC65C008D6B36 /* README.md */,
-				B2D5EB1F235E01F400A99453 /* exp02.png */,
-				B2D5EB1C235E01F400A99453 /* exp03.png */,
 				B2D5EB19235E01F400A99453 /* exp03a.png */,
 				B2D5EB1D235E01F400A99453 /* exp04.png */,
 				B2D5EB1B235E01F400A99453 /* exp05.png */,
@@ -295,8 +289,6 @@
 				B2D5EB20235E01F400A99453 /* exp03a.png in Resources */,
 				B2D5EB25235E01F400A99453 /* exp07.png in Resources */,
 				B2D5EB24235E01F400A99453 /* exp04.png in Resources */,
-				B2D5EB26235E01F400A99453 /* exp02.png in Resources */,
-				B2D5EB23235E01F400A99453 /* exp03.png in Resources */,
 				B2D5EB21235E01F400A99453 /* exp06.png in Resources */,
 				B2D5EB22235E01F400A99453 /* exp05.png in Resources */,
 				B27A75C0235DDB9B008D6B36 /* exp01.png in Resources */,
