@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B27A75B3235C52B9008D6B36 /* InstancesNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A75B2235C52B9008D6B36 /* InstancesNode.swift */; };
+		B27A75B9235C58FC008D6B36 /* InstancesGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */; };
+		B27A75BA235C58FC008D6B36 /* InstancesGenerator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B27A75BD235CBBF1008D6B36 /* SCNGeometry + drawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A75BC235CBBF1008D6B36 /* SCNGeometry + drawLine.swift */; };
 		B28AF850235657A900608F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF84F235657A900608F8F /* AppDelegate.swift */; };
 		B28AF852235657AC00608F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28AF851235657AC00608F8F /* Assets.xcassets */; };
 		B28AF855235657AC00608F8F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B28AF853235657AC00608F8F /* MainMenu.xib */; };
@@ -25,7 +29,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B27A75BB235C58FD008D6B36 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B27A75BA235C58FC008D6B36 /* InstancesGenerator.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		B27A75B2235C52B9008D6B36 /* InstancesNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancesNode.swift; sourceTree = "<group>"; };
+		B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InstancesGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B27A75BC235CBBF1008D6B36 /* SCNGeometry + drawLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry + drawLine.swift"; sourceTree = "<group>"; };
 		B28AF84C235657A900608F8F /* ShowMeInstances.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowMeInstances.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28AF84F235657A900608F8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B28AF851235657AC00608F8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27A75B9235C58FC008D6B36 /* InstancesGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +79,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B27A75B7235C58FC008D6B36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B28AF843235657A900608F8F = {
 			isa = PBXGroup;
 			children = (
 				B28AF84E235657A900608F8F /* ShowMeInstances */,
 				B28AF85F235657AC00608F8F /* ShowMeInstancesTests */,
 				B28AF84D235657A900608F8F /* Products */,
+				B27A75B7235C58FC008D6B36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +111,8 @@
 			children = (
 				B28AF84F235657A900608F8F /* AppDelegate.swift */,
 				B28AF86D23565C2800608F8F /* Instance3D.swift */,
+				B27A75B2235C52B9008D6B36 /* InstancesNode.swift */,
+				B27A75BC235CBBF1008D6B36 /* SCNGeometry + drawLine.swift */,
 				B28AF86B2356591800608F8F /* basicScene.scn */,
 				B28AF851235657AC00608F8F /* Assets.xcassets */,
 				B28AF853235657AC00608F8F /* MainMenu.xib */,
@@ -108,6 +141,7 @@
 				B28AF848235657A900608F8F /* Sources */,
 				B28AF849235657A900608F8F /* Frameworks */,
 				B28AF84A235657A900608F8F /* Resources */,
+				B27A75BB235C58FD008D6B36 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27A75BD235CBBF1008D6B36 /* SCNGeometry + drawLine.swift in Sources */,
 				B28AF850235657A900608F8F /* AppDelegate.swift in Sources */,
+				B27A75B3235C52B9008D6B36 /* InstancesNode.swift in Sources */,
 				B28AF86E23565C2800608F8F /* Instance3D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,7 +397,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.ShowMeInstances;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -382,7 +418,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.ShowMeInstances;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

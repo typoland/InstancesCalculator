@@ -20,6 +20,7 @@ extension InstanceGenerator {
 			var axisInstances: [JsonStyle]
 			var designMinimum: Double
 			var designMaximum: Double
+			var distribution: Double? = 1.0
 		}
 		
 		struct DesignSpace: Decodable {
@@ -32,7 +33,10 @@ extension InstanceGenerator {
 			let newStyles = impAxis.axisInstances.map {
 				Style(name: $0.name, values: $0.values.map { InstanceGenerator.convertToInternal(value: $0, bounds: bounds)})
 			}
-			let axis = Axis(name: impAxis.name, bounds: bounds , styles: newStyles)
+			var axis = Axis(name: impAxis.name, bounds: bounds , styles: newStyles)
+			if let dist = impAxis.distribution {
+				axis.distribution = dist
+			}
 			return axis
 		})
 		self.init(space:space)

@@ -8,13 +8,15 @@
 
 import Cocoa
 import SceneKit
+import InstancesGenerator
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 	@IBOutlet weak var window: NSWindow!
 	@IBOutlet weak var view3D: SCNView!
-
+	@objc var designSpaceText: String = ""
+	
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		
@@ -34,32 +36,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		// Insert code here to tear down your application
 	}
 	
-	@IBAction func openJsonInstnces(_ sender: Any) {
-		struct Instance: Decodable {
-			var name:String
-			var tsn:String
-			var location: [String:Double]
-		}
-		struct JSONData:Decodable {
-			var dataType = "com.fontlab.info.instances"
-			var instances: [Instance]
-		}
-		
+	
+	@IBAction func openDesignSpaceJSON(_ sender: Any) {
 		let panel = NSOpenPanel ()
 		panel.runModal()
 		if let url = panel.url {
-			view3D.scene?.rootNode.childNodes.forEach {$0.removeFromParentNode()}
+			willChangeValue(for: \.designSpaceText)
 			do {
-			let jsonData = try Data(contentsOf: url)
-				let object = try JSONDecoder().decode(JSONData.self, from: jsonData)
-				for instance in object.instances {
-					let node = Instance3D(name: instance.name, size: 0.05, coordinates: instance.location)
-					view3D.scene?.rootNode.addChildNode(node)
-				}
+				let data = try Data(contentsOf: url)
+				loadDataToView(data)
+				designSpaceText = String.init(data: data, encoding: .utf8) ?? ""
 			} catch {
 				print (error)
 			}
+			didChangeValue(for: \.designSpaceText)
 		}
+	}
+	
+	
+	
+	func loadDataToView(_ data:Data) {
+
+			view3D.scene?.rootNode.childNodes.forEach {$0.removeFromParentNode()}
+			view3D.scene?.rootNode.addChildNode(InstancesNode(with: data))
+			
+
 	}
 	
 	@IBAction func exportToDesktop(_ sender: Any) {
@@ -72,6 +73,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			scene.write(to: exportUrl, options: nil, delegate: nil, progressHandler: nil);
 		}
 
+	}
+	
+	@IBAction func updateInstancesView(_ sender: Any) {
+		
+		if let data = designSpaceText.data(using: .utf8) {
+			loadDataToView(data)
+		}
+		
 	}
 
 

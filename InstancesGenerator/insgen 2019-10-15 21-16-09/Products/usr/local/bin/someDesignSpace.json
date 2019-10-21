@@ -32,6 +32,7 @@
 			"name":"width",
 			"designMinimum":0,
 			"designMaximum":1000,
+			"distribution":1.4,
 			"axisInstances":[
 				{
 				"name":"Condensed",

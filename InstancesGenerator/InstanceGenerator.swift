@@ -9,6 +9,7 @@
 import Foundation
 
 public class InstanceGenerator {
+	static var instancesChanged = Notification.Name(rawValue: "InstanceGenerator.InstancesChanged")
 	enum Errors:Error {
 		case axisNotExist(name: String)
 		case notEnoughValuesForStyle(name: String, expected: Int)
@@ -57,6 +58,7 @@ public class InstanceGenerator {
 	
 	public var instances: [(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])] {
 		var result:[(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])]  = []
+		space.distributeAxes()
 		for style in space.instances {
 			let coordinates = (0..<style.coordinates.count).map {
 				(space.axes[$0].name,

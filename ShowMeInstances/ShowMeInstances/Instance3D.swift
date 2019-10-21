@@ -10,29 +10,27 @@ import Foundation
 import SceneKit
 class Instance3D: SCNNode {
 	
-	init (name: String, size: CGFloat , coordinates: [String:Double]) {
+	init (name: String, coordinates: SCNVector3, color: NSColor) {
 		super.init()
 		self.name = name
-		let box = SCNSphere(radius: size)
+		
+		let box = SCNSphere(radius: 0.05)
 		let text = SCNText(string: name.replacingOccurrences(of: " ", with: "\n"), extrusionDepth: 0)
-		text.font = NSFont.boldSystemFont(ofSize: 32)
+		text.font = NSFont.boldSystemFont(ofSize: 12)
 		let node = SCNNode(geometry: text)
 		node.scale = SCNVector3(x: 0.003, y: 0.003, z: 0.003)
 		node.position = SCNVector3(x: 0.07, y:-0.10, z: 0)
 		self.addChildNode(node)
 		let material = SCNMaterial()
-		material.diffuse.contents = NSColor.gray
+		material.diffuse.contents = color
 		material.lightingModel = .physicallyBased
 		material.metalness.contents = 1
 
 		box.materials = [material]
 		text.materials = [material]
-		let x:CGFloat = CGFloat(coordinates["width"] ?? 0)/250.0
-		let y:CGFloat = CGFloat(coordinates["weight"] ?? 0)/250.0
-		let z:CGFloat = CGFloat(coordinates["contrast"] ?? 0)/250.0
-		self.position = SCNVector3(x: x, y: y, z: z)
-		self.geometry = box
 		
+		self.position = coordinates
+		self.geometry = box
 	}
 	
 	required init?(coder: NSCoder) {

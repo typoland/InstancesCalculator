@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B27A75B5235C5855008D6B36 /* InstanceGenerator + axes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A75B4235C5855008D6B36 /* InstanceGenerator + axes.swift */; };
 		B28AF7BD2355DF0800608F8F /* InstancesGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28AF7B32355DF0800608F8F /* InstancesGenerator.framework */; };
 		B28AF7C22355DF0800608F8F /* InstancesGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7C12355DF0800608F8F /* InstancesGeneratorTests.swift */; };
 		B28AF7C42355DF0800608F8F /* InstancesGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = B28AF7B62355DF0800608F8F /* InstancesGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +27,7 @@
 		B28AF7EA2356063300608F8F /* InstanceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E92356063300608F8F /* InstanceGenerator.swift */; };
 		B28AF81F2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */; };
 		B28AF82123564B5700608F8F /* InstanceGenerator exportJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */; };
+		B29A99D923573A6000D569EA /* Axis + distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A99D823573A6000D569EA /* Axis + distribution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B27A75B4235C5855008D6B36 /* InstanceGenerator + axes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstanceGenerator + axes.swift"; sourceTree = "<group>"; };
+		B27A75BE235DC65C008D6B36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B28AF7B32355DF0800608F8F /* InstancesGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstancesGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28AF7B62355DF0800608F8F /* InstancesGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstancesGenerator.h; sourceTree = "<group>"; };
 		B28AF7B72355DF0800608F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 		B28AF8112356365D00608F8F /* insgen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = insgen.xcodeproj; path = insgen/insgen.xcodeproj; sourceTree = "<group>"; };
 		B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Generator. + initFromDesignSpace.swift"; sourceTree = "<group>"; };
 		B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstanceGenerator exportJson.swift"; sourceTree = "<group>"; };
+		B29A99D823573A6000D569EA /* Axis + distribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Axis + distribution.swift"; path = "../insgen/insgen/Axis + distribution.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +98,7 @@
 		B28AF7A92355DF0800608F8F = {
 			isa = PBXGroup;
 			children = (
+				B27A75BE235DC65C008D6B36 /* README.md */,
 				B28AF8112356365D00608F8F /* insgen.xcodeproj */,
 				B28AF7B52355DF0800608F8F /* InstancesGenerator */,
 				B28AF7C02355DF0800608F8F /* InstancesGeneratorTests */,
@@ -113,10 +119,12 @@
 			isa = PBXGroup;
 			children = (
 				B28AF7E92356063300608F8F /* InstanceGenerator.swift */,
+				B27A75B4235C5855008D6B36 /* InstanceGenerator + axes.swift */,
 				B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */,
 				B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */,
 				B28AF7CF2355DF2B00608F8F /* Space.swift */,
 				B28AF7D22355DF2B00608F8F /* Axis.swift */,
+				B29A99D823573A6000D569EA /* Axis + distribution.swift */,
 				B28AF7E32355DF8100608F8F /* Space + instances.swift */,
 				B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */,
 				B28AF7E52355E29300608F8F /* Space + defineEdges.swift */,
@@ -286,11 +294,13 @@
 				B28AF7D92355DF2B00608F8F /* Style.swift in Sources */,
 				B28AF7E22355DF2B00608F8F /* cross.swift in Sources */,
 				B28AF81F2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */,
+				B29A99D923573A6000D569EA /* Axis + distribution.swift in Sources */,
 				B28AF82123564B5700608F8F /* InstanceGenerator exportJson.swift in Sources */,
 				B28AF7E02355DF2B00608F8F /* Pair.swift in Sources */,
 				B28AF7DD2355DF2B00608F8F /* Axis.swift in Sources */,
 				B28AF7EA2356063300608F8F /* InstanceGenerator.swift in Sources */,
 				B28AF7E12355DF2B00608F8F /* Int + Extensions.swift in Sources */,
+				B27A75B5235C5855008D6B36 /* InstanceGenerator + axes.swift in Sources */,
 				B28AF7DA2355DF2B00608F8F /* Space.swift in Sources */,
 				B28AF7DE2355DF2B00608F8F /* Plane.swift in Sources */,
 			);

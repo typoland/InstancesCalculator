@@ -28,7 +28,7 @@ class ConsoleIO {
 		let executableName = (CommandLine.arguments[0] as NSString).lastPathComponent
 		
 		writeMessage("usage:")
-		writeMessage("\(executableName) source target")
+		writeMessage("\(executableName) source.json target.json")
 //		writeMessage("or")
 //		writeMessage("\(executableName) -p string")
 //		writeMessage("or")
@@ -38,13 +38,6 @@ class ConsoleIO {
 }
 
 
-class Generator {
-	
-	let consoleIO = ConsoleIO()
-	
-	
-	
-}
 
 
 if  CommandLine.argc == 3 {
@@ -53,13 +46,14 @@ if  CommandLine.argc == 3 {
 	let targetFileName = CommandLine.arguments[2]
 	ConsoleIO().writeMessage(sourceFileName)
 	let fileManager = FileManager()
-	print (fileManager.currentDirectoryPath)
 	let currentURL = URL(fileURLWithPath: fileManager.currentDirectoryPath)
 	let inputJsonFileURL = currentURL.appendingPathComponent(sourceFileName)
 	let outputJsonFileURL = currentURL.appendingPathComponent(targetFileName)
 	do {
 		let data = try Data(contentsOf: inputJsonFileURL)
+		print (data)
 		let ig = try InstanceGenerator(from: data)
+		print (ig)
 		//ig.instances.forEach({print ($0)})
 		try ig.exportJSON(to: outputJsonFileURL)
 	} catch let error {

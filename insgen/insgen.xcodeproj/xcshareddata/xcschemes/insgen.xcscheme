@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "someDesignSpace.json"
+            argument = "someDesignSpace6D1style.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

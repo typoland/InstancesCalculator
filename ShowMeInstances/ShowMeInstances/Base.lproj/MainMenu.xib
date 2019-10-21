@@ -13,7 +13,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ShowMeInstances" customModuleProvider="target">
             <connections>
                 <outlet property="view3D" destination="qrj-vA-tE7" id="Dsa-xk-9XB"/>
@@ -76,7 +76,12 @@
                                     <action selector="newDocument:" target="-1" id="4Si-XN-c54"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
+                            <menuItem title="Open JSON Designspace" keyEquivalent="o" id="9bN-w2-gOG">
+                                <connections>
+                                    <action selector="openDesignSpaceJSON:" target="Voe-Tx-rLC" id="cFL-ip-ImK"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open JSON Instances" keyEquivalent="O" id="IAo-SY-fd9">
                                 <connections>
                                     <action selector="openJsonInstnces:" target="Voe-Tx-rLC" id="ct3-qD-r1G"/>
                                 </connections>
@@ -692,13 +697,85 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <sceneView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qrj-vA-tE7">
-                        <rect key="frame" x="3" y="5" width="475" height="352"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </sceneView>
+                    <splitView vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGX-Vm-zPo">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                        <subviews>
+                            <customView fixedFrame="YES" id="Jub-4E-H2v">
+                                <rect key="frame" x="0.0" y="0.0" width="172" height="360"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <scrollView identifier="JsonView" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" id="shD-FM-OcB">
+                                        <rect key="frame" x="0.0" y="30" width="172" height="330"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="V9T-H9-IfS">
+                                            <rect key="frame" x="0.0" y="0.0" width="172" height="330"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textView drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" fieldEditor="YES" usesFontPanel="YES" selectionGranularity="word" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" id="OtQ-wh-sqO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="172" height="330"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <size key="minSize" width="172" height="330"/>
+                                                    <size key="maxSize" width="240" height="10000000"/>
+                                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <allowedInputSourceLocales>
+                                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                                    </allowedInputSourceLocales>
+                                                    <connections>
+                                                        <binding destination="Voe-Tx-rLC" name="value" keyPath="designSpaceText" id="Otc-Yx-cEb"/>
+                                                    </connections>
+                                                </textView>
+                                            </subviews>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="mnm-ps-aPn">
+                                            <rect key="frame" x="0.0" y="314" width="172" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="A9A-ly-0tQ">
+                                            <rect key="frame" x="156" y="0.0" width="16" height="330"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKt-Y8-2FH">
+                                        <rect key="frame" x="84" y="7" width="77" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <buttonCell key="cell" type="push" title="UpdateView" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6nU-hA-TnH">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="miniSystem"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="updateInstancesView:" target="Voe-Tx-rLC" id="g0x-fi-izT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </customView>
+                            <customView fixedFrame="YES" id="JYq-r6-r6G">
+                                <rect key="frame" x="181" y="0.0" width="299" height="360"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <sceneView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qrj-vA-tE7">
+                                        <rect key="frame" x="0.0" y="0.0" width="299" height="360"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </sceneView>
+                                </subviews>
+                            </customView>
+                        </subviews>
+                        <holdingPriorities>
+                            <real value="250"/>
+                            <real value="250"/>
+                        </holdingPriorities>
+                    </splitView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="OGX-Vm-zPo" secondAttribute="bottom" id="670-GO-5X3"/>
+                    <constraint firstItem="OGX-Vm-zPo" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="Ttd-bB-N13"/>
+                    <constraint firstItem="OGX-Vm-zPo" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="nje-rc-ZGx"/>
+                    <constraint firstItem="OGX-Vm-zPo" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="uCM-UU-s1d"/>
+                </constraints>
             </view>
             <point key="canvasLocation" x="139" y="-120"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="d7S-xo-4Pz"/>
     </objects>
 </document>

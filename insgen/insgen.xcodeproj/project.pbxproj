@@ -25,6 +25,7 @@
 		B28AF840235651D300608F8F /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF830235651D300608F8F /* Pair.swift */; };
 		B28AF841235651D300608F8F /* Space + defineEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF831235651D300608F8F /* Space + defineEdges.swift */; };
 		B28AF842235651D300608F8F /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF832235651D300608F8F /* Edge.swift */; };
+		B29A99DC23574E1A00D569EA /* Axis + distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A99DB23574E1A00D569EA /* Axis + distribution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,7 @@
 		B28AF830235651D300608F8F /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pair.swift; path = ../../InstancesGenerator/Pair.swift; sourceTree = "<group>"; };
 		B28AF831235651D300608F8F /* Space + defineEdges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Space + defineEdges.swift"; path = "../../InstancesGenerator/Space + defineEdges.swift"; sourceTree = "<group>"; };
 		B28AF832235651D300608F8F /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = ../../InstancesGenerator/Edge.swift; sourceTree = "<group>"; };
+		B29A99DB23574E1A00D569EA /* Axis + distribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Axis + distribution.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				B28AF824235651D200608F8F /* InstanceGenerator exportJson.swift */,
 				B28AF82C235651D200608F8F /* Space.swift */,
 				B28AF829235651D200608F8F /* Axis.swift */,
+				B29A99DB23574E1A00D569EA /* Axis + distribution.swift */,
 				B28AF828235651D200608F8F /* Space + instances.swift */,
 				B28AF82D235651D200608F8F /* Space + combineCoords.swift */,
 				B28AF831235651D300608F8F /* Space + defineEdges.swift */,
@@ -202,6 +205,7 @@
 				B28AF83F235651D300608F8F /* Plane.swift in Sources */,
 				B28AF835235651D300608F8F /* Space + Edges.swift in Sources */,
 				B28AF834235651D300608F8F /* InstanceGenerator exportJson.swift in Sources */,
+				B29A99DC23574E1A00D569EA /* Axis + distribution.swift in Sources */,
 				B28AF81D235643E900608F8F /* Space + initFromDesignspace.swift in Sources */,
 				B28AF833235651D300608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */,
 				B28AF839235651D300608F8F /* Axis.swift in Sources */,
@@ -329,9 +333,11 @@
 		B28AF80F2356365D00608F8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ASHMCMJEN;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -340,9 +346,11 @@
 		B28AF8102356365D00608F8F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ASHMCMJEN;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
