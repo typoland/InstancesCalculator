@@ -64,12 +64,12 @@ class InstancesNode:SCNNode {
 		if coordinates.count > 4 {
 			hue = 0.5
 			saturation = CGFloat(coordinates[3]) / 2000
-			brightness = CGFloat(coordinates[4]) / 3000+0.15
+			brightness = CGFloat(coordinates[4]) / 4000
 			
 		}
 		if coordinates.count > 5 {
 			saturation = CGFloat(coordinates[3]) / 2000
-			brightness = CGFloat(coordinates[4]) / 3000+0.15
+			brightness = CGFloat(coordinates[4]) / 4000
 			hue = CGFloat(coordinates[5]) / 1500 + 0.16
 		}
 		print (hue, saturation, brightness)

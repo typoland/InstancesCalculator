@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B27A75B5235C5855008D6B36 /* InstanceGenerator + axes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A75B4235C5855008D6B36 /* InstanceGenerator + axes.swift */; };
+		B27A75C0235DDB9B008D6B36 /* exp01.png in Resources */ = {isa = PBXBuildFile; fileRef = B27A75BF235DDB9B008D6B36 /* exp01.png */; };
 		B28AF7BD2355DF0800608F8F /* InstancesGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28AF7B32355DF0800608F8F /* InstancesGenerator.framework */; };
 		B28AF7C22355DF0800608F8F /* InstancesGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7C12355DF0800608F8F /* InstancesGeneratorTests.swift */; };
 		B28AF7C42355DF0800608F8F /* InstancesGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = B28AF7B62355DF0800608F8F /* InstancesGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,13 @@
 		B28AF81F2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */; };
 		B28AF82123564B5700608F8F /* InstanceGenerator exportJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */; };
 		B29A99D923573A6000D569EA /* Axis + distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A99D823573A6000D569EA /* Axis + distribution.swift */; };
+		B2D5EB20235E01F400A99453 /* exp03a.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB19235E01F400A99453 /* exp03a.png */; };
+		B2D5EB21235E01F400A99453 /* exp06.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1A235E01F400A99453 /* exp06.png */; };
+		B2D5EB22235E01F400A99453 /* exp05.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1B235E01F400A99453 /* exp05.png */; };
+		B2D5EB23235E01F400A99453 /* exp03.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1C235E01F400A99453 /* exp03.png */; };
+		B2D5EB24235E01F400A99453 /* exp04.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1D235E01F400A99453 /* exp04.png */; };
+		B2D5EB25235E01F400A99453 /* exp07.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1E235E01F400A99453 /* exp07.png */; };
+		B2D5EB26235E01F400A99453 /* exp02.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D5EB1F235E01F400A99453 /* exp02.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +58,7 @@
 /* Begin PBXFileReference section */
 		B27A75B4235C5855008D6B36 /* InstanceGenerator + axes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstanceGenerator + axes.swift"; sourceTree = "<group>"; };
 		B27A75BE235DC65C008D6B36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B27A75BF235DDB9B008D6B36 /* exp01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp01.png; sourceTree = "<group>"; };
 		B28AF7B32355DF0800608F8F /* InstancesGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstancesGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28AF7B62355DF0800608F8F /* InstancesGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstancesGenerator.h; sourceTree = "<group>"; };
 		B28AF7B72355DF0800608F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +83,13 @@
 		B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Generator. + initFromDesignSpace.swift"; sourceTree = "<group>"; };
 		B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstanceGenerator exportJson.swift"; sourceTree = "<group>"; };
 		B29A99D823573A6000D569EA /* Axis + distribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Axis + distribution.swift"; path = "../insgen/insgen/Axis + distribution.swift"; sourceTree = "<group>"; };
+		B2D5EB19235E01F400A99453 /* exp03a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp03a.png; sourceTree = "<group>"; };
+		B2D5EB1A235E01F400A99453 /* exp06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp06.png; sourceTree = "<group>"; };
+		B2D5EB1B235E01F400A99453 /* exp05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp05.png; sourceTree = "<group>"; };
+		B2D5EB1C235E01F400A99453 /* exp03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp03.png; sourceTree = "<group>"; };
+		B2D5EB1D235E01F400A99453 /* exp04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp04.png; sourceTree = "<group>"; };
+		B2D5EB1E235E01F400A99453 /* exp07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp07.png; sourceTree = "<group>"; };
+		B2D5EB1F235E01F400A99453 /* exp02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp02.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,14 @@
 			isa = PBXGroup;
 			children = (
 				B27A75BE235DC65C008D6B36 /* README.md */,
+				B2D5EB1F235E01F400A99453 /* exp02.png */,
+				B2D5EB1C235E01F400A99453 /* exp03.png */,
+				B2D5EB19235E01F400A99453 /* exp03a.png */,
+				B2D5EB1D235E01F400A99453 /* exp04.png */,
+				B2D5EB1B235E01F400A99453 /* exp05.png */,
+				B2D5EB1A235E01F400A99453 /* exp06.png */,
+				B2D5EB1E235E01F400A99453 /* exp07.png */,
+				B27A75BF235DDB9B008D6B36 /* exp01.png */,
 				B28AF8112356365D00608F8F /* insgen.xcodeproj */,
 				B28AF7B52355DF0800608F8F /* InstancesGenerator */,
 				B28AF7C02355DF0800608F8F /* InstancesGeneratorTests */,
@@ -268,6 +292,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D5EB20235E01F400A99453 /* exp03a.png in Resources */,
+				B2D5EB25235E01F400A99453 /* exp07.png in Resources */,
+				B2D5EB24235E01F400A99453 /* exp04.png in Resources */,
+				B2D5EB26235E01F400A99453 /* exp02.png in Resources */,
+				B2D5EB23235E01F400A99453 /* exp03.png in Resources */,
+				B2D5EB21235E01F400A99453 /* exp06.png in Resources */,
+				B2D5EB22235E01F400A99453 /* exp05.png in Resources */,
+				B27A75C0235DDB9B008D6B36 /* exp01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
