@@ -71,66 +71,36 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="File" id="bib-Uj-vzu">
                         <items>
-                            <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
-                                <connections>
-                                    <action selector="newDocument:" target="-1" id="4Si-XN-c54"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Open JSON Designspace" keyEquivalent="o" id="9bN-w2-gOG">
-                                <connections>
-                                    <action selector="openDesignSpaceJSON:" target="Voe-Tx-rLC" id="cFL-ip-ImK"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Open JSON Instances" keyEquivalent="O" id="IAo-SY-fd9">
-                                <connections>
-                                    <action selector="openJsonInstnces:" target="Voe-Tx-rLC" id="ct3-qD-r1G"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Open Recent" id="tXI-mr-wws">
+                            <menuItem title="Designspace" id="1p6-pW-1Cu">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="oas-Oc-fiZ">
+                                <menu key="submenu" title="Designspace" id="twL-p4-bdF">
                                     <items>
-                                        <menuItem title="Clear Menu" id="vNY-rz-j42">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Open" keyEquivalent="o" id="HBa-dh-crG">
                                             <connections>
-                                                <action selector="clearRecentDocuments:" target="-1" id="Daa-9d-B3U"/>
+                                                <action selector="openDesignSpaceJSON:" target="Voe-Tx-rLC" id="gfR-Gk-TcV"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Save" keyEquivalent="s" id="Q2X-09-KNj">
+                                            <connections>
+                                                <action selector="saveDesignSpaceJSON:" target="Voe-Tx-rLC" id="FS9-GH-rDo"/>
                                             </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
-                            <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
+                            <menuItem title="Save Instances" keyEquivalent="S" id="IAo-SY-fd9">
                                 <connections>
-                                    <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>
+                                    <action selector="saveInstancesJson:" target="Voe-Tx-rLC" id="Fne-xP-F8J"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Save…" keyEquivalent="s" id="pxx-59-PXV">
+                            <menuItem title="Export Collada" id="hd5-Zz-SNr">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="exportToDesktop:" target="Voe-Tx-rLC" id="I0d-Vg-rli"/>
+                                    <action selector="exportDAE:" target="Voe-Tx-rLC" id="csh-iz-c6l"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Save As…" keyEquivalent="S" id="Bw7-FT-i3A">
-                                <connections>
-                                    <action selector="saveDocumentAs:" target="-1" id="mDf-zr-I0C"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Revert to Saved" keyEquivalent="r" id="KaW-ft-85H">
-                                <connections>
-                                    <action selector="revertDocumentToSaved:" target="-1" id="iJ3-Pv-kwq"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
-                            <menuItem title="Page Setup…" keyEquivalent="P" id="qIS-W8-SiK">
-                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
-                                <connections>
-                                    <action selector="runPageLayout:" target="-1" id="Din-rz-gC5"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Print…" keyEquivalent="p" id="aTl-1u-JFS">
-                                <connections>
-                                    <action selector="print:" target="-1" id="qaZ-4w-aoO"/>
-                                </connections>
+                            <menuItem title="Open Recent" id="tXI-mr-wws">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
                         </items>
                     </menu>
@@ -695,28 +665,28 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <splitView vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGX-Vm-zPo">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                         <subviews>
                             <customView fixedFrame="YES" id="Jub-4E-H2v">
-                                <rect key="frame" x="0.0" y="0.0" width="172" height="360"/>
+                                <rect key="frame" x="0.0" y="0.0" width="138" height="360"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <scrollView identifier="JsonView" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" id="shD-FM-OcB">
-                                        <rect key="frame" x="0.0" y="30" width="172" height="330"/>
+                                        <rect key="frame" x="0.0" y="30" width="138" height="330"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="V9T-H9-IfS">
-                                            <rect key="frame" x="0.0" y="0.0" width="172" height="330"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="138" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textView drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" fieldEditor="YES" usesFontPanel="YES" selectionGranularity="word" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" id="OtQ-wh-sqO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="172" height="330"/>
+                                                <textView drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" fieldEditor="YES" usesFontPanel="YES" selectionGranularity="word" textCompletion="NO" id="OtQ-wh-sqO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="138" height="330"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="172" height="330"/>
+                                                    <size key="minSize" width="138" height="330"/>
                                                     <size key="maxSize" width="240" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <allowedInputSourceLocales>
@@ -738,7 +708,7 @@
                                         </scroller>
                                     </scrollView>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKt-Y8-2FH">
-                                        <rect key="frame" x="84" y="7" width="77" height="16"/>
+                                        <rect key="frame" x="50" y="7" width="77" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <buttonCell key="cell" type="push" title="UpdateView" bezelStyle="rounded" alignment="center" controlSize="mini" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6nU-hA-TnH">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -751,11 +721,11 @@
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" id="JYq-r6-r6G">
-                                <rect key="frame" x="181" y="0.0" width="299" height="360"/>
+                                <rect key="frame" x="147" y="0.0" width="333" height="360"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <sceneView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qrj-vA-tE7">
-                                        <rect key="frame" x="0.0" y="0.0" width="299" height="360"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="360"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </sceneView>
                                 </subviews>

@@ -15,8 +15,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	@IBOutlet weak var window: NSWindow!
 	@IBOutlet weak var view3D: SCNView!
-	@objc var designSpaceText: String = ""
+	@IBOutlet weak var uiView: NSView!
 	
+	@objc var designSpaceText: String = ""
+	//var instancesRootNode = SCNNode()
+	var instancesNode: InstancesNode? = nil
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		
@@ -39,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	@IBAction func openDesignSpaceJSON(_ sender: Any) {
 		let panel = NSOpenPanel ()
+		panel.allowedFileTypes = ["json"]
 		panel.runModal()
 		if let url = panel.url {
 			willChangeValue(for: \.designSpaceText)
@@ -53,36 +57,56 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 	}
 	
-	
-	
-	func loadDataToView(_ data:Data) {
-
-			view3D.scene?.rootNode.childNodes.forEach {$0.removeFromParentNode()}
-			view3D.scene?.rootNode.addChildNode(InstancesNode(with: data))
-			
-
+	@IBAction func saveDesignSpaceJSON(_ sender: Any) {
+		let panel = NSSavePanel ()
+		panel.allowedFileTypes = ["json"]
+		panel.runModal()
+		if let url = panel.url {
+			do {
+				try designSpaceText.write(to: url, atomically: false, encoding: .utf8)
+			} catch {
+				print (error)
+			}
+		}
 	}
 	
-	@IBAction func exportToDesktop(_ sender: Any) {
-		
-		if let scene = view3D.scene {
-			let documentsPath = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
-			let timeInterval = Date().timeIntervalSince1970 * 1000
-			let filename = String(format: "instances_%d.dae", timeInterval)
-			let exportUrl = documentsPath.appendingPathComponent(filename)
-			scene.write(to: exportUrl, options: nil, delegate: nil, progressHandler: nil);
+	@IBAction func saveInstancesJson(_ sender: Any) {
+		let panel = NSSavePanel ()
+		panel.runModal()
+		panel.allowedFileTypes = ["json"]
+		if let url = panel.url {
+			do {
+				try instancesNode?.instanceGenerator?.exportJSON(to: url)
+			} catch {
+				print (error)
+			}
 		}
-
+	}
+	
+	func loadDataToView(_ data:Data) {
+		instancesNode?.removeFromParentNode()
+		instancesNode = InstancesNode(with: data)
+		view3D.scene?.rootNode.addChildNode(instancesNode!)
+	}
+	
+	@IBAction func exportDAE(_ sender: Any) {
+		if let scene = view3D.scene {
+			let panel = NSSavePanel()
+			panel.allowedFileTypes = ["dae"]
+			panel.runModal()
+			if let url = panel.url {
+				scene.write(to: url,
+							options: nil,
+							delegate: nil,
+							progressHandler: nil);
+			}
+		}
 	}
 	
 	@IBAction func updateInstancesView(_ sender: Any) {
-		
 		if let data = designSpaceText.data(using: .utf8) {
 			loadDataToView(data)
 		}
-		
 	}
-
-
 }
 

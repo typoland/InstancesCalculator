@@ -39,13 +39,11 @@ class InstancesNode:SCNNode {
 				lineNode.scale = SCNVector3(0.001, 0.001, 0.001)
 				lineNode.position = SCNVector3Zero
 				prevCoords = coords3D
-				self.addChildNode(lineNode)
+				node.addChildNode(lineNode)
 			}
 			self.addChildNode(node)
 		}
 	}
-	
-
 	
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
@@ -54,7 +52,7 @@ class InstancesNode:SCNNode {
 	func getMaterialDiffuseColor(for coordinates: [CoordUnit]) -> NSColor {
 		var hue : CGFloat = 0
 		var saturation : CGFloat = 0
-		var brightness : CGFloat = 0
+		var brightness : CGFloat = 0.5
 		
 		if coordinates.count > 3 {
 			hue = 0.5

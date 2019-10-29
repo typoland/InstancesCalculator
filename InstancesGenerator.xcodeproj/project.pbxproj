@@ -25,7 +25,6 @@
 		B28AF7E22355DF2B00608F8F /* cross.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D72355DF2B00608F8F /* cross.swift */; };
 		B28AF7E42355DF8100608F8F /* Space + instances.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E32355DF8100608F8F /* Space + instances.swift */; };
 		B28AF7E62355E29300608F8F /* Space + defineEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E52355E29300608F8F /* Space + defineEdges.swift */; };
-		B28AF7E82355E2E100608F8F /* Space + combineCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */; };
 		B28AF7EA2356063300608F8F /* InstanceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7E92356063300608F8F /* InstanceGenerator.swift */; };
 		B28AF81F2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */; };
 		B28AF82123564B5700608F8F /* InstanceGenerator exportJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */; };
@@ -77,7 +76,6 @@
 		B28AF7D72355DF2B00608F8F /* cross.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cross.swift; sourceTree = "<group>"; };
 		B28AF7E32355DF8100608F8F /* Space + instances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + instances.swift"; sourceTree = "<group>"; };
 		B28AF7E52355E29300608F8F /* Space + defineEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + defineEdges.swift"; sourceTree = "<group>"; };
-		B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + combineCoords.swift"; sourceTree = "<group>"; };
 		B28AF7E92356063300608F8F /* InstanceGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceGenerator.swift; sourceTree = "<group>"; };
 		B28AF8112356365D00608F8F /* insgen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = insgen.xcodeproj; path = insgen/insgen.xcodeproj; sourceTree = "<group>"; };
 		B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Generator. + initFromDesignSpace.swift"; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				B28AF7D22355DF2B00608F8F /* Axis.swift */,
 				B29A99D823573A6000D569EA /* Axis + distribution.swift */,
 				B28AF7E32355DF8100608F8F /* Space + instances.swift */,
-				B28AF7E72355E2E100608F8F /* Space + combineCoords.swift */,
 				B28AF7E52355E29300608F8F /* Space + defineEdges.swift */,
 				B28AF7D72355DF2B00608F8F /* cross.swift */,
 				B28AF7D42355DF2B00608F8F /* Edge.swift */,
@@ -318,7 +315,6 @@
 				B28AF7E62355E29300608F8F /* Space + defineEdges.swift in Sources */,
 				B28AF7DF2355DF2B00608F8F /* Edge.swift in Sources */,
 				B28AF7DC2355DF2B00608F8F /* Type aliases.swift in Sources */,
-				B28AF7E82355E2E100608F8F /* Space + combineCoords.swift in Sources */,
 				B28AF7D92355DF2B00608F8F /* Style.swift in Sources */,
 				B28AF7E22355DF2B00608F8F /* cross.swift in Sources */,
 				B28AF81F2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */,

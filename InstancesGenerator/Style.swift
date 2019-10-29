@@ -7,4 +7,12 @@ struct Style {
 		self.name = name
 		self.values = values
 	}
+	
+	mutating func addValuesForNewAxis() {
+		values = values+values
+	}
+	
+	mutating func removeValuesForLastAxis() {
+		values = Array(values[0..<values.count/2])
+	}
 }

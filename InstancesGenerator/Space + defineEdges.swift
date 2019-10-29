@@ -8,6 +8,7 @@
 
 import Foundation
 extension Space {
+	
 	func definePlanes (egdes:[[Edge]]) -> [[Plane]] {
 		var result: [[Plane]] = []
 		for axisNr in 0..<edges.count {

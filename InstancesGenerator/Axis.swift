@@ -18,10 +18,18 @@ struct Axis: CustomStringConvertible {
 		return "\"\(name)\""
 	}
 	
-	mutating func setValue(_ value: CoordUnit, of styleName: String, in domainIndex:Int) {
+	mutating func setValue(_ value: CoordUnit, of styleName: String, in domainIndex: Int) {
 		guard let styleIndex = styles.firstIndex(where: {$0.name == styleName }) else {return}
 		guard domainIndex < styles[styleIndex].values.count else {return}
 		styles[styleIndex].values[domainIndex] = value
 		
+	}
+	
+	mutating func addValuesForNewAxis() {
+		(0..<styles.count).forEach {styles[$0].addValuesForNewAxis()}
+	}
+	
+	mutating func removeValuesForLastAxis() {
+		(0..<styles.count).forEach {styles[$0].removeValuesForLastAxis()}
 	}
 }

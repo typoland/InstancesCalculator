@@ -2,45 +2,26 @@ import Foundation
 
 infix operator <<>
 infix operator %%
+/**
+Rotate bits left
+- parameter lhs: how many left bits will be affected
+- parameter rhs: number of positions to rotate
+- returns: Int with `lhs` right bits rotates about `rhs` postitions
+*/
 
 public func <<> (lhs: Int, rhs:(size: Int, bits: Int)) -> Int {
 	return lhs.rotate(size: rhs.size, bits: rhs.bits)
 }
 
+/**
+c-like mod, no negative result
+*/
 public func %% (_ a: Int, _ n: Int) -> Int {
 	precondition(n > 0, "modulus must be positive")
 	let r = a % n
 	return r >= 0 ? r : r + n
 }
 
-
-prefix operator ~
-///for debug only
-public extension Double {
-	static prefix func ~ (rhs: Double) -> String {
-		return String(format:"%0.4f", rhs)
-	}
-}
-postfix operator  |<>|
-
-//public extension Array {
-//	static postfix func |<>| (lhs: inout Array) {
-//		let length = lhs.count
-//		precondition ((length/2).isLog2, "Must be divided by 4")
-//		let segmentSize = length/4
-//		let a = lhs[0..<segmentSize]
-//		let b = lhs[segmentSize..<segmentSize * 2]
-//		let c = lhs[segmentSize * 2..<segmentSize * 3]
-//		let d = lhs[segmentSize * 3..<length]
-//		lhs = Array(a) + Array(c) + Array(b) + Array(d)
-//	}
-//}
-//
-//public extension String {
-//	static prefix func ~ (rhs: String) -> String {
-//		return "\(rhs)"
-//	}
-//}
 
 extension Array where Element: FloatingPoint {
 	var average: Element {
@@ -50,7 +31,8 @@ extension Array where Element: FloatingPoint {
 
 extension Int {
 	
-	/**I hope it's fast log2 for integers. If it's log returns log if not returns nil
+	/**I hope it's fast log2 for integers.
+	- returns: if `self` is  2^n and `n` is `Int` than returns `n`, if not, returns `nil`
 	*/
 	var log2:Int? {
 		var i = -1
@@ -61,19 +43,17 @@ extension Int {
 		}
 		return 1<<i == self ? i : nil
 	}
+	/**
+	- returns: if number is log 2 then returns true*/
 	var isLog2:Bool {
 		return self.log2 != nil
-		
-	}
-	func pad(_ toSize: Int) -> String {
-		let string = String(self, radix: 2)
-		var padded = string
-		for _ in 0..<(toSize - string.count) {
-			padded = "0" + padded
-		}
-		return padded
 	}
 	
+	/**
+	Rotate bits left.
+	- parameter size: **Int** describing how many bits will be rotated - xx10001
+	- parameter bits: **Int** describing how far will be moved. Left bits will be moved to right - xx00110
+	*/
 	func rotate (size: Int, bits: Int) -> Int {
 		let mask = (1<<size)-1
 		let shift = ( bits % size )
@@ -81,7 +61,10 @@ extension Int {
 		let b = (self & mask) >> (size - shift)
 		return a | b
 	}
-	
+	/**
+	Deletes bit. Bits on left will be moved one position right
+	- parameter bit: which bit disappear
+	*/
 	func deleteBit (_ bit:Int) -> Int {
 		let exp = Int.max//(1<<8)-1//
 		let rightMask = (1<<(bit))-1

@@ -9,23 +9,50 @@
 import Foundation
 
 extension InstanceGenerator {
+	/**
+	Inits Instance generator from **json** data. Json file has to have structure:
+	- parameter data: json data
+	
+	Json file sholud have structure like this:
+	```{
+	"axes":[
+	{
+		"name":"weight",
+		"designMinimum":0,
+		"designMaximum":1000,
+		"distribution":1.2,
+		"axisInstances":[
+		{
+			"name":"Thin",
+			"values": [100...]
+		},
+	...
+	]
+	
+	},
+	...
+```
+	*distribution* which cases distribute styles across axis exponentially, only first an last style counts. Parameter  *distribution* is optional
+	*/
 	
 	public convenience init (from data: Data) throws {
 		struct JsonStyle:Decodable {
 			var name: String
 			var values: [Double]
 		}
+		
 		struct JsonAxis:Decodable {
 			var name: String
 			var axisInstances: [JsonStyle]
 			var designMinimum: Double
 			var designMaximum: Double
-			var distribution: Double? = 1.0
+			var distribution: Double? = nil
 		}
 		
 		struct DesignSpace: Decodable {
 			var axes:[JsonAxis]
 		}
+		
 		let designspace = try JSONDecoder().decode(DesignSpace.self, from: data)
 		
 		let space = Space(axes: designspace.axes.map { impAxis in
