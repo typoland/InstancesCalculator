@@ -34,33 +34,34 @@ extension InstanceGenerator {
 ```
 	*distribution* which cases distribute styles across axis exponentially, only first an last style counts. Parameter  *distribution* is optional
 	*/
+	struct JsonStyle<CU:FloatingPoint & Decodable>:Decodable {
+		var name: String
+		var values: [CU]
+	}
+	
+	struct JsonAxis<CU:FloatingPoint & Decodable>:Decodable {
+		var name: String
+		var axisInstances: [JsonStyle<CU>]
+		var designMinimum: CU
+		var designMaximum: CU
+		var distribution: CU? = nil
+	}
+	
+	struct DesignSpace<CU:FloatingPoint & Decodable>: Decodable {
+		var axes:[JsonAxis<CU>]
+	}
 	
 	public convenience init (from data: Data) throws {
-		struct JsonStyle:Decodable {
-			var name: String
-			var values: [Double]
-		}
 		
-		struct JsonAxis:Decodable {
-			var name: String
-			var axisInstances: [JsonStyle]
-			var designMinimum: Double
-			var designMaximum: Double
-			var distribution: Double? = nil
-		}
 		
-		struct DesignSpace: Decodable {
-			var axes:[JsonAxis]
-		}
+		let designspace = try JSONDecoder().decode(DesignSpace<CoordUnit>.self, from: data)
 		
-		let designspace = try JSONDecoder().decode(DesignSpace.self, from: data)
-		
-		let space = Space(axes: designspace.axes.map { impAxis in
+		let space = Space<CoordUnit>(axes: designspace.axes.map { impAxis in
 			let bounds = impAxis.designMinimum...impAxis.designMaximum
 			let newStyles = impAxis.axisInstances.map {
-				Style(name: $0.name, values: $0.values.map { InstanceGenerator.convertToInternal(value: $0, bounds: bounds)})
+				Space.Axis.AxisInstance(name: $0.name, values: $0.values.map { InstanceGenerator.convertToInternal(value: $0, bounds: bounds)})
 			}
-			var axis = Axis(name: impAxis.name, bounds: bounds , styles: newStyles)
+			var axis = Space.Axis(name: impAxis.name, bounds: bounds , styles: newStyles)
 			if let dist = impAxis.distribution {
 				axis.distribution = dist
 			}

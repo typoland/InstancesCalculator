@@ -6,7 +6,7 @@ extension String {
 	}
 }
 
-public typealias CoordUnit = Double
+//public typealias CoordUnit = Double
 
 
 //public enum EdgePosition :Int, CustomStringConvertible {

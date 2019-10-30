@@ -1,6 +1,6 @@
 import Foundation
 
-extension Space {
+extension SpaceProtocol {
 	var edges: [[Edge]] {
 		var result:[[Edge]] = []
 		for axisNr in (0..<dimensions) {

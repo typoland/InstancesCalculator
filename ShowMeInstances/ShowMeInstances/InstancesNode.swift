@@ -14,7 +14,7 @@ class InstancesNode:SCNNode {
 	typealias CoordUnit = Double
 	
 	//var axes:[(name:String, bounds:ClosedRange<CoordUnit>)]
-	var instanceGenerator:InstanceGenerator?
+	var instanceGenerator:InstanceGenerator<CoordUnit>?
 	init(with data: Data) {
 		do {
 			self.instanceGenerator = try InstanceGenerator(from: data)

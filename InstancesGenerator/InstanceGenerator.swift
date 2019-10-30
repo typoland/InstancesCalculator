@@ -8,9 +8,13 @@
 
 import Foundation
 
-public class InstanceGenerator {
-	public static var instancesCoordinatesChanged = Notification.Name(rawValue: "com.typolnd.InstanceGenerator.instancesCoordinatesChanged")
-	public static var numberOfInstancesChanged = Notification.Name(rawValue: "com.typolnd.InstanceGenerator.numberOfInstancesChanged")
+var instancesCoordinatesChanged = Notification.Name(rawValue: "com.typolnd.InstanceGenerator.instancesCoordinatesChanged")
+var numberOfInstancesChanged = Notification.Name(rawValue: "com.typolnd.InstanceGenerator.numberOfInstancesChanged")
+
+
+public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable> {
+	
+	//public typealias CoordUnit = Space.Axis.AxisInstance.CoordUnit
 	
 	enum Errors:Error {
 		case axisNotExist(name: String)
@@ -18,17 +22,25 @@ public class InstanceGenerator {
 		case notEnoughValuesForStyle(name: String, expected: Int)
 	}
 	
-	var space: Space
+	var space: Space<CoordUnit>
 	/**
 	Instance Generator to count instances needs Axes, and each Axis needs at least one Style. `Init` doesn't add styles, only Axes for them.
 	- parameter axes: array of names of each axis.
 	- parameter bounds: bounds for all axes
 	*/
 	public init (axes names: [String], bounds: ClosedRange<CoordUnit>) {
-		self.space = Space(axes: (0..<names.count).map {Axis(name: names[$0], bounds: bounds)})
+		self.space = Space.init(
+			axes: (0..<names.count).map {
+				Space.Axis.init(name: names[$0],
+								bounds: bounds,
+								styles: [])})
 	}
 	
-	init (space:Space) {
+	public init <S:SpaceProtocol> (space:S) {
+		self.space = space as! Space<CoordUnit>
+	}
+	
+	init (space: Space<CoordUnit>) {
 		self.space = space
 	}
 	/**
@@ -52,9 +64,9 @@ public class InstanceGenerator {
 			 InstanceGenerator.convertToInternal(value: value, bounds: space.axes[axisIndex].bounds)
 		}
 		
-		let style = Style(name: name, values: internalValues)
+		let style = Space.Axis.AxisInstance(name: name, values: internalValues)
 		space.axes[axisIndex].styles.append(style)
-		NotificationCenter.default.post(name: InstanceGenerator.numberOfInstancesChanged, object: axes)
+		NotificationCenter.default.post(name: numberOfInstancesChanged, object: axes)
 		
 	}
 	/**
@@ -72,7 +84,7 @@ public class InstanceGenerator {
 			throw Errors.styleNotExist(styleName: styleName, axisName: axisName)
 		}
 		space.axes[axisIndex].styles.remove(at: styleIndex)
-		NotificationCenter.default.post(name: InstanceGenerator.numberOfInstancesChanged, object: axes)
+		NotificationCenter.default.post(name: numberOfInstancesChanged, object: axes)
 	}
 	/**
 	Adds **Axis**. Values of every *Style* in other axes will be extented by adding its content to itself.
@@ -80,12 +92,12 @@ public class InstanceGenerator {
 	- parameter bounds: bounds of new *Axis*
 	*/
 	public func addAxis(name: String, bounds:ClosedRange<CoordUnit>) {
-		let axis = Axis(name: name, bounds: bounds)
+		let axis = Space.Axis.init(name: name, bounds: bounds, styles: [])
 		space.axes.append(axis)
 		(0..<space.axes.count).forEach { axisNr in
 			space.axes[axisNr].addValuesForNewAxis()
 		}
-		NotificationCenter.default.post(name: InstanceGenerator.numberOfInstancesChanged, object:axes)
+		NotificationCenter.default.post(name: numberOfInstancesChanged, object:axes)
 	}
 	/**
 	Removes last **Axis**. Values of every *Style* in other axes will be truncated in half.
@@ -95,7 +107,7 @@ public class InstanceGenerator {
 		(0..<space.axes.count).forEach { axisNr in
 			space.axes[axisNr].removeValuesForLastAxis()
 		}
-		NotificationCenter.default.post(name: InstanceGenerator.numberOfInstancesChanged, object:axes)
+		NotificationCenter.default.post(name: numberOfInstancesChanged, object:axes)
 	}
 	/**
 	Converts values from value between *bounds* to value between 0...1
@@ -123,8 +135,9 @@ public class InstanceGenerator {
 		for style in space.instances {
 			let coordinates = (0..<style.coordinates.count).map {
 				(space.axes[$0].name,
-				 InstanceGenerator.convertfromInternal(value: style.coordinates[$0],
-									 bounds: space.axes[$0].bounds) )
+				 InstanceGenerator.convertfromInternal(
+					value: style.coordinates[$0],
+					bounds: space.axes[$0].bounds) )
 			}
 			
 			result.append((instanceName: style.name, coordinates:coordinates))

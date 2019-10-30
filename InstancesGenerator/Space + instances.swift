@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension Space {
+extension SpaceProtocol {
 
 	var stylesIndexList : [[Int]] {
 		var result: [[Int]] = []
@@ -26,10 +26,10 @@ extension Space {
 		return result
 	}
 	
-	func flat (array: [[Pair<CoordUnit>]]) -> [[CoordUnit]] {
-		var result : [[CoordUnit]] = []
+	func flat (array: [[Pair <Axis.AxisInstance.CoordUnit> ]]) -> [[Axis.AxisInstance.CoordUnit]] {
+		var result : [[Axis.AxisInstance.CoordUnit]] = []
 		for line in array {
-			let newLine = line.reduce(into:[CoordUnit]()) { newline, pair in
+			let newLine = line.reduce(into:[Axis.AxisInstance.CoordUnit]()) { newline, pair in
 				newline += [pair.a, pair.b]
 			}
 			result.append(newLine)
@@ -39,8 +39,8 @@ extension Space {
 	
 	
 	
-	func simplify(_ line:[CoordUnit]) -> [CoordUnit]  {
-		var result:[CoordUnit] = []
+	func simplify(_ line:[Axis.AxisInstance.CoordUnit]) -> [Axis.AxisInstance.CoordUnit]  {
+		var result:[Axis.AxisInstance.CoordUnit] = []
 		//print ("simplify \(line)")
 		
 		for i in 0..<line.count / 4 {
@@ -55,14 +55,14 @@ extension Space {
 		return result
 	}
 	
-	func reduceByCross (list: [[CoordUnit]], level:Int = 0) -> [[CoordUnit]] {
+	func reduceByCross (list: [[Axis.AxisInstance.CoordUnit]], level:Int = 0) -> [[Axis.AxisInstance.CoordUnit]] {
 		precondition(list[0].count.isLog2, "Not 2^n count")
-		var result : [[CoordUnit]] = []
+		var result : [[Axis.AxisInstance.CoordUnit]] = []
 		
 		
 		if list[0].count == 2 {
 			//print ("top", level)
-			var shifted : [[CoordUnit]] = []
+			var shifted : [[Axis.AxisInstance.CoordUnit]] = []
 			for lineNr in 0..<list.count {
 				let nextLine = (lineNr + 1) % list.count
 				let a = list[lineNr][0]
@@ -72,9 +72,9 @@ extension Space {
 			return shifted
 			
 		} else {
-			var reduced: [[CoordUnit]] = []
+			var reduced: [[Axis.AxisInstance.CoordUnit]] = []
 			for lineNr in 0..<list.count {
-				var newLine : [CoordUnit] = []
+				var newLine : [Axis.AxisInstance.CoordUnit] = []
 				for pair in 0..<list[lineNr].count/2 {
 					let nextLine = (lineNr + 1) %% list.count
 					newLine.append(contentsOf: [list[lineNr][pair*2], list[nextLine][pair*2+1]])
@@ -92,19 +92,19 @@ extension Space {
 	}
 	
 	
-	public var instances: [(name:String, coordinates:[CoordUnit])] {
+	public var instances: [(name:String, coordinates:[Axis.AxisInstance.CoordUnit])] {
 		
-		var result:[(name:String, coordinates:[CoordUnit])] = []
+		var result:[(name:String, coordinates:[Axis.AxisInstance.CoordUnit])] = []
 		
 		let planes = definePlanes(egdes: edges)
 		
 		for stylesIndexes in stylesIndexList {
 			var name = ""
-			var groups: [[Pair<CoordUnit>]] = []
+			var groups: [[Pair<Axis.AxisInstance.CoordUnit>]] = []
 			for axisNr in 0..<dimensions {
 				let styleIndex = stylesIndexes[axisNr]
 				name += "\(axes[axisNr].styles[styleIndex].name) "
-				var planeGroup : [Pair<CoordUnit>] = []
+				var planeGroup : [Pair<Axis.AxisInstance.CoordUnit>] = []
 				for plane in planes[axisNr] {
 					//print (plane)
 					

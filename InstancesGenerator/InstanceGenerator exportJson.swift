@@ -7,18 +7,22 @@
 //
 
 import Foundation
+
+
+struct Instance<CoordUnit:Encodable>: Encodable {
+	var name:String
+	var tsn:String
+	var location: [String:CoordUnit]
+}
+struct JSONData<CoordUnit:Encodable>:Encodable {
+	var dataType = "com.fontlab.info.instances"
+	var instances: [Instance<CoordUnit>]
+}
+
 extension InstanceGenerator {
 	public func exportJSON(to url: URL) throws {
-		struct Instance: Encodable {
-			var name:String
-			var tsn:String
-			var location: [String:CoordUnit]
-		}
-		struct JSONData:Encodable {
-			var dataType = "com.fontlab.info.instances"
-			var instances: [Instance]
-		}
-		var result : [Instance] = []
+		
+		var result : [Instance<CoordUnit>] = []
 		
 		for instance in instances {
 			let location = instance.coordinates.reduce(into: [String:CoordUnit]()) {dict, loc in

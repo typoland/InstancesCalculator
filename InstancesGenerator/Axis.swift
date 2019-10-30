@@ -1,14 +1,17 @@
 import Foundation
 
 
-struct Axis: CustomStringConvertible {
+struct IGAxis<AI: AxisInstanceProtocol >: AxisProtocol, CustomStringConvertible {
+
 	
+	typealias AxisInstance = AI
+
 	var name: String
-	var styles: [Style]
-	var bounds: ClosedRange<CoordUnit>
-	var distribution: Double? = nil
+	var styles: [AxisInstance]
+	var bounds: ClosedRange<AxisInstance.CoordUnit>
+	var distribution: AI.CoordUnit? = nil
 	
-	init (name:String, bounds: ClosedRange<CoordUnit>, styles:[Style] = []) {
+	init (name:String, bounds: ClosedRange<AxisInstance.CoordUnit>, styles:[AxisInstance] = []) {
 		self.name = name
 		self.bounds = bounds
 		self.styles = styles
@@ -17,8 +20,11 @@ struct Axis: CustomStringConvertible {
 	var description: String {
 		return "\"\(name)\""
 	}
-	
-	mutating func setValue(_ value: CoordUnit, of styleName: String, in domainIndex: Int) {
+}
+
+
+extension AxisProtocol {
+	mutating func setValue(_ value: AxisInstance.CoordUnit, of styleName: String, in domainIndex: Int) {
 		guard let styleIndex = styles.firstIndex(where: {$0.name == styleName }) else {return}
 		guard domainIndex < styles[styleIndex].values.count else {return}
 		styles[styleIndex].values[domainIndex] = value

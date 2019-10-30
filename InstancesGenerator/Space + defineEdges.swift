@@ -7,7 +7,7 @@
 //
 
 import Foundation
-extension Space {
+extension SpaceProtocol {
 	
 	func definePlanes (egdes:[[Edge]]) -> [[Plane]] {
 		var result: [[Plane]] = []
