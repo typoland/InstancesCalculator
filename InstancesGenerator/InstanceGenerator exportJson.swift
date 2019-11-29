@@ -12,16 +12,16 @@ import Foundation
 struct Instance<CoordUnit:Encodable>: Encodable {
 	var name:String
 	var tsn:String
-	var location: [String:CoordUnit]
+	var location: [String: CoordUnit]
 }
+
 struct JSONData<CoordUnit:Encodable>:Encodable {
 	var dataType = "com.fontlab.info.instances"
-	var instances: [Instance<CoordUnit>]
+	var instances: [Instance <CoordUnit>]
 }
 
 extension InstanceGenerator {
-	public func exportJSON(to url: URL) throws {
-		
+	var jsonData: JSONData<CoordUnit> {
 		var result : [Instance<CoordUnit>] = []
 		
 		for instance in instances {
@@ -32,8 +32,23 @@ extension InstanceGenerator {
 								   tsn: instance.instanceName,
 								   location: location))
 		}
-		
-		let data = try JSONEncoder().encode(JSONData(instances: result))
+		return JSONData(instances: result)
+	}
+	
+	
+	public var instancesJsonText: String {
+		let encoder = JSONEncoder()
+		encoder.outputFormatting = .prettyPrinted
+		if let z = try? encoder.encode(jsonData),
+			let s = String.init(data: z, encoding: .utf8) {
+			return s
+		} else {
+			return ""
+		}
+	}
+	
+	public func exportJSON(to url: URL) throws {
+		let data = try JSONEncoder().encode(jsonData)
 		try data.write(to: url)
 	}
 }

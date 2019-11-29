@@ -10,11 +10,11 @@ import XCTest
 @testable import InstancesGenerator
 
 class InstancesGeneratorTests: XCTestCase {
-	var axisX = Axis(name: "X", bounds: 0.0...1.0)
-	var axisY = Axis(name: "Y", bounds: 0.0...1000.0)
-	var axisZ = Axis(name: "Z", bounds: -1.0...1.0)
-	var axisV = Axis(name: "V", bounds: -1000.0...1000.0)
-	var axisW = Axis(name: "W", bounds: 23.0...71.0)
+//	var axisX = Axis(name: "X", bounds: 0.0...1.0)
+//	var axisY = Axis(name: "Y", bounds: 0.0...1000.0)
+//	var axisZ = Axis(name: "Z", bounds: -1.0...1.0)
+//	var axisV = Axis(name: "V", bounds: -1000.0...1000.0)
+//	var axisW = Axis(name: "W", bounds: 23.0...71.0)
 	
 	
 	///Pierwszy rysunek
@@ -77,14 +77,14 @@ class InstancesGeneratorTests: XCTestCase {
 		ig.instances.forEach {print ($0)}
 	}
     func testExample() {
-		var axes = [axisX, axisY, axisZ, axisV, axisW]
+		//var axes = [axisX, axisY, axisZ, axisV, axisW]
 		
-		let styleA = Style(name: "Light", values: x)
-		
-		let styleB = Style(name: "Extended", values: y)
-		let styleC = Style(name: "Title", values: z)
-		let styleD = Style(name: "LowX", values: v)
-		let styleE = Style(name: "BigSerif", values: w)
+//		let styleA = Style(name: "Light", values: x)
+//
+//		let styleB = Style(name: "Extended", values: y)
+//		let styleC = Style(name: "Title", values: z)
+//		let styleD = Style(name: "LowX", values: v)
+//		let styleE = Style(name: "BigSerif", values: w)
 		
 		//let styleA = Style(name: "a", values: Array((0 ..< 1<<axes.count).map{"\(String($0, radix: 16 ))"}))
 		//let styleB = Style(name: "b", values: Array((0 ..< 1<<axes.count).map{"y\($0)"}))
@@ -99,17 +99,17 @@ class InstancesGeneratorTests: XCTestCase {
 		//		let styleE = Style(name: "e", values: Array(repeating: "★", count: 1<<axes.count))
 		
 		
-		axes[0].styles.append(styleA)
-		axes[1].styles.append(styleB)
-		axes[2].styles.append(styleC)
-		axes[3].styles.append(styleD)
-		axes[4].styles.append(styleE)
-		
-		let space = Space(axes: axes)
-		
-		let instances = space.instances
-		instances.forEach({print("+",$0)})
-		print ("Done")
+//		axes[0].styles.append(styleA)
+//		axes[1].styles.append(styleB)
+//		axes[2].styles.append(styleC)
+//		axes[3].styles.append(styleD)
+//		axes[4].styles.append(styleE)
+//
+//		let space = Space(axes: axes)
+//
+//		let instances = space.instances
+//		instances.forEach({print("+",$0)})
+//		print ("Done")
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

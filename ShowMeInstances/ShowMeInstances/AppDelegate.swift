@@ -18,6 +18,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBOutlet weak var uiView: NSView!
 	
 	@objc var designSpaceText: String = ""
+	@objc var instancesText: String  {
+		return instancesNode?.instanceGenerator?.instancesJsonText ?? ""
+	}
 	//var instancesRootNode = SCNNode()
 	var instancesNode: InstancesNode? = nil
 
@@ -46,6 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		panel.runModal()
 		if let url = panel.url {
 			willChangeValue(for: \.designSpaceText)
+			willChangeValue(for: \.instancesText)
 			do {
 				let data = try Data(contentsOf: url)
 				loadDataToView(data)
@@ -54,6 +58,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				print (error)
 			}
 			didChangeValue(for: \.designSpaceText)
+			didChangeValue(for: \.instancesText)
 		}
 	}
 	
@@ -84,6 +89,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	func loadDataToView(_ data:Data) {
+		print ("loading data to view")
 		instancesNode?.removeFromParentNode()
 		instancesNode = InstancesNode(with: data)
 		view3D.scene?.rootNode.addChildNode(instancesNode!)
@@ -104,9 +110,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	@IBAction func updateInstancesView(_ sender: Any) {
+		willChangeValue(for: \.instancesText)
+		print ("upadate Instance View")
 		if let data = designSpaceText.data(using: .utf8) {
+			print ("data will load wrom \(data)")
 			loadDataToView(data)
 		}
+		print ("data loaded")
+		didChangeValue(for: \.instancesText)
 	}
 }
 

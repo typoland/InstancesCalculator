@@ -22,7 +22,11 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 		case notEnoughValuesForStyle(name: String, expected: Int)
 	}
 	
-	var space: Space<CoordUnit>
+	var space: Space<CoordUnit> {
+		didSet {_instances = nil; print("space set")}
+	}
+	///instances cache
+	var _instances:[(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])]? = nil
 	/**
 	Instance Generator to count instances needs Axes, and each Axis needs at least one Style. `Init` doesn't add styles, only Axes for them.
 	- parameter axes: array of names of each axis.
@@ -34,6 +38,7 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 				Space.Axis.init(name: names[$0],
 								bounds: bounds,
 								styles: [])})
+
 	}
 	
 	public init <S:SpaceProtocol> (space:S) {
@@ -43,6 +48,7 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 	init (space: Space<CoordUnit>) {
 		self.space = space
 	}
+
 	/**
 	Adds style for axis and its values.
 	- parameter name: name of new style
@@ -66,6 +72,7 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 		
 		let style = Space.Axis.AxisInstance(name: name, values: internalValues)
 		space.axes[axisIndex].styles.append(style)
+
 		NotificationCenter.default.post(name: numberOfInstancesChanged, object: axes)
 		
 	}
@@ -84,6 +91,7 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 			throw Errors.styleNotExist(styleName: styleName, axisName: axisName)
 		}
 		space.axes[axisIndex].styles.remove(at: styleIndex)
+
 		NotificationCenter.default.post(name: numberOfInstancesChanged, object: axes)
 	}
 	/**
@@ -97,6 +105,7 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 		(0..<space.axes.count).forEach { axisNr in
 			space.axes[axisNr].addValuesForNewAxis()
 		}
+
 		NotificationCenter.default.post(name: numberOfInstancesChanged, object:axes)
 	}
 	/**
@@ -107,6 +116,7 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 		(0..<space.axes.count).forEach { axisNr in
 			space.axes[axisNr].removeValuesForLastAxis()
 		}
+		
 		NotificationCenter.default.post(name: numberOfInstancesChanged, object:axes)
 	}
 	/**
@@ -129,6 +139,9 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 	Returns array of tuplets with `InstanceName` and `cordinates` - array of tuplets with `axisName` and `value` descibing instance position in space
 	*/
 	public var instances: [(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])] {
+		if let result = _instances {
+			return result
+		} else {
 		let start = Date()
 		var result:[(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])]  = []
 		space.distributeAxes()
@@ -144,7 +157,9 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 		}
 		let time  =  Date().timeIntervalSince(start)//DateInterval(start: start, end: Date())
 		print ( "It took \(time) seconds to generate \(result.count) instances" )
+			_instances = result
 		return result
+			}
 	}
 	
 }

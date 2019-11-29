@@ -13,13 +13,13 @@ import InstancesGenerator
 class InstancesNode:SCNNode {
 	typealias CoordUnit = Double
 	
-	//var axes:[(name:String, bounds:ClosedRange<CoordUnit>)]
-	var instanceGenerator:InstanceGenerator<CoordUnit>?
+	var instanceGenerator: InstanceGenerator<CoordUnit>?
 	init(with data: Data) {
 		do {
 			self.instanceGenerator = try InstanceGenerator(from: data)
+			print ("generator Inited")
 		} catch let error {
-			print (error)
+			print ("init generator Error", error)
 		}
 		super.init()
 		
@@ -30,7 +30,7 @@ class InstancesNode:SCNNode {
 			let coords3D = convertCoordinatesTo3D(coords)
 			let node = Instance3D(
 				name: instance.instanceName,
-				coordinates: coords3D ,
+				coordinates: coords3D,
 				color: color)
 			
 			if let prev = prevCoords {
@@ -50,9 +50,9 @@ class InstancesNode:SCNNode {
 	}
 	
 	func getMaterialDiffuseColor(for coordinates: [CoordUnit]) -> NSColor {
-		var hue : CGFloat = 0
-		var saturation : CGFloat = 0
-		var brightness : CGFloat = 0.5
+		var saturation = CGFloat(coordinates[0]) / 2000
+		var brightness = coordinates.count > 1 ? CGFloat(coordinates[1]) / 4000 + 0.1 : 0
+		var hue = coordinates.count > 2 ? CGFloat(coordinates[2]) / 1500 + 0.16 : 0
 		
 		if coordinates.count > 3 {
 			hue = 0.5

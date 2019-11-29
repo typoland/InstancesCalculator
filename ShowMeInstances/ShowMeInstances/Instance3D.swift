@@ -15,7 +15,7 @@ class Instance3D: SCNNode {
 		self.name = name
 		
 		//let box = SCNSphere(radius: 0.01)
-		let box = SCNBox(width: 0.02, height: 0.02, length: 0.02, chamferRadius: 0)
+		let box = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0)
 		//let text = SCNText(string: name.replacingOccurrences(of: " ", with: "\n"), extrusionDepth: 0)
 		//text.font = NSFont.boldSystemFont(ofSize: 12)
 		//let node = SCNNode(geometry: text)
@@ -25,7 +25,7 @@ class Instance3D: SCNNode {
 		let material = SCNMaterial()
 		material.diffuse.contents = color
 		material.emission.contents = color
-		material.lightingModel = .physicallyBased
+		material.lightingModel = .lambert
 		material.metalness.contents = 0
 		material.shininess = 1
 
