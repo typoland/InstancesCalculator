@@ -16,11 +16,7 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 	
 	//public typealias CoordUnit = Space.Axis.AxisInstance.CoordUnit
 	
-	enum Errors:Error {
-		case axisNotExist(name: String)
-		case styleNotExist(styleName: String, axisName: String)
-		case notEnoughValuesForStyle(name: String, expected: Int)
-	}
+	
 	
 	var space: Space<CoordUnit> {
 		didSet {_instances = nil}
@@ -59,11 +55,15 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 	public func addStyle(name: String, to axisName: String, values: [CoordUnit]) throws {
 		
 		guard let axisIndex = space.axes.firstIndex(where: {$0.name == axisName}) else {
-			throw Errors.axisNotExist(name: axisName)
+			throw SpaceError.axisNotExist(name: axisName)
 		}
 		
 		guard values.count.log2 == space.axes.count - 1 else {
-			throw Errors.notEnoughValuesForStyle(name: name, expected: 1<<(space.axes.count-1))
+			throw SpaceError.wrongValuesNumber(
+				styleName: name,
+				axisName: axisName,
+				expected: 1<<(space.axes.count-1),
+				found: values.count)
 			
 		}
 		let internalValues = values.map { value in
@@ -84,11 +84,11 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 	*/
 	public func removeStyle(_ styleName: String, from axisName:String) throws {
 		guard let axisIndex = space.axes.firstIndex(where: {$0.name == axisName}) else {
-			throw Errors.axisNotExist(name: axisName)
+			throw SpaceError.axisNotExist(name: axisName)
 		}
 		guard let styleIndex = space.axes[axisIndex].styles.firstIndex(where: {$0.name == styleName})
 		else {
-			throw Errors.styleNotExist(styleName: styleName, axisName: axisName)
+			throw SpaceError.styleNotExist(styleName: styleName, axisName: axisName)
 		}
 		space.axes[axisIndex].styles.remove(at: styleIndex)
 

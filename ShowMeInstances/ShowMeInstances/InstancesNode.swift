@@ -16,7 +16,7 @@ class InstancesNode:SCNNode {
 	var instanceGenerator: InstanceGenerator<CoordUnit>?
 	init(with data: Data) throws {
 
-			self.instanceGenerator = try InstanceGenerator(from: data)
+		self.instanceGenerator = try InstanceGenerator(from: data)
 
 		super.init()
 		

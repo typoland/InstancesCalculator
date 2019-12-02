@@ -16,8 +16,7 @@ func ❖ <F:FloatingPoint>(lhs:(F,F), rhs:(F,F)) -> (F,F) {
 }
 
 
-func ❖ <T:FloatingPoint>(lhs: Pair<T>, rhs: Pair<T>) -> Pair<T> {
-	
+func ❖ <T:FloatingPoint>(lhs: Pair<T>, rhs: Pair<T>) -> Pair<T> {	
 	let (a,b) = (lhs.a, lhs.b) ❖ (rhs.a, rhs.b)
 	return Pair(a: a, b: b)
 }

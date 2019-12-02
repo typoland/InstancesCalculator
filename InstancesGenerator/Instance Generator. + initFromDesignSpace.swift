@@ -53,7 +53,6 @@ extension InstanceGenerator {
 	
 	public convenience init (from data: Data) throws {
 		
-		
 		let designspace = try JSONDecoder().decode(DesignSpace<CoordUnit>.self, from: data)
 		
 		let space = Space<CoordUnit>(axes: designspace.axes.map { impAxis in
@@ -67,6 +66,7 @@ extension InstanceGenerator {
 			}
 			return axis
 		})
+		try space.isDataOK()
 		self.init(space:space)
 	}
 }

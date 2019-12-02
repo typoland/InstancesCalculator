@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B2671DA2235E07960063E9C7 /* exp02.png in Resources */ = {isa = PBXBuildFile; fileRef = B2671DA0235E07960063E9C7 /* exp02.png */; };
 		B2671DA3235E07960063E9C7 /* exp01.png in Resources */ = {isa = PBXBuildFile; fileRef = B2671DA1235E07960063E9C7 /* exp01.png */; };
+		B26E767D2395AE990042A2EB /* Space + isDataOK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E767C2395AE990042A2EB /* Space + isDataOK.swift */; };
+		B26E76822395BA530042A2EB /* SpaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E76812395BA530042A2EB /* SpaceError.swift */; };
 		B27A75B5235C5855008D6B36 /* InstanceGenerator + axes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A75B4235C5855008D6B36 /* InstanceGenerator + axes.swift */; };
 		B28AF7BD2355DF0800608F8F /* InstancesGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28AF7B32355DF0800608F8F /* InstancesGenerator.framework */; };
 		B28AF7C22355DF0800608F8F /* InstancesGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7C12355DF0800608F8F /* InstancesGeneratorTests.swift */; };
@@ -56,6 +58,8 @@
 /* Begin PBXFileReference section */
 		B2671DA0235E07960063E9C7 /* exp02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp02.png; sourceTree = "<group>"; };
 		B2671DA1235E07960063E9C7 /* exp01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp01.png; sourceTree = "<group>"; };
+		B26E767C2395AE990042A2EB /* Space + isDataOK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Space + isDataOK.swift"; path = "../insgen/insgen/Space + isDataOK.swift"; sourceTree = "<group>"; };
+		B26E76812395BA530042A2EB /* SpaceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpaceError.swift; path = ../insgen/insgen/SpaceError.swift; sourceTree = "<group>"; };
 		B27A75B4235C5855008D6B36 /* InstanceGenerator + axes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "InstanceGenerator + axes.swift"; path = "../insgen/insgen/InstanceGenerator + axes.swift"; sourceTree = "<group>"; };
 		B27A75BE235DC65C008D6B36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B28AF7B32355DF0800608F8F /* InstancesGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstancesGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +146,8 @@
 				B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */,
 				B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */,
 				B28AF7CF2355DF2B00608F8F /* Space.swift */,
+				B26E76812395BA530042A2EB /* SpaceError.swift */,
+				B26E767C2395AE990042A2EB /* Space + isDataOK.swift */,
 				B28AF7E32355DF8100608F8F /* Space + instances.swift */,
 				B28AF7E52355E29300608F8F /* Space + defineEdges.swift */,
 				B28AF7D02355DF2B00608F8F /* Space + Edges.swift */,
@@ -172,7 +178,7 @@
 		B28AF8122356365D00608F8F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B28AF8162356365E00608F8F /* insgen */,
+				B28AF8162356365E00608F8F /* calculate_instances */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,10 +278,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B28AF8162356365E00608F8F /* insgen */ = {
+		B28AF8162356365E00608F8F /* calculate_instances */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			path = insgen;
+			path = calculate_instances;
 			remoteRef = B28AF8152356365E00608F8F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -316,6 +322,7 @@
 				B28AF7DF2355DF2B00608F8F /* Edge.swift in Sources */,
 				B28AF7DC2355DF2B00608F8F /* Type aliases.swift in Sources */,
 				B28AF7D92355DF2B00608F8F /* Style.swift in Sources */,
+				B26E767D2395AE990042A2EB /* Space + isDataOK.swift in Sources */,
 				B28AF7E22355DF2B00608F8F /* cross.swift in Sources */,
 				B28AF81F2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */,
 				B29A99D923573A6000D569EA /* Axis + distribution.swift in Sources */,
@@ -323,6 +330,7 @@
 				B28AF7E02355DF2B00608F8F /* Pair.swift in Sources */,
 				B28AF7DD2355DF2B00608F8F /* Axis.swift in Sources */,
 				B28AF7EA2356063300608F8F /* InstanceGenerator.swift in Sources */,
+				B26E76822395BA530042A2EB /* SpaceError.swift in Sources */,
 				B28AF7E12355DF2B00608F8F /* Int + Extensions.swift in Sources */,
 				B27A75B5235C5855008D6B36 /* InstanceGenerator + axes.swift in Sources */,
 				B28AF7DA2355DF2B00608F8F /* Space.swift in Sources */,

@@ -20,11 +20,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextDelegate {
 	
 	
 	@objc var designSpaceText: String = ""
-	@objc var parserErrorString: String = ""
-	@objc var instancesText: String  {
-		return instancesNode?.instanceGenerator?.instancesJsonText ?? parserErrorString 
+	@objc var parserErrorString: String? = nil {
+		willSet {willChangeValue(for: \.instancesText)}
+		didSet {didChangeValue(for: \.instancesText)}
 	}
-	//var instancesRootNode = SCNNode()
+	@objc var instancesText: String?  {
+		return parserErrorString ?? instancesNode?.instanceGenerator?.instancesJsonText
+	}
 	var instancesNode: InstancesNode? = nil
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -55,8 +57,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextDelegate {
 				let data = try Data(contentsOf: url)
 				loadDataToView(data)
 				designSpaceText = String.init(data: data, encoding: .utf8) ?? ""
+				parserErrorString = nil
 			} catch {
-				print (error)
+				
+				parserErrorString = error.localizedDescription
 			}
 			didChangeValue(for: \.designSpaceText)
 			didChangeValue(for: \.instancesText)
@@ -70,8 +74,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextDelegate {
 		if let url = panel.url {
 			do {
 				try designSpaceText.write(to: url, atomically: false, encoding: .utf8)
+				parserErrorString = nil
 			} catch {
-				print (error)
+				parserErrorString = error.localizedDescription
 			}
 		}
 	}
@@ -83,29 +88,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextDelegate {
 		if let url = panel.url {
 			do {
 				try instancesNode?.instanceGenerator?.exportJSON(to: url)
+				parserErrorString = nil
 			} catch {
-				print (error)
+				parserErrorString = error.localizedDescription
 			}
 		}
 	}
 	
 	func loadDataToView(_ data:Data) {
 		instancesNode?.removeFromParentNode()
-		willChangeValue(for: \.parserErrorString)
 		willChangeValue(for: \.instancesText)
 		do {
 			instancesNode = try InstancesNode(with: data)
-			
-			parserErrorString = ""
-			
 			view3D.scene?.rootNode.addChildNode(instancesNode!)
-			
-			
+			parserErrorString = nil
 		} catch let error {
 			parserErrorString = error.localizedDescription
 		}
 		didChangeValue(for: \.instancesText)
-		didChangeValue(for: \.parserErrorString)
 	}
 
 	
@@ -124,16 +124,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextDelegate {
 	}
 	
 	@IBAction func updateInstancesView(_ sender: Any) {
-		
 		if let data = designSpaceText.data(using: .utf8) {
 			loadDataToView(data)
 		}
-		
 	}
 	
 	func textDidChange(_ notification: Notification) {
-		let s = (notification.object as? NSTextView)?.attributedString().string ?? ""
-		designSpaceText = s
+		designSpaceText = (notification.object as? NSTextView)?.attributedString().string ?? ""
 		updateInstancesView(self)
 	}
 }

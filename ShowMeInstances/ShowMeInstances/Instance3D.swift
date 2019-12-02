@@ -8,6 +8,8 @@
 
 import Foundation
 import SceneKit
+
+
 class Instance3D: SCNNode {
 	
 	init (name: String, coordinates: SCNVector3, color: NSColor) {

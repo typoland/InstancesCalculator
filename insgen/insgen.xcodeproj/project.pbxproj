@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B26E76762395531A0042A2EB /* InstanceGenerator + axes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E7675239553190042A2EB /* InstanceGenerator + axes.swift */; };
+		B26E76802395B2F20042A2EB /* Space + isDataOK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E767F2395B2F20042A2EB /* Space + isDataOK.swift */; };
+		B26E76842395BBB60042A2EB /* SpaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E76832395BBB60042A2EB /* SpaceError.swift */; };
 		B28AF80B2356365D00608F8F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF80A2356365D00608F8F /* main.swift */; };
 		B28AF81D235643E900608F8F /* Space + initFromDesignspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF81C235643E900608F8F /* Space + initFromDesignspace.swift */; };
 		B28AF833235651D300608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF823235651D200608F8F /* Instance Generator. + initFromDesignSpace.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		B26E7675239553190042A2EB /* InstanceGenerator + axes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstanceGenerator + axes.swift"; sourceTree = "<group>"; };
+		B26E767F2395B2F20042A2EB /* Space + isDataOK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + isDataOK.swift"; sourceTree = "<group>"; };
+		B26E76832395BBB60042A2EB /* SpaceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceError.swift; sourceTree = "<group>"; };
 		B28AF8072356365D00608F8F /* calculate_instances */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = calculate_instances; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28AF80A2356365D00608F8F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B28AF818235643B700608F8F /* InstancesGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InstancesGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,16 +122,18 @@
 				B28AF823235651D200608F8F /* Instance Generator. + initFromDesignSpace.swift */,
 				B28AF824235651D200608F8F /* InstanceGenerator exportJson.swift */,
 				B28AF82C235651D200608F8F /* Space.swift */,
-				B28AF829235651D200608F8F /* Axis.swift */,
-				B29A99DB23574E1A00D569EA /* Axis + distribution.swift */,
+				B26E76832395BBB60042A2EB /* SpaceError.swift */,
+				B26E767F2395B2F20042A2EB /* Space + isDataOK.swift */,
 				B28AF828235651D200608F8F /* Space + instances.swift */,
 				B28AF831235651D300608F8F /* Space + defineEdges.swift */,
+				B28AF825235651D200608F8F /* Space + Edges.swift */,
+				B28AF829235651D200608F8F /* Axis.swift */,
+				B29A99DB23574E1A00D569EA /* Axis + distribution.swift */,
 				B28AF82E235651D200608F8F /* cross.swift */,
 				B28AF832235651D300608F8F /* Edge.swift */,
 				B28AF827235651D200608F8F /* Int + Extensions.swift */,
 				B28AF830235651D300608F8F /* Pair.swift */,
 				B28AF82F235651D200608F8F /* Plane.swift */,
-				B28AF825235651D200608F8F /* Space + Edges.swift */,
 				B28AF826235651D200608F8F /* Style.swift */,
 				B28AF82B235651D200608F8F /* Type aliases.swift */,
 			);
@@ -204,8 +210,10 @@
 				B28AF842235651D300608F8F /* Edge.swift in Sources */,
 				B28AF83F235651D300608F8F /* Plane.swift in Sources */,
 				B28AF835235651D300608F8F /* Space + Edges.swift in Sources */,
+				B26E76802395B2F20042A2EB /* Space + isDataOK.swift in Sources */,
 				B28AF834235651D300608F8F /* InstanceGenerator exportJson.swift in Sources */,
 				B29A99DC23574E1A00D569EA /* Axis + distribution.swift in Sources */,
+				B26E76842395BBB60042A2EB /* SpaceError.swift in Sources */,
 				B28AF81D235643E900608F8F /* Space + initFromDesignspace.swift in Sources */,
 				B28AF833235651D300608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */,
 				B28AF839235651D300608F8F /* Axis.swift in Sources */,
