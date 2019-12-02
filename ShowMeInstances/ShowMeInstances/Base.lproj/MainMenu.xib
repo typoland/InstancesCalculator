@@ -675,18 +675,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <scrollView identifier="JsonView" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" id="shD-FM-OcB">
-                                        <rect key="frame" x="0.0" y="30" width="90" height="330"/>
+                                        <rect key="frame" x="0.0" y="68" width="90" height="292"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="V9T-H9-IfS">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="330"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="292"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" fieldEditor="YES" usesFontPanel="YES" selectionGranularity="word" textCompletion="NO" id="OtQ-wh-sqO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="330"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="292"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="90" height="330"/>
+                                                    <size key="minSize" width="90" height="292"/>
                                                     <size key="maxSize" width="240" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <allowedInputSourceLocales>
@@ -694,6 +694,7 @@
                                                     </allowedInputSourceLocales>
                                                     <connections>
                                                         <binding destination="Voe-Tx-rLC" name="value" keyPath="designSpaceText" id="Otc-Yx-cEb"/>
+                                                        <outlet property="delegate" destination="Voe-Tx-rLC" id="rca-Yc-Ohm"/>
                                                     </connections>
                                                 </textView>
                                             </subviews>
@@ -718,6 +719,18 @@
                                             <action selector="updateInstancesView:" target="Voe-Tx-rLC" id="g0x-fi-izT"/>
                                         </connections>
                                     </button>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPP-Yx-AnX">
+                                        <rect key="frame" x="3" y="27" width="84" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" controlSize="mini" selectable="YES" title="Multiline Label" id="eVg-Q3-hsi">
+                                            <font key="font" metaFont="miniSystem"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="Voe-Tx-rLC" name="value" keyPath="parserErrorString" id="Wzj-Fx-1Yg"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" id="JYq-r6-r6G">

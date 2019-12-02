@@ -77,6 +77,7 @@ class InstancesGeneratorTests: XCTestCase {
 		ig.instances.forEach {print ($0)}
 	}
     func testExample() {
+		
 		//var axes = [axisX, axisY, axisZ, axisV, axisW]
 		
 //		let styleA = Style(name: "Light", values: x)

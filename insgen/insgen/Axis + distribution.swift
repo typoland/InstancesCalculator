@@ -23,6 +23,7 @@ extension AxisProtocol {
 		}
 		fatalError("unknown FloatingPointType")
 	}
+	
 	mutating func distributeStyles() {
 		
 		func distribute (values:[AxisInstance.CoordUnit]) -> [AxisInstance.CoordUnit]  {

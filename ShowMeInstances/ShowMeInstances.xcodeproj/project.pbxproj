@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B26E76722392D5760042A2EB /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E76712392D5760042A2EB /* CodeView.swift */; };
 		B27A75B3235C52B9008D6B36 /* InstancesNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A75B2235C52B9008D6B36 /* InstancesNode.swift */; };
 		B27A75B9235C58FC008D6B36 /* InstancesGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */; };
 		B27A75BA235C58FC008D6B36 /* InstancesGenerator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -44,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B26E76712392D5760042A2EB /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		B27A75B2235C52B9008D6B36 /* InstancesNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancesNode.swift; sourceTree = "<group>"; };
 		B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InstancesGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27A75BC235CBBF1008D6B36 /* SCNGeometry + drawLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry + drawLine.swift"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				B28AF84F235657A900608F8F /* AppDelegate.swift */,
 				B28AF86D23565C2800608F8F /* Instance3D.swift */,
 				B27A75B2235C52B9008D6B36 /* InstancesNode.swift */,
+				B26E76712392D5760042A2EB /* CodeView.swift */,
 				B27A75BC235CBBF1008D6B36 /* SCNGeometry + drawLine.swift */,
 				B28AF86B2356591800608F8F /* basicScene.scn */,
 				B28AF851235657AC00608F8F /* Assets.xcassets */,
@@ -236,6 +239,7 @@
 				B27A75BD235CBBF1008D6B36 /* SCNGeometry + drawLine.swift in Sources */,
 				B28AF850235657A900608F8F /* AppDelegate.swift in Sources */,
 				B27A75B3235C52B9008D6B36 /* InstancesNode.swift in Sources */,
+				B26E76722392D5760042A2EB /* CodeView.swift in Sources */,
 				B28AF86E23565C2800608F8F /* Instance3D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,22 +11,23 @@ import SceneKit
 import InstancesGenerator
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSTextDelegate {
 
 	@IBOutlet weak var window: NSWindow!
 	@IBOutlet weak var view3D: SCNView!
 	@IBOutlet weak var uiView: NSView!
 	
+	
+	
 	@objc var designSpaceText: String = ""
+	@objc var parserErrorString: String = ""
 	@objc var instancesText: String  {
-		return instancesNode?.instanceGenerator?.instancesJsonText ?? ""
+		return instancesNode?.instanceGenerator?.instancesJsonText ?? parserErrorString 
 	}
 	//var instancesRootNode = SCNNode()
 	var instancesNode: InstancesNode? = nil
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
-		
-		
 		// Insert code here to initialize your application
 		let scene = SCNScene(named: "basicScene.scn")
 		view3D.allowsCameraControl = true
@@ -89,11 +90,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	func loadDataToView(_ data:Data) {
-		print ("loading data to view")
 		instancesNode?.removeFromParentNode()
-		instancesNode = InstancesNode(with: data)
-		view3D.scene?.rootNode.addChildNode(instancesNode!)
+		willChangeValue(for: \.parserErrorString)
+		willChangeValue(for: \.instancesText)
+		do {
+			instancesNode = try InstancesNode(with: data)
+			
+			parserErrorString = ""
+			
+			view3D.scene?.rootNode.addChildNode(instancesNode!)
+			
+			
+		} catch let error {
+			parserErrorString = error.localizedDescription
+		}
+		didChangeValue(for: \.instancesText)
+		didChangeValue(for: \.parserErrorString)
 	}
+
 	
 	@IBAction func exportDAE(_ sender: Any) {
 		if let scene = view3D.scene {
@@ -110,14 +124,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	@IBAction func updateInstancesView(_ sender: Any) {
-		willChangeValue(for: \.instancesText)
-		print ("upadate Instance View")
+		
 		if let data = designSpaceText.data(using: .utf8) {
-			print ("data will load wrom \(data)")
 			loadDataToView(data)
 		}
-		print ("data loaded")
-		didChangeValue(for: \.instancesText)
+		
+	}
+	
+	func textDidChange(_ notification: Notification) {
+		let s = (notification.object as? NSTextView)?.attributedString().string ?? ""
+		designSpaceText = s
+		updateInstancesView(self)
 	}
 }
 

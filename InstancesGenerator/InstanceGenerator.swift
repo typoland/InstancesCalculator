@@ -23,10 +23,10 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 	}
 	
 	var space: Space<CoordUnit> {
-		didSet {_instances = nil; print("space set")}
+		didSet {_instances = nil}
 	}
 	///instances cache
-	var _instances:[(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])]? = nil
+	var _instances: [(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])]? = nil
 	/**
 	Instance Generator to count instances needs Axes, and each Axis needs at least one Style. `Init` doesn't add styles, only Axes for them.
 	- parameter axes: array of names of each axis.
@@ -162,4 +162,18 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 			}
 	}
 	
+	public var instancesX:[IsInstance] {
+		return []
+	}
+	
+}
+
+public protocol IsCoordinate {
+	var axisName: String {get set}
+	var value: FloatingPointClassification {get set}
+}
+
+public protocol IsInstance {
+	var name: String {get}
+	var coordinates: [IsCoordinate] {get set}
 }

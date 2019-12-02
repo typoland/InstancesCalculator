@@ -22,7 +22,6 @@ public protocol SpaceProtocol {
 	associatedtype Axis: AxisProtocol
 	var axes: [Axis] {get set}
 	init (axes: [Axis])
-	//init (axes names: [String], bounds: ClosedRange<Axis.AxisInstance.CoordUnit>)
 }
 
 extension SpaceProtocol {
@@ -47,15 +46,5 @@ struct Space<CU:FloatingPoint & Codable>: SpaceProtocol {
 	init (axes:[Axis]) {
 		self.axes = axes
 	}
-//	var dimensions: Int {
-//		return axes.count
-//	}
 
-//	var verticesNr: Int {
-//		return 1<<dimensions
-//	}
-	
-//	mutating func distributeAxes() {
-//		(0..<axes.count).forEach { axes[$0].distributeStyles() }
-//	}
 }

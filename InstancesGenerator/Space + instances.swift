@@ -79,15 +79,11 @@ extension SpaceProtocol {
 					let nextLine = (lineNr + 1) %% list.count
 					newLine.append(contentsOf: [list[lineNr][pair*2], list[nextLine][pair*2+1]])
 				}
-				//print("NewLine",newLine)
 				reduced.append(simplify(newLine))
 			}
 			result.append(contentsOf: reduceByCross(list: reduced, level: level+1))
 			
 		}
-		//print ("return", level)
-		//result.forEach {print ($0)}
-		//print ()
 		return result
 	}
 	
@@ -124,19 +120,14 @@ extension SpaceProtocol {
 					let b0 = valuesB[styleValueIndexB0]
 					let b1 = valuesB[styleValueIndexB1]
 					
-					//print ("# \(~a0) \(~a1) ❖ \(~b0) \(~b1)", terminator:" = ")
+
 					let (a, b) = (a0,a1) ❖ (b0, b1)
 					planeGroup.append(Pair(a:a, b:b))
-					
-					//let d =  (planeGroup.last!)
-					//print (~d.a, ~d.b)
+
 				}
 				groups.append(planeGroup)
 			}
 			let data = flat(array: groups)
-			//print ("flat Data:")
-			//data.forEach({print ($0)})
-			//print ()
 			let coordinatesArray = reduceByCross(list: data)
 			let coordinates = coordinatesArray.map { $0.average }
 			_ = name.removeLast()

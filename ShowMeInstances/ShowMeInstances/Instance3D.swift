@@ -14,8 +14,8 @@ class Instance3D: SCNNode {
 		super.init()
 		self.name = name
 		
-		//let box = SCNSphere(radius: 0.01)
-		let box = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0)
+		let box = SCNSphere(radius: 0.1)
+		//let box = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0)
 		//let text = SCNText(string: name.replacingOccurrences(of: " ", with: "\n"), extrusionDepth: 0)
 		//text.font = NSFont.boldSystemFont(ofSize: 12)
 		//let node = SCNNode(geometry: text)

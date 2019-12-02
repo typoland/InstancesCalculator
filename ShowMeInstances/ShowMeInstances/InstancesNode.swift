@@ -14,16 +14,12 @@ class InstancesNode:SCNNode {
 	typealias CoordUnit = Double
 	
 	var instanceGenerator: InstanceGenerator<CoordUnit>?
-	init(with data: Data) {
-		do {
+	init(with data: Data) throws {
+
 			self.instanceGenerator = try InstanceGenerator(from: data)
-			print ("generator Inited")
-		} catch let error {
-			print ("init generator Error", error)
-		}
+
 		super.init()
 		
-		var prevCoords: SCNVector3? = nil
 		for instance in instanceGenerator?.instances ?? [] {
 			let coords = instance.coordinates.map( {$0.value})
 			let color =  getMaterialDiffuseColor(for: coords)
@@ -32,21 +28,16 @@ class InstancesNode:SCNNode {
 				name: instance.instanceName,
 				coordinates: coords3D,
 				color: color)
-			
-			if let prev = prevCoords {
-				let line = SCNGeometry.line(from: prev, to: coords3D)
-				let lineNode = SCNNode(geometry: line)
-				lineNode.scale = SCNVector3(0.001, 0.001, 0.001)
-				lineNode.position = SCNVector3Zero
-				prevCoords = coords3D
-				node.addChildNode(lineNode)
-			}
+
 			self.addChildNode(node)
 		}
 	}
 	
 	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		print ("from coder \(coder)")
+		super.init()
+		instanceGenerator = InstanceGenerator<Double>.init(axes: ["width", "weight"], bounds: 0...1000)
+		
 	}
 	
 	func getMaterialDiffuseColor(for coordinates: [CoordUnit]) -> NSColor {
