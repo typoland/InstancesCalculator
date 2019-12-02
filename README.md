@@ -18,48 +18,56 @@ Fore more than two dimensions it bacame a little more complicated. First, each a
 
 ## Usage
 Input is json file:
-```{
+```json
+{
 	"axes":[
-	{
-		"name":"wt",
-		"designMinimum":0,
-		"designMaximum":1000,
-		"distribution":1.2,
-		"axisInstances":[
 		{
-			"name":"Thin",
-			"values": [80, 0]
+			"name":"weight",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"Book",
+				"values": [250, 100]
+				},
+				{
+				"name":"Normal",
+				"values": [450, 300]
+				},
+				{
+				"name":"Medium",
+				"values": [600, 550]
+				},
+				{
+				"name":"Bold",
+				"values": [900, 950]
+				}
+			]
+
 		},
 		{
-			"name":"Light",
-			"values": [100, 100]
-		},
-		{
-			"name":"Book",
-			"values": [200, 200]
+			"name":"width",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"Condensed",
+				"values": [100, 50]
+				},
+				{
+				"name":"Narrow",
+				"values": [350, 300]
+				},
+				{
+				"name":"Regular",
+				"values": [650, 600]
+				},
+				{
+				"name":"Wide",
+				"values": [950, 950]
+				}
+			]
 		}
-		]
-	},
-	{
-		"name":"wd",
-		"designMinimum":0,
-		"designMaximum":1000,
-		"distribution":1.2,
-		"axisInstances":[
-		{
-			"name":"Compressed",
-			"values": [0, 0]
-		},
-		{
-			"name":"Condensed",
-			"values": [100, 100]
-		},
-		{
-			"name":"Narrow",
-			"values": [200, 200]
-		}
-		]
-	}
 	]
 }
 ```
