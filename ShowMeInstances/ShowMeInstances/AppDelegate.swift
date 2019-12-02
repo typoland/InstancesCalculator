@@ -8,7 +8,7 @@
 
 import Cocoa
 import SceneKit
-import InstancesGenerator
+import InstancesCalculator
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSTextDelegate {

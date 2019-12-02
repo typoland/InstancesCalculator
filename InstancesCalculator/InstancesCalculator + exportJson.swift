@@ -1,6 +1,6 @@
 //
-//  InstanceGenerator exportJson.swift
-//  InstancesGenerator
+//  InstancesCalculator exportJson.swift
+//  InstancesCalculator
 //
 //  Created by Łukasz Dziedzic on 15/10/2019.
 //  Copyright © 2019 Łukasz Dziedzic. All rights reserved.
@@ -20,7 +20,7 @@ struct JSONData<CoordUnit:Encodable>:Encodable {
 	var instances: [Instance <CoordUnit>]
 }
 
-extension InstanceGenerator {
+extension InstancesCalculator {
 	var jsonData: JSONData<CoordUnit> {
 		var result : [Instance<CoordUnit>] = []
 		

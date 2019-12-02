@@ -1,6 +1,6 @@
 //
-//  InstanceGenerator + axes.swift
-//  InstancesGenerator
+//  InstancesCalculator + axes.swift
+//  InstancesCalculator
 //
 //  Created by Łukasz Dziedzic on 20/10/2019.
 //  Copyright © 2019 Łukasz Dziedzic. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-public extension InstanceGenerator {
+public extension InstancesCalculator {
 	var axes: [(name: String, bounds:ClosedRange<CoordUnit>)] {
 		return space.axes.map({(name: $0.name, bounds: $0.bounds)})
 	}

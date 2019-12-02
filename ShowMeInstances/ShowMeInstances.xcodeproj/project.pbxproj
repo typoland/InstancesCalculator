@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B26E76722392D5760042A2EB /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E76712392D5760042A2EB /* CodeView.swift */; };
+		B272AAD02395C662001146E7 /* InstancesCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B272AACF2395C662001146E7 /* InstancesCalculator.framework */; };
+		B272AAD12395C662001146E7 /* InstancesCalculator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B272AACF2395C662001146E7 /* InstancesCalculator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B27A75B3235C52B9008D6B36 /* InstancesNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A75B2235C52B9008D6B36 /* InstancesNode.swift */; };
-		B27A75B9235C58FC008D6B36 /* InstancesGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */; };
-		B27A75BA235C58FC008D6B36 /* InstancesGenerator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B27A75BD235CBBF1008D6B36 /* SCNGeometry + drawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A75BC235CBBF1008D6B36 /* SCNGeometry + drawLine.swift */; };
 		B28AF850235657A900608F8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF84F235657A900608F8F /* AppDelegate.swift */; };
 		B28AF852235657AC00608F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28AF851235657AC00608F8F /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B27A75BA235C58FC008D6B36 /* InstancesGenerator.framework in Embed Frameworks */,
+				B272AAD12395C662001146E7 /* InstancesCalculator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		B26E76712392D5760042A2EB /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		B272AACF2395C662001146E7 /* InstancesCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InstancesCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27A75B2235C52B9008D6B36 /* InstancesNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancesNode.swift; sourceTree = "<group>"; };
 		B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InstancesGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27A75BC235CBBF1008D6B36 /* SCNGeometry + drawLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry + drawLine.swift"; sourceTree = "<group>"; };
@@ -67,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B27A75B9235C58FC008D6B36 /* InstancesGenerator.framework in Frameworks */,
+				B272AAD02395C662001146E7 /* InstancesCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B27A75B8235C58FC008D6B36 /* InstancesGenerator.framework */,
+				B272AACF2395C662001146E7 /* InstancesCalculator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

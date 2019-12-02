@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B28AF7B22355DF0800608F8F"
-               BuildableName = "InstancesGenerator.framework"
-               BlueprintName = "InstancesGenerator"
-               ReferencedContainer = "container:InstancesGenerator.xcodeproj">
+               BlueprintIdentifier = "B28AF8062356365D00608F8F"
+               BuildableName = "calculate_instances"
+               BlueprintName = "calculate_instances"
+               ReferencedContainer = "container:calculate_instances.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B28AF7BB2355DF0800608F8F"
-               BuildableName = "InstancesGeneratorTests.xctest"
-               BlueprintName = "InstancesGeneratorTests"
-               ReferencedContainer = "container:InstancesGenerator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -50,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B28AF8062356365D00608F8F"
+            BuildableName = "calculate_instances"
+            BlueprintName = "calculate_instances"
+            ReferencedContainer = "container:calculate_instances.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B28AF7B22355DF0800608F8F"
-            BuildableName = "InstancesGenerator.framework"
-            BlueprintName = "InstancesGenerator"
-            ReferencedContainer = "container:InstancesGenerator.xcodeproj">
+            BlueprintIdentifier = "B28AF8062356365D00608F8F"
+            BuildableName = "calculate_instances"
+            BlueprintName = "calculate_instances"
+            ReferencedContainer = "container:calculate_instances.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

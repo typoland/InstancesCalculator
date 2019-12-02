@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import InstancesGenerator
+@testable import InstancesCalculator
 
 class InstancesGeneratorTests: XCTestCase {
 //	var axisX = Axis(name: "X", bounds: 0.0...1.0)

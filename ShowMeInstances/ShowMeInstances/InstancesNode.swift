@@ -8,15 +8,15 @@
 
 import Foundation
 import SceneKit
-import InstancesGenerator
+import InstancesCalculator
 
 class InstancesNode:SCNNode {
 	typealias CoordUnit = Double
 	
-	var instanceGenerator: InstanceGenerator<CoordUnit>?
+	var instanceGenerator: InstancesCalculator<CoordUnit>?
 	init(with data: Data) throws {
 
-		self.instanceGenerator = try InstanceGenerator(from: data)
+		self.instanceGenerator = try InstancesCalculator(from: data)
 
 		super.init()
 		
@@ -36,7 +36,7 @@ class InstancesNode:SCNNode {
 	required init?(coder: NSCoder) {
 		print ("from coder \(coder)")
 		super.init()
-		instanceGenerator = InstanceGenerator<Double>.init(axes: ["width", "weight"], bounds: 0...1000)
+		instanceGenerator = InstancesCalculator<Double>.init(axes: ["width", "weight"], bounds: 0...1000)
 		
 	}
 	

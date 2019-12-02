@@ -1,6 +1,6 @@
 //
 //  Instance Generator. + initFromDesignSpace.swift
-//  InstancesGenerator
+//  InstancesCalculator
 //
 //  Created by Łukasz Dziedzic on 15/10/2019.
 //  Copyright © 2019 Łukasz Dziedzic. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension InstanceGenerator {
+extension InstancesCalculator {
 	/**
 	Inits Instance generator from **json** data. Json file has to have structure:
 	- parameter data: json data
@@ -58,7 +58,7 @@ extension InstanceGenerator {
 		let space = Space<CoordUnit>(axes: designspace.axes.map { impAxis in
 			let bounds = impAxis.designMinimum...impAxis.designMaximum
 			let newStyles = impAxis.axisInstances.map {
-				Space.Axis.AxisInstance(name: $0.name, values: $0.values.map { InstanceGenerator.convertToInternal(value: $0, bounds: bounds)})
+				Space.Axis.AxisInstance(name: $0.name, values: $0.values.map { InstancesCalculator.convertToInternal(value: $0, bounds: bounds)})
 			}
 			var axis = Space.Axis(name: impAxis.name, bounds: bounds , styles: newStyles)
 			if let dist = impAxis.distribution {

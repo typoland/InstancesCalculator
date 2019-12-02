@@ -1,6 +1,6 @@
 //
-//  InstanceGenerator.swift
-//  InstancesGenerator
+//  InstanceCalculator.swift
+//  InstancesCalculator
 //
 //  Created by Łukasz Dziedzic on 15/10/2019.
 //  Copyright © 2019 Łukasz Dziedzic. All rights reserved.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-var instancesCoordinatesChanged = Notification.Name(rawValue: "com.typolnd.InstanceGenerator.instancesCoordinatesChanged")
-var numberOfInstancesChanged = Notification.Name(rawValue: "com.typolnd.InstanceGenerator.numberOfInstancesChanged")
+var instancesCoordinatesChanged = Notification.Name(rawValue: "com.typolnd.InstancesCalculator.instancesCoordinatesChanged")
+var numberOfInstancesChanged = Notification.Name(rawValue: "com.typolnd.InstancesCalculator.numberOfInstancesChanged")
 
 
-public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable> {
+public class InstancesCalculator <CoordUnit: FloatingPoint & Encodable & Decodable> {
 	
 	//public typealias CoordUnit = Space.Axis.AxisInstance.CoordUnit
 	
@@ -67,7 +67,7 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 			
 		}
 		let internalValues = values.map { value in
-			 InstanceGenerator.convertToInternal(value: value, bounds: space.axes[axisIndex].bounds)
+			 InstancesCalculator.convertToInternal(value: value, bounds: space.axes[axisIndex].bounds)
 		}
 		
 		let style = Space.Axis.AxisInstance(name: name, values: internalValues)
@@ -148,7 +148,7 @@ public class InstanceGenerator <CoordUnit: FloatingPoint & Encodable & Decodable
 		for style in space.instances {
 			let coordinates = (0..<style.coordinates.count).map {
 				(space.axes[$0].name,
-				 InstanceGenerator.convertfromInternal(
+				 InstancesCalculator.convertfromInternal(
 					value: style.coordinates[$0],
 					bounds: space.axes[$0].bounds) )
 			}
