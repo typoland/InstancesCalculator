@@ -12,7 +12,7 @@ Two dimensional font has four masters: ThinCondensed, BlackCondensed, ThinExtend
 Let's say that generated instance ThinCondensed sholud be wider, BlackCondensed a little bit lighter, ThinExtended darker, and BlackExtedned not so wide and lighter. But what with restof instances? Which coordinates will be for NarrowBold? We need to set values for Narrow style at Width axis, separate for Light and Black edge and values for Weight axis, separate for Condensed and Extended edges. For two dimensions it's easy: it's just a point, where lines cross.
 ![](./exp01.png)
 
-Fore more than two dimensions it bacame a little more complicated. First, each axis has `2^(n-1)` edges, where `n` is equal to number of dimensions. Second, lines in more then two dimensions doesn't like to cross each other. Sometimes they do, but in most cases don't. But it's possible to find common point of each dimension hyperplane (?) So, this tool does.
+Fore more than two dimensions it bacame a little more complicated. First, each axis has `2^(n-1)` edges, where `n` is equal to number of dimensions. Second, lines in more then two dimensions doesn't like to cross each other. Sometimes they do, but in most cases don't. But it's possible to find common point of each dimension hyperbolic paraboloids. So, this tool does.
 
 ![](./exp02.png)
 
@@ -72,6 +72,10 @@ Input is json file:
 }
 ```
 I think it is self-explaing. Except experimental parameter `distribution` which causes exponential disribution of styles. Only first and last values counts.
+
+if you use commadline siply feed `instaces_calculator` by `somejson.json` file.
+If you prefer UI, use `ShowMeInstances` app which is pretty experimental. But first prepare `json` in some editor. This app allwos you to change numbers, copy and delete parts of code, but has some limitations... (i.e you cannot add line. Why not?) 
+
 __Important__: number of values in `axisInstance` must be equal `2^(dimensions - 1)`; 2 for 2-dimensional, 4 for 3-dimensional, 8 for 4-dimensional designspace.
 #### Rendering of distributed, not distorted 2d designspace
 ![](./exp03.png)
