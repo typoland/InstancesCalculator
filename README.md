@@ -18,7 +18,8 @@ Fore more than two dimensions it bacame a little more complicated. First, each a
 
 ## Usage
 Input is json file:
-```{
+```json
+{
 	"axes":[
 		{
 			"name":"weight",
