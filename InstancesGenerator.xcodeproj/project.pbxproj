@@ -56,7 +56,7 @@
 /* Begin PBXFileReference section */
 		B2671DA0235E07960063E9C7 /* exp02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp02.png; sourceTree = "<group>"; };
 		B2671DA1235E07960063E9C7 /* exp01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp01.png; sourceTree = "<group>"; };
-		B27A75B4235C5855008D6B36 /* InstanceGenerator + axes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstanceGenerator + axes.swift"; sourceTree = "<group>"; };
+		B27A75B4235C5855008D6B36 /* InstanceGenerator + axes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "InstanceGenerator + axes.swift"; path = "../insgen/insgen/InstanceGenerator + axes.swift"; sourceTree = "<group>"; };
 		B27A75BE235DC65C008D6B36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B28AF7B32355DF0800608F8F /* InstancesGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InstancesGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28AF7B62355DF0800608F8F /* InstancesGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstancesGenerator.h; sourceTree = "<group>"; };
@@ -142,16 +142,16 @@
 				B28AF81E2356448000608F8F /* Instance Generator. + initFromDesignSpace.swift */,
 				B28AF82023564B5700608F8F /* InstanceGenerator exportJson.swift */,
 				B28AF7CF2355DF2B00608F8F /* Space.swift */,
-				B28AF7D22355DF2B00608F8F /* Axis.swift */,
-				B29A99D823573A6000D569EA /* Axis + distribution.swift */,
 				B28AF7E32355DF8100608F8F /* Space + instances.swift */,
 				B28AF7E52355E29300608F8F /* Space + defineEdges.swift */,
+				B28AF7D02355DF2B00608F8F /* Space + Edges.swift */,
+				B28AF7D22355DF2B00608F8F /* Axis.swift */,
+				B29A99D823573A6000D569EA /* Axis + distribution.swift */,
 				B28AF7D72355DF2B00608F8F /* cross.swift */,
 				B28AF7D42355DF2B00608F8F /* Edge.swift */,
 				B28AF7D62355DF2B00608F8F /* Int + Extensions.swift */,
 				B28AF7D52355DF2B00608F8F /* Pair.swift */,
 				B28AF7D32355DF2B00608F8F /* Plane.swift */,
-				B28AF7D02355DF2B00608F8F /* Space + Edges.swift */,
 				B28AF7CE2355DF2B00608F8F /* Style.swift */,
 				B28AF7D12355DF2B00608F8F /* Type aliases.swift */,
 				B28AF7B62355DF0800608F8F /* InstancesGenerator.h */,
@@ -488,7 +488,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.InstancesGenerator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.InstancesCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -517,7 +517,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.InstancesGenerator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.typoland.InstancesCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

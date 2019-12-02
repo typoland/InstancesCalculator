@@ -52,7 +52,7 @@ if  CommandLine.argc == 3 {
 	do {
 		let data = try Data(contentsOf: inputJsonFileURL)
 		print (data)
-		let ig = try InstanceGenerator(from: data)
+		let ig = try InstanceGenerator<Double>(from: data)
 		print (ig)
 		//ig.instances.forEach({print ($0)})
 		try ig.exportJSON(to: outputJsonFileURL)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B26E76762395531A0042A2EB /* InstanceGenerator + axes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E7675239553190042A2EB /* InstanceGenerator + axes.swift */; };
 		B28AF80B2356365D00608F8F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF80A2356365D00608F8F /* main.swift */; };
 		B28AF81D235643E900608F8F /* Space + initFromDesignspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF81C235643E900608F8F /* Space + initFromDesignspace.swift */; };
 		B28AF833235651D300608F8F /* Instance Generator. + initFromDesignSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF823235651D200608F8F /* Instance Generator. + initFromDesignSpace.swift */; };
@@ -19,7 +20,6 @@
 		B28AF83A235651D300608F8F /* InstanceGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82A235651D200608F8F /* InstanceGenerator.swift */; };
 		B28AF83B235651D300608F8F /* Type aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82B235651D200608F8F /* Type aliases.swift */; };
 		B28AF83C235651D300608F8F /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82C235651D200608F8F /* Space.swift */; };
-		B28AF83D235651D300608F8F /* Space + combineCoords.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82D235651D200608F8F /* Space + combineCoords.swift */; };
 		B28AF83E235651D300608F8F /* cross.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82E235651D200608F8F /* cross.swift */; };
 		B28AF83F235651D300608F8F /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF82F235651D200608F8F /* Plane.swift */; };
 		B28AF840235651D300608F8F /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF830235651D300608F8F /* Pair.swift */; };
@@ -41,7 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B28AF8072356365D00608F8F /* insgen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = insgen; sourceTree = BUILT_PRODUCTS_DIR; };
+		B26E7675239553190042A2EB /* InstanceGenerator + axes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InstanceGenerator + axes.swift"; sourceTree = "<group>"; };
+		B28AF8072356365D00608F8F /* calculate_instances */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = calculate_instances; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28AF80A2356365D00608F8F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B28AF818235643B700608F8F /* InstancesGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InstancesGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28AF81C235643E900608F8F /* Space + initFromDesignspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Space + initFromDesignspace.swift"; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		B28AF82A235651D200608F8F /* InstanceGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstanceGenerator.swift; path = ../../InstancesGenerator/InstanceGenerator.swift; sourceTree = "<group>"; };
 		B28AF82B235651D200608F8F /* Type aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Type aliases.swift"; path = "../../InstancesGenerator/Type aliases.swift"; sourceTree = "<group>"; };
 		B28AF82C235651D200608F8F /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Space.swift; path = ../../InstancesGenerator/Space.swift; sourceTree = "<group>"; };
-		B28AF82D235651D200608F8F /* Space + combineCoords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Space + combineCoords.swift"; path = "../../InstancesGenerator/Space + combineCoords.swift"; sourceTree = "<group>"; };
 		B28AF82E235651D200608F8F /* cross.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = cross.swift; path = ../../InstancesGenerator/cross.swift; sourceTree = "<group>"; };
 		B28AF82F235651D200608F8F /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Plane.swift; path = ../../InstancesGenerator/Plane.swift; sourceTree = "<group>"; };
 		B28AF830235651D300608F8F /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pair.swift; path = ../../InstancesGenerator/Pair.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		B28AF8082356365D00608F8F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B28AF8072356365D00608F8F /* insgen */,
+				B28AF8072356365D00608F8F /* calculate_instances */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,13 +114,13 @@
 			isa = PBXGroup;
 			children = (
 				B28AF82A235651D200608F8F /* InstanceGenerator.swift */,
+				B26E7675239553190042A2EB /* InstanceGenerator + axes.swift */,
 				B28AF823235651D200608F8F /* Instance Generator. + initFromDesignSpace.swift */,
 				B28AF824235651D200608F8F /* InstanceGenerator exportJson.swift */,
 				B28AF82C235651D200608F8F /* Space.swift */,
 				B28AF829235651D200608F8F /* Axis.swift */,
 				B29A99DB23574E1A00D569EA /* Axis + distribution.swift */,
 				B28AF828235651D200608F8F /* Space + instances.swift */,
-				B28AF82D235651D200608F8F /* Space + combineCoords.swift */,
 				B28AF831235651D300608F8F /* Space + defineEdges.swift */,
 				B28AF82E235651D200608F8F /* cross.swift */,
 				B28AF832235651D300608F8F /* Edge.swift */,
@@ -137,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B28AF8062356365D00608F8F /* insgen */ = {
+		B28AF8062356365D00608F8F /* calculate_instances */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B28AF80E2356365D00608F8F /* Build configuration list for PBXNativeTarget "insgen" */;
+			buildConfigurationList = B28AF80E2356365D00608F8F /* Build configuration list for PBXNativeTarget "calculate_instances" */;
 			buildPhases = (
 				B28AF8032356365D00608F8F /* Sources */,
 				B28AF8042356365D00608F8F /* Frameworks */,
@@ -149,9 +149,9 @@
 			);
 			dependencies = (
 			);
-			name = insgen;
+			name = calculate_instances;
 			productName = insgen;
-			productReference = B28AF8072356365D00608F8F /* insgen */;
+			productReference = B28AF8072356365D00608F8F /* calculate_instances */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B28AF8062356365D00608F8F /* insgen */,
+				B28AF8062356365D00608F8F /* calculate_instances */,
 			);
 		};
 /* End PBXProject section */
@@ -200,8 +200,8 @@
 				B28AF83C235651D300608F8F /* Space.swift in Sources */,
 				B28AF838235651D300608F8F /* Space + instances.swift in Sources */,
 				B28AF836235651D300608F8F /* Style.swift in Sources */,
+				B26E76762395531A0042A2EB /* InstanceGenerator + axes.swift in Sources */,
 				B28AF842235651D300608F8F /* Edge.swift in Sources */,
-				B28AF83D235651D300608F8F /* Space + combineCoords.swift in Sources */,
 				B28AF83F235651D300608F8F /* Plane.swift in Sources */,
 				B28AF835235651D300608F8F /* Space + Edges.swift in Sources */,
 				B28AF834235651D300608F8F /* InstanceGenerator exportJson.swift in Sources */,
@@ -368,7 +368,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B28AF80E2356365D00608F8F /* Build configuration list for PBXNativeTarget "insgen" */ = {
+		B28AF80E2356365D00608F8F /* Build configuration list for PBXNativeTarget "calculate_instances" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B28AF80F2356365D00608F8F /* Debug */,
