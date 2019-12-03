@@ -9,6 +9,7 @@
 import Foundation
 import SceneKit
 
+var blackMaterial = SCNMaterial()
 
 class Instance3D: SCNNode {
 	
@@ -18,12 +19,16 @@ class Instance3D: SCNNode {
 		
 		let box = SCNSphere(radius: 0.1)
 		//let box = SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0)
-		//let text = SCNText(string: name.replacingOccurrences(of: " ", with: "\n"), extrusionDepth: 0)
-		//text.font = NSFont.boldSystemFont(ofSize: 12)
-		//let node = SCNNode(geometry: text)
-		//node.scale = SCNVector3(x: 0.003, y: 0.003, z: 0.003)
-		//node.position = SCNVector3(x: 0.07, y:-0.10, z: 0)
-		//self.addChildNode(node)
+		
+		let text = SCNText(string: name.replacingOccurrences(of: " ", with: "\n"), extrusionDepth: 0)
+		text.font = NSFont.boldSystemFont(ofSize: 12)
+		text.materials = [blackMaterial]
+		let node = SCNNode(geometry: text)
+		node.scale = SCNVector3(x: 0.008, y: 0.008, z: 0.008)
+		node.position = SCNVector3(x: 0.1, y:-0.10, z: 0)
+		self.addChildNode(node)
+		
+		
 		let material = SCNMaterial()
 		material.diffuse.contents = color
 		material.emission.contents = color

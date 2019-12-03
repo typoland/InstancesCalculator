@@ -20,6 +20,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextDelegate {
 	
 	
 	@objc var designSpaceText: String = ""
+	var time:Double = 0 {
+		willSet {willChangeValue(for: \.timeString)}
+		didSet {didChangeValue(for: \.timeString)}
+	}
+	@objc var timeString: String {
+		return "\(time) s."
+	}
 	@objc var parserErrorString: String? = nil {
 		willSet {willChangeValue(for: \.instancesText)}
 		didSet {didChangeValue(for: \.instancesText)}
@@ -34,7 +41,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextDelegate {
 		let scene = SCNScene(named: "basicScene.scn")
 		view3D.allowsCameraControl = true
 		view3D.scene = scene
+		blackMaterial.isDoubleSided = true
+		blackMaterial.diffuse.contents = CGColor.black
+		NotificationCenter.default.addObserver(self, selector: #selector(instancesReady(_:)), name: .instancesReady, object: nil)
 
+	}
+	@objc func instancesReady(_ notification: Notification) {
+		if let time = notification.object as? Double {
+			self.time = time
+		}
 	}
 	
 	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

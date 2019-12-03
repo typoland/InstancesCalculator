@@ -10,11 +10,11 @@ But in this second approach setting coordinates for particular styles are became
 ## Let's try an example
 Two dimensional font has four masters: ThinCondensed, BlackCondensed, ThinExtended and BlackExtended.
 Let's say that generated instance ThinCondensed sholud be wider, BlackCondensed a little bit lighter, ThinExtended darker, and BlackExtedned not so wide and lighter. But what with restof instances? Which coordinates will be for NarrowBold? We need to set values for Narrow style at Width axis, separate for Light and Black edge and values for Weight axis, separate for Condensed and Extended edges. For two dimensions it's easy: it's just a point, where lines cross.
-![](./exp01.png)
+![](./pictures/exp01.png)
 
 Fore more than two dimensions it bacame a little more complicated. First, each axis has `2^(n-1)` edges, where `n` is equal to number of dimensions. Second, lines in more then two dimensions doesn't like to cross each other. Sometimes they do, but in most cases don't. But it's possible to find common point of each dimension hyperbolic paraboloids. So, this tool does.
 
-![](./exp02.png)
+![](./pictures/exp02.png)
 
 ## Usage
 Input is json file:
@@ -78,16 +78,18 @@ If you prefer UI, use `ShowMeInstances` app which is pretty experimental. But fi
 
 __Important__: number of values in `axisInstance` must be equal `2^(dimensions - 1)`; 2 for 2-dimensional, 4 for 3-dimensional, 8 for 4-dimensional designspace.
 #### Rendering of distributed, not distorted 2d designspace
-![](./exp03.png)
+![](./pictures/exp03.png)
 #### Rendering of distributed, distorted 2d designspace
-![](./exp03a.png)
+![](./pictures/exp03a.png)
+#### Rendering of manually set 2d designspace
+![](./pictures/exp03b.png)
 #### Rendering of distorted 3d designspace
-![](./exp04.png)
+![](./pictures/exp04.png)
 #### Rendering of distorted 4d designspace. 4th dimension is represented by white balls
-![](./exp05.png)
+![](./pictures/exp05.png)
 #### Rendering of distorted 5d designspace. 4th dimension is represented by blue color and 5th dimension is represented brightness
-![](./exp06.png)
+![](./pictures/exp06.png)
 #### Rendering of distorted 6d designspace. 4th dimension is represented by hue,  5th by saturation, 6th by brightness.
-![](./exp07.png)
+![](./pictures/exp07.png)
 
 

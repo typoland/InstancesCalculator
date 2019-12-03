@@ -21,7 +21,7 @@ public enum SpaceError: Error, LocalizedError {
 		expected: Int,
 		found: Int)
 	
-	public var errorDescription: String {
+	public var errorDescription: String? {
 		switch self {
 		case .axisNotExist(let name):
 			return NSLocalizedString("Axis \"\(name)\" does not exist", comment: "Space error")

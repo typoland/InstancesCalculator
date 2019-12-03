@@ -24,6 +24,6 @@ public extension InstancesCalculator {
 	func setValue(_ value:CoordUnit, of axisName:String, for styleName: String, in domainIndex: Int) {
 		guard let axisIndex = axes.firstIndex(where: {$0.name == axisName}) else {return}
 		space.axes[axisIndex].setValue(value, of: styleName, in: domainIndex)
-		NotificationCenter.default.post(name: instancesCoordinatesChanged, object: self)
+		NotificationCenter.default.post(name: .instancesCoordinatesChanged, object: self)
 	}
 }

@@ -8,14 +8,19 @@
 
 import Foundation
 
-var instancesCoordinatesChanged = Notification.Name(rawValue: "com.typolnd.InstancesCalculator.instancesCoordinatesChanged")
-var numberOfInstancesChanged = Notification.Name(rawValue: "com.typolnd.InstancesCalculator.numberOfInstancesChanged")
+public extension Notification.Name {
+
+	static var instancesCoordinatesChanged = Notification.Name(rawValue: "com.typolnd.InstancesCalculator.instancesCoordinatesChanged")
+	static var numberOfInstancesChanged = Notification.Name(rawValue: "com.typolnd.InstancesCalculator.numberOfInstancesChanged")
+
+	static var instancesReady = Notification.Name(rawValue: "com.typolnd.InstancesCalculator.instancesReady")
+}
 
 
 public class InstancesCalculator <CoordUnit: FloatingPoint & Encodable & Decodable> {
 	
 	//public typealias CoordUnit = Space.Axis.AxisInstance.CoordUnit
-	
+
 	
 	
 	var space: Space<CoordUnit> {
@@ -73,7 +78,7 @@ public class InstancesCalculator <CoordUnit: FloatingPoint & Encodable & Decodab
 		let style = Space.Axis.AxisInstance(name: name, values: internalValues)
 		space.axes[axisIndex].styles.append(style)
 
-		NotificationCenter.default.post(name: numberOfInstancesChanged, object: axes)
+		NotificationCenter.default.post(name: .numberOfInstancesChanged, object: axes)
 		
 	}
 	/**
@@ -92,7 +97,7 @@ public class InstancesCalculator <CoordUnit: FloatingPoint & Encodable & Decodab
 		}
 		space.axes[axisIndex].styles.remove(at: styleIndex)
 
-		NotificationCenter.default.post(name: numberOfInstancesChanged, object: axes)
+		NotificationCenter.default.post(name: .numberOfInstancesChanged, object: axes)
 	}
 	/**
 	Adds **Axis**. Values of every *Style* in other axes will be extented by adding its content to itself.
@@ -106,7 +111,7 @@ public class InstancesCalculator <CoordUnit: FloatingPoint & Encodable & Decodab
 			space.axes[axisNr].addValuesForNewAxis()
 		}
 
-		NotificationCenter.default.post(name: numberOfInstancesChanged, object:axes)
+		NotificationCenter.default.post(name: .numberOfInstancesChanged, object:axes)
 	}
 	/**
 	Removes last **Axis**. Values of every *Style* in other axes will be truncated in half.
@@ -117,7 +122,7 @@ public class InstancesCalculator <CoordUnit: FloatingPoint & Encodable & Decodab
 			space.axes[axisNr].removeValuesForLastAxis()
 		}
 		
-		NotificationCenter.default.post(name: numberOfInstancesChanged, object:axes)
+		NotificationCenter.default.post(name: .numberOfInstancesChanged, object:axes)
 	}
 	/**
 	Converts values from value between *bounds* to value between 0...1
@@ -156,7 +161,8 @@ public class InstancesCalculator <CoordUnit: FloatingPoint & Encodable & Decodab
 			result.append((instanceName: style.name, coordinates:coordinates))
 		}
 		let time  =  Date().timeIntervalSince(start)//DateInterval(start: start, end: Date())
-		print ( "It took \(time) seconds to generate \(result.count) instances" )
+		NotificationCenter.default.post(name: .instancesReady, object: time)
+		//print ( "It took \(time) seconds to generate \(result.count) instances" )
 			_instances = result
 		return result
 			}
