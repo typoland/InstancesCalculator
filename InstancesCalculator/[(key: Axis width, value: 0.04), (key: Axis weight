@@ -1,0 +1,25 @@
+[(key: Axis width, value: 0.04), (key: Axis weight, value: 0.25)], 
+[(key: Axis width, value: 0.04), (key: Axis weight, value: 0.25)], 
+[(key: Axis width, value: 0.04), (key: Axis contrast, value: 0.72)], 
+[(key: Axis width, value: 0.04), (key: Axis contrast, value: 0.72)], 
+[(key: Axis weight, value: 0.25), (key: Axis contrast, value: 0.72)], 
+[(key: Axis weight, value: 0.25), (key: Axis contrast, value: 0.72)]
+
+
+
+[(key: Axis width, value: 0.15000000000000002), (key: Axis weight, value: 0.25)], 
+[(key: Axis width, value: 0.3), (key: Axis weight, value: 0.25)], 
+[(key: Axis width, value: 0.244), (key: Axis contrast, value: 0.72)], 
+[(key: Axis width, value: 0.3), (key: Axis contrast, value: 0.72)], 
+[(key: Axis weight, value: 0.25), (key: Axis contrast, value: 0.72)], 
+[(key: Axis weight, value: 0.25), (key: Axis contrast, value: 0.72)]]>
+
+
+[(key: Axis width, value: 0.258), (key: Axis weight, value: 0.25), (key: Axis contrast, value: 0.72)], 
+[(key: Axis width, value: 0.3), (key: Axis weight, value: 0.25), (key: Axis contrast, value: 0.72)], 
+[(key: Axis width, value: 0.258), (key: Axis weight, value: 0.25), (key: Axis x-Height, value: 0.72)], 
+[(key: Axis width, value: 0.3), (key: Axis weight, value: 0.25), (key: Axis x-Height, value: 0.72)], 
+[(key: Axis width, value: 0.28432), (key: Axis contrast, value: 0.72), (key: Axis x-Height, value: 0.72)], 
+[(key: Axis width, value: 0.3), (key: Axis contrast, value: 0.72), (key: Axis x-Height, value: 0.72)], 
+[(key: Axis weight, value: 0.25), (key: Axis contrast, value: 0.72), (key: Axis x-Height, value: 0.72)], 
+[(key: Axis weight, value: 0.25), (key: Axis contrast, value: 0.72), (key: Axis x-Height, value: 0.72)]]>

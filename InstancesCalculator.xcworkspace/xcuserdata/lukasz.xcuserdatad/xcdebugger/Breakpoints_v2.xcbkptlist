@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "54B88A79-38C1-42C5-AF5B-DA72E297B621"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5FA6E3F9-2785-4F09-90CC-0B33DD588578"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstancesGenerator/InstanceGenerator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "instances"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "5FA6E3F9-2785-4F09-90CC-0B33DD588578 - e4f8d94d2a936ba4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; (Swift.String, A) in InstancesGenerator.InstanceGenerator.instances.getter : Swift.Array&lt;(instanceName: Swift.String, coordinates: Swift.Array&lt;(axis: Swift.String, value: A)&gt;)&gt;"
+                  moduleName = "InstancesGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/XCode/InstancesGenerator/InstancesGenerator/InstanceGenerator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "1171">
+               </Location>
+               <Location
+                  uuid = "5FA6E3F9-2785-4F09-90CC-0B33DD588578 - 57208120c2873dd5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "InstancesGenerator.InstanceGenerator.instances.getter : Swift.Array&lt;(instanceName: Swift.String, coordinates: Swift.Array&lt;(axis: Swift.String, value: A)&gt;)&gt;"
+                  moduleName = "InstancesGenerator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lukasz/Documents/XCode/InstancesGenerator/InstancesGenerator/InstanceGenerator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "211">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

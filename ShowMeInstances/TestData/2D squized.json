@@ -1,0 +1,65 @@
+{
+	"axes":[
+		{
+			"name":"weight",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"distribution":1.2,
+			"axisInstances":[
+				{
+				"name":"Thin",
+				"values": [-65, 100]
+				},
+				{
+				"name":"Light",
+				"values": [250, 100]
+				},
+				{
+				"name":"Book",
+				"values": [250, 100]
+				},
+				{
+				"name":"Normal",
+				"values": [450, 300]
+				},
+				{
+				"name":"Medium",
+				"values": [600, 550]
+				},
+				{
+				"name":"Bold",
+				"values": [600, 550]
+				},
+				{
+				"name":"Black",
+				"values": [700, 950]
+				},
+			]
+
+		},
+		{
+			"name":"width",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"distribution":1.2,
+			"axisInstances":[
+				{
+				"name":"Condensed",
+				"values": [400, 0]
+				},
+				{
+				"name":"Narrow",
+				"values": [350, 300]
+				},
+				{
+				"name":"Regular",
+				"values": [650, 600]
+				},
+				{
+				"name":"Wide",
+				"values": [1000, 850]
+				}
+			]
+		}
+	]
+}

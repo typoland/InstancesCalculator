@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:/Users/lukasz/Documents/XCode/InstancesCalculator/insgen/calculate_instances.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:InstancesCalculator.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ShowMeInstances/ShowMeInstances.xcodeproj">
+   </FileRef>
+</Workspace>

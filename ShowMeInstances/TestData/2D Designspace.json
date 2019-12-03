@@ -1,0 +1,51 @@
+{
+	"axes":[
+		{
+			"name":"weight",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"Book",
+				"values": [250, 100]
+				},
+				{
+				"name":"Normal",
+				"values": [450, 300]
+				},
+				{
+				"name":"Medium",
+				"values": [600, 550]
+				},
+				{
+				"name":"Bold",
+				"values": [900, 950]
+				}
+			]
+
+		},
+		{
+			"name":"width",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"Condensed",
+				"values": [100, 50]
+				},
+				{
+				"name":"Narrow",
+				"values": [350, 300]
+				},
+				{
+				"name":"Regular",
+				"values": [650, 600]
+				},
+				{
+				"name":"Wide",
+				"values": [950, 950]
+				}
+			]
+		}
+	]
+}
