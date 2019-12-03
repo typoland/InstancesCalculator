@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2671DA2235E07960063E9C7 /* exp02.png in Resources */ = {isa = PBXBuildFile; fileRef = B2671DA0235E07960063E9C7 /* exp02.png */; };
-		B2671DA3235E07960063E9C7 /* exp01.png in Resources */ = {isa = PBXBuildFile; fileRef = B2671DA1235E07960063E9C7 /* exp01.png */; };
 		B26E767D2395AE990042A2EB /* Space + isDataOK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E767C2395AE990042A2EB /* Space + isDataOK.swift */; };
 		B26E76822395BA530042A2EB /* SpaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E76812395BA530042A2EB /* SpaceError.swift */; };
 		B272AAFB2395C93D001146E7 /* InstancesCalculator + axes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272AAFA2395C93D001146E7 /* InstancesCalculator + axes.swift */; };
@@ -266,8 +264,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2671DA2235E07960063E9C7 /* exp02.png in Resources */,
-				B2671DA3235E07960063E9C7 /* exp01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

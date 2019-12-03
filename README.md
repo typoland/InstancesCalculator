@@ -80,16 +80,16 @@ __Important__: number of values in `axisInstance` must be equal `2^(dimensions -
 #### Rendering of distributed, not distorted 2d designspace
 ![](./pictures/exp03.png)
 #### Rendering of distributed, distorted 2d designspace
-![](./pictures/exp03a.png)
+![](Pictures/exp03a.png)
 #### Rendering of manually set 2d designspace
-![](./pictures/exp03b.png)
+![](Pictures/exp03b.png)
 #### Rendering of distorted 3d designspace
-![](./pictures/exp04.png)
+![](Pictures/exp04.png)
 #### Rendering of distorted 4d designspace. 4th dimension is represented by white balls
-![](./pictures/exp05.png)
+![](Pictures/exp05.png)
 #### Rendering of distorted 5d designspace. 4th dimension is represented by blue color and 5th dimension is represented brightness
-![](./pictures/exp06.png)
+![](Pictures/exp06.png)
 #### Rendering of distorted 6d designspace. 4th dimension is represented by hue,  5th by saturation, 6th by brightness.
-![](./pictures/exp07.png)
+![](Pictures/exp07.png)
 
 
