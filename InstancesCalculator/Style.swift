@@ -12,9 +12,7 @@ struct IGStyle<T:FloatingPoint & Codable> : AxisInstanceProtocol {
 
 
 extension AxisInstanceProtocol {
-	
 
-	
 	mutating func addValuesForNewAxis() {
 		values = values+values
 	}

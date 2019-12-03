@@ -20,22 +20,3 @@ func ❖ <T:FloatingPoint>(lhs: Pair<T>, rhs: Pair<T>) -> Pair<T> {
 	let (a,b) = (lhs.a, lhs.b) ❖ (rhs.a, rhs.b)
 	return Pair(a: a, b: b)
 }
-
-//
-//func crossEdge (x1:String,
-//				x2:String,
-//				y1:String,
-//				y2:String) -> (String, String) {
-//	print ("counting: \(x1)\(x2)❖\(y1)\(y2)")
-//	return ("\(x1)\(x2)","\(y1)\(y2)")
-//}
-//public func ❖ (lhs:(String,String), rhs:(String,String)) -> (String,String) {
-//	return crossEdge (x1: lhs.0, x2: lhs.1, y1: rhs.0, y2: rhs.1)
-//}
-
-//
-//public func ❖ (lhs: Pair<String>, rhs: Pair<String>) -> Pair<String> {
-//	print ("Pair ", terminator:"")
-//	let (a,b) = (lhs.a, lhs.b) ❖ (rhs.a, rhs.b)
-//	return Pair(a: a, b: b)
-//}

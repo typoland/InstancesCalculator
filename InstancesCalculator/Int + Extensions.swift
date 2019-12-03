@@ -13,9 +13,8 @@ public func <<> (lhs: Int, rhs:(size: Int, bits: Int)) -> Int {
 	return lhs.rotate(size: rhs.size, bits: rhs.bits)
 }
 
-/**
-c-like mod, no negative result
-*/
+
+///c-like mod, no negative result
 public func %% (_ a: Int, _ n: Int) -> Int {
 	precondition(n > 0, "modulus must be positive")
 	let r = a % n

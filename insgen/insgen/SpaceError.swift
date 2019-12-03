@@ -28,7 +28,7 @@ public enum SpaceError: Error, LocalizedError {
 		case .styleNotExist(let styleName, let axisName):
 			return NSLocalizedString("Axis \"\(axisName)\" does not have style \"\(styleName)\"", comment: "Space error")
 		case .wrongValuesNumber(let styleName, let axisName, let expected, let found):
-			return NSLocalizedString("Style \"\(styleName)\" in axis \"\(axisName)\" have (\(found) values insead of \(expected)", comment: "Space error")
+			return NSLocalizedString("Style \"\(styleName)\" in axis \"\(axisName)\" have \(found) values instead of \(expected)", comment: "Space error")
 		}
 	}
 }
