@@ -1,13 +1,10 @@
 import Foundation
+protocol EdgeProtocol {
+	var from:Int {get set}
+	var to:Int {get set}
+}
 
-struct Edge: CustomStringConvertible {
-	var from:Int
-	var to:Int
-	init(from: Int, to: Int) {
-		self.from = from
-		self.to = to
-	}
-	
+extension EdgeProtocol {
 	var axisNr: Int {
 		return (from ^ to).log2!
 	}
@@ -21,4 +18,15 @@ struct Edge: CustomStringConvertible {
 	var description:String {
 		return "\(from)⟷\(to)"
 	}
+}
+
+
+struct Edge: EdgeProtocol, CustomStringConvertible {
+	var from:Int
+	var to:Int
+	init(from: Int, to: Int) {
+		self.from = from
+		self.to = to
+	}
+	
 }

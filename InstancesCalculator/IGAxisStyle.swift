@@ -9,3 +9,5 @@ struct IGAxisStyle<T:FloatingPoint & Codable> : AxisInstanceProtocol {
 		self.values = values
 	}
 }
+
+

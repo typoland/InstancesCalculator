@@ -1,7 +1,7 @@
-import Foundation
-
-extension String {
-	static var zero: String {
-		return ""
-	}
-}
+//import Foundation
+//
+//extension String {
+//	static var zero: String {
+//		return ""
+//	}
+//}

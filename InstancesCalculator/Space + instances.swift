@@ -92,7 +92,7 @@ extension SpaceProtocol {
 		
 		var result:[(name:String, coordinates:[Axis.AxisInstance.CoordUnit])] = []
 		
-		let planes = definePlanes(egdes: edges)
+		let planes = Plane.definePlanes(for: edges)
 		
 		for stylesIndexes in stylesIndexList {
 			var name = ""

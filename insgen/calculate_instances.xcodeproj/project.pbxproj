@@ -14,7 +14,7 @@
 		B20930EB2395F27E0088301F /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930D82395F27D0088301F /* Pair.swift */; };
 		B20930EC2395F27E0088301F /* Axis + distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930D92395F27E0088301F /* Axis + distribution.swift */; };
 		B20930ED2395F27E0088301F /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930DA2395F27E0088301F /* Axis.swift */; };
-		B20930EE2395F27E0088301F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930DB2395F27E0088301F /* Style.swift */; };
+		B20930EE2395F27E0088301F /* IGAxisStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930DB2395F27E0088301F /* IGAxisStyle.swift */; };
 		B20930EF2395F27E0088301F /* SpaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930DC2395F27E0088301F /* SpaceError.swift */; };
 		B20930F02395F27E0088301F /* Space + isDataOK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930DD2395F27E0088301F /* Space + isDataOK.swift */; };
 		B20930F12395F27E0088301F /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930DE2395F27E0088301F /* Edge.swift */; };
@@ -50,7 +50,7 @@
 		B20930D82395F27D0088301F /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		B20930D92395F27E0088301F /* Axis + distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Axis + distribution.swift"; path = "insgen/Axis + distribution.swift"; sourceTree = SOURCE_ROOT; };
 		B20930DA2395F27E0088301F /* Axis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
-		B20930DB2395F27E0088301F /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		B20930DB2395F27E0088301F /* IGAxisStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGAxisStyle.swift; sourceTree = "<group>"; };
 		B20930DC2395F27E0088301F /* SpaceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpaceError.swift; path = insgen/SpaceError.swift; sourceTree = SOURCE_ROOT; };
 		B20930DD2395F27E0088301F /* Space + isDataOK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Space + isDataOK.swift"; path = "insgen/Space + isDataOK.swift"; sourceTree = SOURCE_ROOT; };
 		B20930DE2395F27E0088301F /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				B20930DF2395F27E0088301F /* Int + Extensions.swift */,
 				B20930D82395F27D0088301F /* Pair.swift */,
 				B20930E62395F27E0088301F /* Plane.swift */,
-				B20930DB2395F27E0088301F /* Style.swift */,
+				B20930DB2395F27E0088301F /* IGAxisStyle.swift */,
 				B20930D72395F27D0088301F /* Type aliases.swift */,
 			);
 			name = InstancesGeneratorFiles;
@@ -213,7 +213,7 @@
 				B20930F82395F27E0088301F /* cross.swift in Sources */,
 				B20930F32395F27E0088301F /* Space + Edges.swift in Sources */,
 				B20930E82395F27E0088301F /* Space.swift in Sources */,
-				B20930EE2395F27E0088301F /* Style.swift in Sources */,
+				B20930EE2395F27E0088301F /* IGAxisStyle.swift in Sources */,
 				B20930F02395F27E0088301F /* Space + isDataOK.swift in Sources */,
 				B20930F22395F27E0088301F /* Int + Extensions.swift in Sources */,
 				B20930EB2395F27E0088301F /* Pair.swift in Sources */,

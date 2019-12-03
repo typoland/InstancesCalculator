@@ -7,6 +7,17 @@ public protocol AxisInstanceProtocol {
 	init (name: String, values: [CoordUnit])
 }
 
+extension AxisInstanceProtocol {
+	
+	mutating func addValuesForNewAxis() {
+		values = values+values
+	}
+	
+	mutating func removeValuesForLastAxis() {
+		values = Array(values[0..<values.count/2])
+	}
+}
+
 public protocol AxisProtocol {
 	associatedtype AxisInstance: AxisInstanceProtocol
 	var name: String {get set}
@@ -40,7 +51,7 @@ extension SpaceProtocol {
 
 struct Space<CU:FloatingPoint & Codable>: SpaceProtocol {
 	
-	typealias Axis = IGAxis<IGStyle<CU>>
+	typealias Axis = IGAxis<IGAxisStyle<CU>>
 
 	var axes: [Axis] = []
 	init (axes:[Axis]) {
