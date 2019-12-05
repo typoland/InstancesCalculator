@@ -40,7 +40,7 @@ extension InstancesCalculator {
 	}
 	
 	struct JsonAxis<CU:FloatingPoint & Decodable>:Decodable {
-		var name: String
+		var shortName: String
 		var axisInstances: [JsonStyle<CU>]
 		var designMinimum: CU
 		var designMaximum: CU
@@ -60,7 +60,7 @@ extension InstancesCalculator {
 			let newStyles = impAxis.axisInstances.map {
 				Space.Axis.AxisInstance(name: $0.name, values: $0.values.map { InstancesCalculator.convertToInternal(value: $0, bounds: bounds)})
 			}
-			var axis = Space.Axis(name: impAxis.name, bounds: bounds , styles: newStyles)
+			var axis = Space.Axis(name: impAxis.shortName, bounds: bounds , styles: newStyles)
 			if let dist = impAxis.distribution {
 				axis.distribution = dist
 			}
