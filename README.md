@@ -127,13 +127,25 @@ In FontLab 7, all axis instances are orthogonal — the same value is used at th
 }
 ```
 
-The **axesmatrix** JSON syntax is a subset of the above syntax, but instead of one `value` element, it uses a list of `values`. Each `values` list lists the values of a given axis instance on each “edge” of the design space. (**to be explained**).
+The **axesmatrix** JSON syntax is a subset of the above syntax, but instead of one `value` element, it uses a list of `values`. Each `values` list lists the values of a given axis instance on each “edge” of the design space.
 
-__Important__: number of `values` in each `axisInstances` entry must be equal `2^(dimensions - 1)`; 2 for 2-dimensional, 4 for 3-dimensional, 8 for 4-dimensional designspace.
+For example: in 3 dimensional space  [weight, width, contrast], axis weight has four egdes:
+00 - minimum width ,  minimum contrast
+01 - minimum width, maximum contrast
+10 - maximum width, minimum contras
+11 - maximum width, maximum contrast
+Each edge has to have different `style value`. It's a main reason why I made this software.
 
-Only first and last values counts (**to be explained**).
+Each 4-dimensional space axis has 8 edges, so it needs 8 values
+Each 5-dimensional space axis has 15 edges, so it needs 8 values
 
-There can also be an experimental parameter `distribution`, which causes exponential disribution of styles.
+Order of values is a `binary zero for minimum, binary one for maximum` , bit order is the same as an order of defined axes. 
+
+__in short__: number of `values` in each `axisInstances` entry must be equal `2^(dimensions - 1)`; 2 for 2-dimensional, 4 for 3-dimensional, 8 for 4-dimensional designspace.
+
+if parameter `distribution` is used , values between first and last style could be set to whatever, they don't count, but array must have proper (1, 2, 4, 8, 16...) number of whatevers.
+
+There can also be an experimental parameter `distribution`, which causes exponential disribution of styles. `distribution = 1` makes linear spaces between styles .
 
 `calculate_instances` and `ShowMeInstances` takes this JSON as input:
 
@@ -144,6 +156,7 @@ There can also be an experimental parameter `distribution`, which causes exponen
 			"name":"weight",
 			"designMinimum":0,
 			"designMaximum":1000,
+			"distribution" : 1.2,
 			"axisInstances":[
 				{
 				"name":"Book",
@@ -151,11 +164,11 @@ There can also be an experimental parameter `distribution`, which causes exponen
 				},
 				{
 				"name":"(Regular)",
-				"values": [450, 300]
+				"values": [0, 0]
 				},
 				{
 				"name":"Medium",
-				"values": [600, 550]
+				"values": [0, 0]
 				},
 				{
 				"name":"Bold",
