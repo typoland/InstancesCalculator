@@ -154,7 +154,7 @@ There can also be an experimental parameter `distribution`, which causes exponen
 {
 	"axes":[
 		{
-			"name":"weight",
+			"shortName":"weight",
 			"designMinimum":0,
 			"designMaximum":1000,
 			"distribution" : 1.2,
@@ -341,7 +341,7 @@ You will get back an instances JSON:
 
 This is almost correct for FontLab 7.
 
-Open the `outfont.instances.json` file in a text editor, replace the axis names `weight` and `width` with the 2-letter codes `wt` and `wd`, and replace the regex ` *\(.*\) ` with nothing. Copy the contents to the clipboard. Then in FontLab 7, go to _Font Info > Instances_ and click the _Paste page_ button (3rd in the bottom-left). This will get the predefined instances into FontLab.
+Open the `outfont.instances.json` file in a text editor, replace the axis names `weight` and `width` with the 2-letter codes `wt` and `wd`. Copy the contents to the clipboard. Then in FontLab 7, go to _Font Info > Instances_ and click the _Paste page_ button (3rd in the bottom-left). This will get the predefined instances into FontLab.
 
 If you prefer UI, use `ShowMeInstances` app which is pretty experimental. But first prepare JSON in some editor. This app allwos you to change numbers, copy and delete parts of code, but has some limitations.
 
