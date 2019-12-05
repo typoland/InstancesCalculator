@@ -179,7 +179,7 @@ There can also be an experimental parameter `distribution`, which causes exponen
 
 		},
 		{
-			"name":"width",
+			"shortName":"width",
 			"designMinimum":0,
 			"designMaximum":1000,
 			"axisInstances":[
@@ -217,125 +217,137 @@ You will get back an instances JSON:
 
 ```json
 {
-	"instances": [
-		{
-			"name": "Book Condensed",
-			"tsn": "Book Condensed",
-			"location": {
-				"width": 88.16120906801008,
-				"weight": 236.7758186397985
-			}
-		},
-		{
-			"name": "Book Narrow",
-			"tsn": "Book Narrow",
-			"location": {
-				"width": 340.0503778337531,
-				"weight": 198.992443324937
-			}
-		},
-		{
-			"name": "Book (Normal)",
-			"tsn": "Book (Normal)",
-			"location": {
-				"width": 642.3173803526449,
-				"weight": 153.6523929471033
-			}
-		},
-		{
-			"name": "Book Wide",
-			"tsn": "Book Wide",
-			"location": { "width": 950, "weight": 107.5 }
-		},
-		{
-			"name": "(Regular) Condensed",
-			"tsn": "(Regular) Condensed",
-			"location": {
-				"width": 78.08564231738035,
-				"weight": 438.2871536523929
-			}
-		},
-		{
-			"name": "(Regular) Narrow",
-			"tsn": "(Regular) Narrow",
-			"location": {
-				"width": 329.9748110831234,
-				"weight": 400.5037783375314
-			}
-		},
-		{
-			"name": "(Regular) (Normal)",
-			"tsn": "(Regular) (Normal)",
-			"location": {
-				"width": 632.2418136020151,
-				"weight": 355.1637279596977
-			}
-		},
-		{
-			"name": "(Regular) Wide",
-			"tsn": "(Regular) Wide",
-			"location": { "width": 950, "weight": 307.5 }
-		},
-		{
-			"name": "Medium Condensed",
-			"tsn": "Medium Condensed",
-			"location": {
-				"width": 70.17543859649122,
-				"weight": 596.4912280701756
-			}
-		},
-		{
-			"name": "Medium Narrow",
-			"tsn": "Medium Narrow",
-			"location": {
-				"width": 320.8020050125313,
-				"weight": 583.9598997493734
-			}
-		},
-		{
-			"name": "Medium (Normal)",
-			"tsn": "Medium (Normal)",
-			"location": {
-				"width": 621.5538847117795,
-				"weight": 568.922305764411
-			}
-		},
-		{
-			"name": "Medium Wide",
-			"tsn": "Medium Wide",
-			"location": { "width": 950, "weight": 552.5 }
-		},
-		{
-			"name": "Bold Condensed",
-			"tsn": "Bold Condensed",
-			"location": {
-				"width": 54.86284289276809,
-				"weight": 902.7431421446385
-			}
-		},
-		{
-			"name": "Bold Narrow",
-			"tsn": "Bold Narrow",
-			"location": {
-				"width": 304.2394014962594,
-				"weight": 915.2119700748131
-			}
-		},
-		{
-			"name": "Bold (Normal)",
-			"tsn": "Bold (Normal)",
-			"location": {
-				"width": 603.4912718204489,
-				"weight": 930.1745635910223
-			}
-		},
-		{
-			"name": "Bold Wide",
-			"tsn": "Bold Wide",
-			"location": { "width": 950, "weight": 947.5 }
-		}
-	],
-	"dataType": "com.fontlab.info.instances"
+  "instances" : [
+    {
+      "name" : "Book Condensed",
+      "tsn" : "Book Condensed",
+      "location" : {
+        "width" : 88,
+        "weight" : 236
+      }
+    },
+    {
+      "name" : "Book Narrow",
+      "tsn" : "Book Narrow",
+      "location" : {
+        "width" : 340,
+        "weight" : 198
+      }
+    },
+    {
+      "name" : "Book",
+      "tsn" : "Book",
+      "location" : {
+        "width" : 642,
+        "weight" : 153
+      }
+    },
+    {
+      "name" : "Book Wide",
+      "tsn" : "Book Wide",
+      "location" : {
+        "width" : 950,
+        "weight" : 107
+      }
+    },
+    {
+      "name" : "Condensed",
+      "tsn" : "Condensed",
+      "location" : {
+        "width" : 79,
+        "weight" : 416
+      }
+    },
+    {
+      "name" : "Narrow",
+      "tsn" : "Narrow",
+      "location" : {
+        "width" : 330,
+        "weight" : 392
+      }
+    },
+    {
+      "name" : "",
+      "tsn" : "",
+      "location" : {
+        "width" : 631,
+        "weight" : 362
+      }
+    },
+    {
+      "name" : "Wide",
+      "tsn" : "Wide",
+      "location" : {
+        "width" : 950,
+        "weight" : 332
+      }
+    },
+    {
+      "name" : "Medium Condensed",
+      "tsn" : "Medium Condensed",
+      "location" : {
+        "width" : 67,
+        "weight" : 647
+      }
+    },
+    {
+      "name" : "Medium Narrow",
+      "tsn" : "Medium Narrow",
+      "location" : {
+        "width" : 317,
+        "weight" : 640
+      }
+    },
+    {
+      "name" : "Medium",
+      "tsn" : "Medium",
+      "location" : {
+        "width" : 618,
+        "weight" : 632
+      }
+    },
+    {
+      "name" : "Medium Wide",
+      "tsn" : "Medium Wide",
+      "location" : {
+        "width" : 950,
+        "weight" : 623
+      }
+    },
+    {
+      "name" : "Bold Condensed",
+      "tsn" : "Bold Condensed",
+      "location" : {
+        "width" : 54,
+        "weight" : 902
+      }
+    },
+    {
+      "name" : "Bold Narrow",
+      "tsn" : "Bold Narrow",
+      "location" : {
+        "width" : 304,
+        "weight" : 915
+      }
+    },
+    {
+      "name" : "Bold",
+      "tsn" : "Bold",
+      "location" : {
+        "width" : 603,
+        "weight" : 930
+      }
+    },
+    {
+      "name" : "Bold Wide",
+      "tsn" : "Bold Wide",
+      "location" : {
+        "width" : 950,
+        "weight" : 947
+      }
+    }
+  ],
+  "dataType" : "com.fontlab.info.instances"
 }
 ```
 
