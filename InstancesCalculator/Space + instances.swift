@@ -137,7 +137,7 @@ extension SpaceProtocol {
 				let b = String(name[range.upperBound...])
 				name =  a + b
 			}
-			name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+			name = name.trimmingCharacters(in: .whitespacesAndNewlines).condenseWhitespace()
 			result.append((name: name, coordinates: coordinates))
 		}
 		return result
