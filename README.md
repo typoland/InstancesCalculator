@@ -1,21 +1,24 @@
 #  Instances Calculator
 
-Instances Calculator is a set of two apps for macOS: 
+Instances Calculator is a set of two apps for macOS:
 
 1. A commandline tool `calculate_instances`
 2. A GUI app `ShowMeInstances`
 
-The apps are tools that can help designers of variable OpenType fonts or of multi-axis font families distort the design space and then calculate the instance locations. 
+The apps are tools that can help designers of variable OpenType fonts or of multi-axis font families distort the design space and then calculate the instance locations.
 
-### If you know what MultipleMaster or Variable Font is, it will be much easier to understand what this software do.
+The tools are a bit experimental.
 
-If you design or developing font in MM or VariableFont technology, sometimes happened that particular Masters does not fit to each other — i.e. BlackCondensed could be to wide to pair with ThinCondensed or BlackCondesed could have different ”blackness” than BlackExtended. 
+### If you know what MultipleMaster or Variable Font is, it will be much easier to understand what this software does.
 
-There are two ways to deal with problem: to redesign masters or set their coordiantes in nice-looking places. 
+If you design or developing font in MM or VariableFont technology, sometimes happened that particular Masters does not fit to each other — i.e. BlackCondensed could be to wide to pair with ThinCondensed or BlackCondesed could have different ”blackness” than BlackExtended.
 
-But in this second approach setting coordinates for particular styles are became a bit harder: there are not anymore [Light, Extended] coordinates but [LightSlightlyChangedOnWidthAxis, ExtendedSlghtlyChangedOnWeightAxis]. 
+There are two ways to deal with problem: to redesign masters or set their coordiantes in nice-looking places.
+
+But in this second approach setting coordinates for particular styles are became a bit harder: there are not anymore [Light, Extended] coordinates but [LightSlightlyChangedOnWidthAxis, ExtendedSlghtlyChangedOnWeightAxis].
 
 ## Let's try an example
+
 Two dimensional font has four masters: ThinCondensed, BlackCondensed, ThinExtended and BlackExtended.
 Let's say that generated instance ThinCondensed sholud be wider, BlackCondensed a little bit lighter, ThinExtended darker, and BlackExtedned not so wide and lighter. But what with restof instances? Which coordinates will be for NarrowBold? We need to set values for Narrow style at Width axis, separate for Light and Black edge and values for Weight axis, separate for Condensed and Extended edges. For two dimensions it's easy: it's just a point, where lines cross.
 ![](./Pictures/exp01.png)
@@ -28,25 +31,25 @@ Fore more than two dimensions it bacame a little more complicated. First, each a
 
 1. Download and install [Swift 5 Runtime Support for Command Line Tools](https://support.apple.com/kb/DL1998) — you’ll need it to run the `calculate_instances` commandline app.
 
-2. Currently, there are no compiled downloadable versions of Instances Calculator, but they will be published soon. Right now you need the most recent XCode and you need to build the tools yourself. 
+2. Currently, there are no compiled downloadable versions of Instances Calculator, but they will be published soon. Right now you need the most recent XCode and you need to build the tools yourself.
 
 
 ## Usage
 
-The `ShowMeInstances` GUI app lets you open an **axesmatrix** JSON file, shows it in the left pane, in the middle visualizes it, and in the right pane shows the **instances** JSON. The `calculate_instances` commandline tool takes the axesmatrix JSON file as input, and outputs the instances JSON file. 
+The `ShowMeInstances` GUI app lets you open an **axesmatrix** JSON file, shows it in the left pane, in the middle visualizes it, and in the right pane shows the **instances** JSON. The `calculate_instances` commandline tool takes the axesmatrix JSON file as input, and outputs the instances JSON file.
 
 ### Axesmatrix JSON
 
-The axesmatrix file is a JSON file with a syntax very similar to the syntax used in **[FontLab 7](http://fontlab.info)**. 
+The axesmatrix file is a JSON file with a syntax very similar to the syntax used in **[FontLab 7](http://fontlab.info)**.
 
 Read the FontLab 7 documentation chapters [Variations](https://help.fontlab.com/fontlab/7/manual/Variable-Fonts/) and [Working with
-Font Variations](https://help.fontlab.com/fontlab/7/manual/Working-with-Font-Variations/) to understand design space, axes, axis instances, and instances. 
+Font Variations](https://help.fontlab.com/fontlab/7/manual/Working-with-Font-Variations/) to understand design space, axes, axis instances, and instances.
 
 1. Open FontLab 7. (You can download a 30-day fully-functional trial from FontLab’s website).
 2. Turn on _Preferences > Editing > Copy FontLab JSON data as plain text_
-3. Open your multi-axis font in FontLab. 
+3. Open your multi-axis font in FontLab.
 4. Go to _File > Font Info > Axes_
-5. Write your axis instances per axis.  
+5. Write your axis instances per axis.
 5. Click _Copy Page_ (bottom-left corner)
 6. Paste the JSON representation of the axes into a text editor such as Atom or Sublime Text.
 
@@ -124,15 +127,15 @@ In FontLab 7, all axis instances are orthogonal — the same value is used at th
 }
 ```
 
-The **axesmatrix** JSON syntax is a subset of the above syntax, but instead of one `value` element, it uses a list of `values`. Each `values` list lists the values of a given axis instance on each “edge” of the design space. (**to be explained**). 
+The **axesmatrix** JSON syntax is a subset of the above syntax, but instead of one `value` element, it uses a list of `values`. Each `values` list lists the values of a given axis instance on each “edge” of the design space. (**to be explained**).
 
 __Important__: number of `values` in each `axisInstances` entry must be equal `2^(dimensions - 1)`; 2 for 2-dimensional, 4 for 3-dimensional, 8 for 4-dimensional designspace.
 
 Only first and last values counts (**to be explained**).
 
-There can also be an experimental parameter `distribution`, which causes exponential disribution of styles. 
+There can also be an experimental parameter `distribution`, which causes exponential disribution of styles.
 
-`calculate_instances` and `ShowMeInstances` takes this JSON as input: 
+`calculate_instances` and `ShowMeInstances` takes this JSON as input:
 
 ```json
 {
@@ -188,7 +191,7 @@ There can also be an experimental parameter `distribution`, which causes exponen
 }
 ```
 
-If you save this JSON as `yourfont.axesmatrix.json`, you can use the command-line: 
+If you save this JSON as `yourfont.axesmatrix.json`, you can use the command-line:
 
 ```
 calculate_instances yourfont.axesmatrix.json outfont.instances.json
@@ -196,7 +199,7 @@ calculate_instances yourfont.axesmatrix.json outfont.instances.json
 
 ### Instances JSON
 
-You will get back an instances JSON: 
+You will get back an instances JSON:
 
 ```json
 {
@@ -322,7 +325,7 @@ You will get back an instances JSON:
 }
 ```
 
-This is almost correct for FontLab 7. 
+This is almost correct for FontLab 7.
 
 Open the `outfont.instances.json` file in a text editor, replace the axis names `weight` and `width` with the 2-letter codes `wt` and `wd`, and replace the regex ` *\(.*\) ` with nothing. Copy the contents to the clipboard. Then in FontLab 7, go to _Font Info > Instances_ and click the _Paste page_ button (3rd in the bottom-left). This will get the predefined instances into FontLab.
 
@@ -346,3 +349,12 @@ If you prefer UI, use `ShowMeInstances` app which is pretty experimental. But fi
 ![](./Pictures/exp07.png)
 
 
+## License
+
+Copyright 2019 Łukasz Dziedzic
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
