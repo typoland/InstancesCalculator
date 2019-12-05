@@ -10,7 +10,6 @@
 		B20930E72395F27E0088301F /* InstancesCalculator + exportJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930D42395F27D0088301F /* InstancesCalculator + exportJson.swift */; };
 		B20930E82395F27E0088301F /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930D52395F27D0088301F /* Space.swift */; };
 		B20930E92395F27E0088301F /* Space + instances.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930D62395F27D0088301F /* Space + instances.swift */; };
-		B20930EA2395F27E0088301F /* Type aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930D72395F27D0088301F /* Type aliases.swift */; };
 		B20930EB2395F27E0088301F /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930D82395F27D0088301F /* Pair.swift */; };
 		B20930EC2395F27E0088301F /* Axis + distribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930D92395F27E0088301F /* Axis + distribution.swift */; };
 		B20930ED2395F27E0088301F /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20930DA2395F27E0088301F /* Axis.swift */; };
@@ -46,7 +45,6 @@
 		B20930D42395F27D0088301F /* InstancesCalculator + exportJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InstancesCalculator + exportJson.swift"; sourceTree = "<group>"; };
 		B20930D52395F27D0088301F /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		B20930D62395F27D0088301F /* Space + instances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Space + instances.swift"; sourceTree = "<group>"; };
-		B20930D72395F27D0088301F /* Type aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Type aliases.swift"; sourceTree = "<group>"; };
 		B20930D82395F27D0088301F /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		B20930D92395F27E0088301F /* Axis + distribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Axis + distribution.swift"; path = "insgen/Axis + distribution.swift"; sourceTree = SOURCE_ROOT; };
 		B20930DA2395F27E0088301F /* Axis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				B20930D82395F27D0088301F /* Pair.swift */,
 				B20930E62395F27E0088301F /* Plane.swift */,
 				B20930DB2395F27E0088301F /* IGAxisStyle.swift */,
-				B20930D72395F27D0088301F /* Type aliases.swift */,
 			);
 			name = InstancesGeneratorFiles;
 			path = ../../InstancesCalculator;
@@ -207,7 +204,6 @@
 				B20930ED2395F27E0088301F /* Axis.swift in Sources */,
 				B20930EC2395F27E0088301F /* Axis + distribution.swift in Sources */,
 				B20930F52395F27E0088301F /* InstancesCalculator.swift in Sources */,
-				B20930EA2395F27E0088301F /* Type aliases.swift in Sources */,
 				B20930F72395F27E0088301F /* InstancesCalculator + initFromDesignSpace.swift in Sources */,
 				B28AF80B2356365D00608F8F /* main.swift in Sources */,
 				B20930F82395F27E0088301F /* cross.swift in Sources */,
