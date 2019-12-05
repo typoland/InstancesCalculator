@@ -130,7 +130,14 @@ extension SpaceProtocol {
 			let data = flat(array: groups)
 			let coordinatesArray = reduceByCross(list: data)
 			let coordinates = coordinatesArray.map { $0.average }
-			_ = name.removeLast()
+			
+			if let range = name.range(of: #"\(.*\)"#,
+									  options: .regularExpression) {
+				let a = String(name[..<range.lowerBound])
+				let b = String(name[range.upperBound...])
+				name =  a + b
+			}
+			name = name.trimmingCharacters(in: .whitespacesAndNewlines)
 			result.append((name: name, coordinates: coordinates))
 		}
 		return result
