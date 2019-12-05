@@ -20,13 +20,16 @@ struct JSONData<CoordUnit:Encodable>:Encodable {
 	var instances: [Instance <CoordUnit>]
 }
 
+
+
 extension InstancesCalculator {
-	var jsonData: JSONData<CoordUnit> {
-		var result : [Instance<CoordUnit>] = []
+	var jsonData: JSONData<Int> {
+		var result : [Instance<Int>] = []
 		
 		for instance in instances {
-			let location = instance.coordinates.reduce(into: [String:CoordUnit]()) {dict, loc in
-				dict[loc.axis] = loc.value
+			let location = instance.coordinates.reduce(into: [String:Int]()) {
+				dict, location in
+				dict[location.axis] = Int(location.value as! Double) // Risky Stuff
 			}
 			result.append(Instance(name: instance.instanceName,
 								   tsn: instance.instanceName,
