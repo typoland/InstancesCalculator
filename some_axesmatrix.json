@@ -1,0 +1,52 @@
+{
+	"axes":[
+		{
+			"name":"weight",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"Thin",
+				"values": [100, 90, 110, 120]
+				},
+				{
+				"name":"Bold",
+				"values": [350, 333, 320, 370]
+				}
+			]
+
+		},
+		{
+			"name":"width",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"Condensed",
+				"values": [12, 18, 23, 45]
+				},
+				{
+				"name":"Extended",
+				"values": [820, 775, 990, 920]
+				}
+			]
+
+		},
+		{
+			"name":"contrast",
+			"designMinimum":0,
+			"designMaximum":1000,
+			"axisInstances":[
+				{
+				"name":"High",
+				"values": [222, 234, 287, 240]
+				},
+				{
+				"name":"Low",
+				"values": [666, 625, 640, 690]
+				}
+			]
+
+		}
+	]
+}
