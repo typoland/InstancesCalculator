@@ -18,7 +18,7 @@ extension AxisInstanceProtocol {
 	}
 }
 
-public protocol AxisProtocol {
+public protocol AxisProtocol: Hashable {
 	associatedtype AxisInstance: AxisInstanceProtocol
 	var name: String {get set}
 	var styles: [AxisInstance] {get set}
@@ -40,8 +40,12 @@ extension SpaceProtocol {
 		return axes.count
 	}
 	
-	var verticesNr: Int {
+	static func vertices(of dimensions:Int) -> Int {
 		return 1<<dimensions
+	}
+	
+	var verticesNr: Int {
+		return Self.vertices(of: dimensions)
 	}
 	
 	mutating func distributeAxes() {

@@ -10,7 +10,7 @@ import Foundation
 
 
 
-extension Space {
+extension SpaceProtocol {
 	func isDataOK() throws {
 		let count = axes.count
 		let okLength = 1 << (count-1)

@@ -10,7 +10,7 @@ extension PlaneProtocol {
 	static func definePlanes (for edges:[[EdgeProtocol]]) -> [[Self]] {
 		var result: [[Self]] = []
 		for axisNr in 0..<edges.count {
-			let nextAxis = (axisNr+1) % edges.count // Totally not sure
+			let nextAxis = (axisNr+1) % edges.count
 			var planes: [Self] = []
 			for pairNr in 0..<(edges[axisNr].count/2) {
 				let e1 = (edges[axisNr][pairNr*2],
@@ -35,7 +35,6 @@ extension PlaneProtocol {
 		return ((edgesA.0.from ^ edgesA.0.to).log2!, (edgesB.0.from ^ edgesB.0.to ).log2!)
 	}
 }
-
 
 struct Plane: PlaneProtocol, CustomStringConvertible {
 	var edgesA: (EdgeProtocol, EdgeProtocol)

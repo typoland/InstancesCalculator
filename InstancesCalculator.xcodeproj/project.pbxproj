@@ -16,6 +16,7 @@
 		B20931092395F4180088301F /* exp05.png in Resources */ = {isa = PBXBuildFile; fileRef = B20931002395F4180088301F /* exp05.png */; };
 		B209310A2395F4180088301F /* exp03.png in Resources */ = {isa = PBXBuildFile; fileRef = B20931012395F4180088301F /* exp03.png */; };
 		B209310B2395F4180088301F /* exp03a.png in Resources */ = {isa = PBXBuildFile; fileRef = B20931022395F4180088301F /* exp03a.png */; };
+		B20931122396DB110088301F /* IGAxisStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20931112396DB110088301F /* IGAxisStyle.swift */; };
 		B26E767D2395AE990042A2EB /* Space + isDataOK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E767C2395AE990042A2EB /* Space + isDataOK.swift */; };
 		B26E76822395BA530042A2EB /* SpaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26E76812395BA530042A2EB /* SpaceError.swift */; };
 		B272AAFB2395C93D001146E7 /* InstancesCalculator + axes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272AAFA2395C93D001146E7 /* InstancesCalculator + axes.swift */; };
@@ -24,10 +25,8 @@
 		B28AF7BD2355DF0800608F8F /* InstancesCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28AF7B32355DF0800608F8F /* InstancesCalculator.framework */; };
 		B28AF7C22355DF0800608F8F /* InstancesGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7C12355DF0800608F8F /* InstancesGeneratorTests.swift */; };
 		B28AF7C42355DF0800608F8F /* InstancesGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = B28AF7B62355DF0800608F8F /* InstancesGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B28AF7D92355DF2B00608F8F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7CE2355DF2B00608F8F /* Style.swift */; };
 		B28AF7DA2355DF2B00608F8F /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7CF2355DF2B00608F8F /* Space.swift */; };
 		B28AF7DB2355DF2B00608F8F /* Space + Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D02355DF2B00608F8F /* Space + Edges.swift */; };
-		B28AF7DC2355DF2B00608F8F /* Type aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D12355DF2B00608F8F /* Type aliases.swift */; };
 		B28AF7DD2355DF2B00608F8F /* Axis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D22355DF2B00608F8F /* Axis.swift */; };
 		B28AF7DE2355DF2B00608F8F /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D32355DF2B00608F8F /* Plane.swift */; };
 		B28AF7DF2355DF2B00608F8F /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28AF7D42355DF2B00608F8F /* Edge.swift */; };
@@ -60,6 +59,7 @@
 		B20931002395F4180088301F /* exp05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp05.png; sourceTree = "<group>"; };
 		B20931012395F4180088301F /* exp03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp03.png; sourceTree = "<group>"; };
 		B20931022395F4180088301F /* exp03a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exp03a.png; sourceTree = "<group>"; };
+		B20931112396DB110088301F /* IGAxisStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGAxisStyle.swift; sourceTree = "<group>"; };
 		B26E767C2395AE990042A2EB /* Space + isDataOK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Space + isDataOK.swift"; path = "../insgen/insgen/Space + isDataOK.swift"; sourceTree = "<group>"; };
 		B26E76812395BA530042A2EB /* SpaceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpaceError.swift; path = ../insgen/insgen/SpaceError.swift; sourceTree = "<group>"; };
 		B272AAF82395C93C001146E7 /* InstancesCalculator + initFromDesignSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InstancesCalculator + initFromDesignSpace.swift"; sourceTree = "<group>"; };
@@ -72,10 +72,8 @@
 		B28AF7BC2355DF0800608F8F /* InstancesCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstancesCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28AF7C12355DF0800608F8F /* InstancesGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancesGeneratorTests.swift; sourceTree = "<group>"; };
 		B28AF7C32355DF0800608F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B28AF7CE2355DF2B00608F8F /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		B28AF7CF2355DF2B00608F8F /* Space.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		B28AF7D02355DF2B00608F8F /* Space + Edges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Space + Edges.swift"; sourceTree = "<group>"; };
-		B28AF7D12355DF2B00608F8F /* Type aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Type aliases.swift"; sourceTree = "<group>"; };
 		B28AF7D22355DF2B00608F8F /* Axis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
 		B28AF7D32355DF2B00608F8F /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		B28AF7D42355DF2B00608F8F /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
@@ -163,8 +161,7 @@
 				B28AF7D62355DF2B00608F8F /* Int + Extensions.swift */,
 				B28AF7D52355DF2B00608F8F /* Pair.swift */,
 				B28AF7D32355DF2B00608F8F /* Plane.swift */,
-				B28AF7CE2355DF2B00608F8F /* Style.swift */,
-				B28AF7D12355DF2B00608F8F /* Type aliases.swift */,
+				B20931112396DB110088301F /* IGAxisStyle.swift */,
 				B28AF7B62355DF0800608F8F /* InstancesGenerator.h */,
 				B28AF7B72355DF0800608F8F /* Info.plist */,
 			);
@@ -301,11 +298,10 @@
 			files = (
 				B28AF7DB2355DF2B00608F8F /* Space + Edges.swift in Sources */,
 				B28AF7E42355DF8100608F8F /* Space + instances.swift in Sources */,
+				B20931122396DB110088301F /* IGAxisStyle.swift in Sources */,
 				B272AAFD2395C93D001146E7 /* InstancesCalculator + initFromDesignSpace.swift in Sources */,
 				B28AF7E62355E29300608F8F /* Space + defineEdges.swift in Sources */,
 				B28AF7DF2355DF2B00608F8F /* Edge.swift in Sources */,
-				B28AF7DC2355DF2B00608F8F /* Type aliases.swift in Sources */,
-				B28AF7D92355DF2B00608F8F /* Style.swift in Sources */,
 				B26E767D2395AE990042A2EB /* Space + isDataOK.swift in Sources */,
 				B28AF7E22355DF2B00608F8F /* cross.swift in Sources */,
 				B29A99D923573A6000D569EA /* Axis + distribution.swift in Sources */,

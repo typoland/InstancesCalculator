@@ -2,6 +2,15 @@ import Foundation
 
 
 struct IGAxis<AI: AxisInstanceProtocol >: AxisProtocol, CustomStringConvertible {
+	static func == (lhs: IGAxis<AI>, rhs: IGAxis<AI>) -> Bool {
+		return lhs.name == rhs.name && lhs.bounds == rhs.bounds
+	}
+	
+
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(name)
+		hasher.combine(bounds)
+	}
 
 	
 	typealias AxisInstance = AI
@@ -17,9 +26,7 @@ struct IGAxis<AI: AxisInstanceProtocol >: AxisProtocol, CustomStringConvertible 
 		self.styles = styles
 	}
 	
-	var description: String {
-		return "\"\(name)\""
-	}
+	
 }
 
 
@@ -37,5 +44,9 @@ extension AxisProtocol {
 	
 	mutating func removeValuesForLastAxis() {
 		(0..<styles.count).forEach {styles[$0].removeValuesForLastAxis()}
+	}
+	
+	var description: String {
+		return "\"\(name)\""
 	}
 }

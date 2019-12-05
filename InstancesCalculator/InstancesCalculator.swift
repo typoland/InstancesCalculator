@@ -16,6 +16,15 @@ public extension Notification.Name {
 	static var instancesReady = Notification.Name(rawValue: "com.typolnd.InstancesCalculator.instancesReady")
 }
 
+//Hmmm
+
+public protocol InstanceProtocol {
+	associatedtype CoordUnit
+	associatedtype Axis:AxisProtocol
+	var instanceName: String {get set}
+	var coordinates: [Axis: CoordUnit] {get set}
+	init (from: (instanceName:String, coordinates:[(axis:Axis, value:CoordUnit)]))
+}
 
 public class InstancesCalculator <CoordUnit: FloatingPoint & Encodable & Decodable> {
 	
@@ -147,25 +156,29 @@ public class InstancesCalculator <CoordUnit: FloatingPoint & Encodable & Decodab
 		if let result = _instances {
 			return result
 		} else {
-		let start = Date()
-		var result:[(instanceName:String, coordinates:[(axis:String, value:CoordUnit)])]  = []
-		space.distributeAxes()
-		for style in space.instances {
-			let coordinates = (0..<style.coordinates.count).map {
-				(space.axes[$0].name,
-				 InstancesCalculator.convertfromInternal(
-					value: style.coordinates[$0],
-					bounds: space.axes[$0].bounds) )
-			}
+			let start = Date()
+			var result: [
+				(instanceName:String,
+				coordinates:[(
+				axis:String,
+				value:CoordUnit)])]  = []
 			
-			result.append((instanceName: style.name, coordinates:coordinates))
-		}
-		let time  =  Date().timeIntervalSince(start)//DateInterval(start: start, end: Date())
-		NotificationCenter.default.post(name: .instancesReady, object: time)
-		//print ( "It took \(time) seconds to generate \(result.count) instances" )
-			_instances = result
-		return result
+			space.distributeAxes()
+			
+			for style in space.instances {
+				let coordinates = (0..<style.coordinates.count).map {
+					(space.axes[$0].name,
+					 InstancesCalculator.convertfromInternal(
+						value: style.coordinates[$0],
+						bounds: space.axes[$0].bounds) )
+				}
+				result.append((instanceName: style.name, coordinates:coordinates))
 			}
+			let time  =  Date().timeIntervalSince(start)
+			NotificationCenter.default.post(name: .instancesReady, object: time)
+			_instances = result
+			return result
+		}
 	}
 	
 	public var instancesX:[IsInstance] {
