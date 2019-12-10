@@ -31,8 +31,7 @@ Fore more than two dimensions it bacame a little more complicated. First, each a
 
 1. Download and install [Swift 5 Runtime Support for Command Line Tools](https://support.apple.com/kb/DL1998) — you’ll need it to run the `calculate_instances` commandline app.
 
-2. Currently, there are no compiled downloadable versions of Instances Calculator, but they will be published soon. Right now you need the most recent XCode and you need to build the tools yourself.
-
+2. App and command line are [in this folder](https://github.com/typoland/InstancesGenerator/tree/master/Dist)
 
 ## Usage
 
